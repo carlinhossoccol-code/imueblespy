@@ -599,6 +599,37 @@ def c_nosales_only():
     return bad
 
 
+@check("widgets", "Interactive components keep the markup their script needs")
+def c_widgets():
+    """Guards the hooks assets/site.js reaches for.
+
+    A codemod that tidied empty elements once removed the empty
+    <div data-suggestions> the search writes its results into, and every page
+    with a search box threw a TypeError. The browser journeys caught it, but a
+    static check catches it on all pages and in a second.
+    """
+    bad = []
+    for p, s in CP.pages():
+        u = C.rel_url(p)
+        if "data-city-search" in s:
+            for sel, what in (
+                ('data-suggestions', 'the container the script writes results into'),
+                ('id="city-search"', 'the search input'),
+                ('data-status', 'the live region for result announcements'),
+                ('<label', 'a label for the search input'),
+            ):
+                if sel not in s:
+                    bad.append((u, f"search form is missing {what} ({sel})"))
+        if "data-menu-toggle" in s:
+            if 'id="main-menu"' not in s:
+                bad.append((u, "menu toggle has no #main-menu to control"))
+            if 'aria-expanded' not in s:
+                bad.append((u, "menu toggle has no aria-expanded state"))
+        if 'class="mnpb"' in s and "mnpb-cta" not in s:
+            bad.append((u, "advertising block is missing its call to action"))
+    return bad
+
+
 @check("orphans", "No indexable page is unreachable from internal links")
 def c_orphans():
     inbound = collections.Counter()
