@@ -471,6 +471,45 @@ def c_doorway():
     return bad
 
 
+@check("doorway_cities", "Same-category pages in different cities carry city-specific substance",
+       blocking=False)
+def c_doorway_cities():
+    """The second doorway axis: one category compared across municipalities.
+
+    These pages legitimately share the category guidance, so a high score is
+    not automatically a defect; what matters is that each page still carries
+    its own municipal data. The check samples within each department, where
+    similarity is highest, and reports the worst pairs.
+    """
+    THRESH = 0.72
+    bad = []
+    for lang, seg in C.BUY_SEGMENT.items():
+        base = os.path.join(C.SITE, lang, seg)
+        if not os.path.isdir(base):
+            continue
+        for cat in ("terrenos", "casas"):
+            for dept in sorted(os.listdir(base)):
+                dpath = os.path.join(base, dept)
+                if not os.path.isdir(dpath):
+                    continue
+                files = []
+                for city in sorted(os.listdir(dpath)):
+                    fp = os.path.join(dpath, city, cat, "index.html")
+                    if fp in CP.src:
+                        files.append((city, fp))
+                if len(files) < 2:
+                    continue
+                sh = {c: C.shingles(C.visible_text(CP.src[fp], main_only=True)) for c, fp in files}
+                keys = sorted(sh)
+                for i in range(len(keys)):
+                    for j in range(i + 1, len(keys)):
+                        v = C.jaccard(sh[keys[i]], sh[keys[j]])
+                        if v > THRESH:
+                            bad.append((f"/{lang}/{seg}/{dept}/*/{cat}/",
+                                        f"{keys[i]} vs {keys[j]} similarity {v:.2f} > {THRESH}"))
+    return bad
+
+
 @check("orphans", "No indexable page is unreachable from internal links")
 def c_orphans():
     inbound = collections.Counter()

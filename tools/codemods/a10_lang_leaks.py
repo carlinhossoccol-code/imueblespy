@@ -43,14 +43,18 @@ ES_FIXES = [
     ("— imóveis publicados", "— inmuebles publicados"),
     ("site oficial", "sitio oficial"),
     ("Site oficial", "Sitio oficial"),
-    ("da imobiliária", "de la inmobiliaria"),
-    ("da empresa", "de la empresa"),
     ("imobiliárias", "inmobiliarias"),
     ("imobiliária", "inmobiliaria"),
 ]
 
 # Field tokens inside the "Campos publicados / no informados" lists and the
 # "Contactos presentes" fact. Bounded by punctuation so nothing else matches.
+# Word-boundary guarded: a bare "da empresa" also occurs inside "cada empresa".
+GUARDED_ES_FIXES = [
+    (r"(?<![\wá-úÁ-Ú])da imobiliária", "de la inmobiliaria"),
+    (r"(?<![\wá-úÁ-Ú])da empresa", "de la empresa"),
+]
+
 FIELD_FIXES = [
     (r"(?<![\w>])Telefone(?![\w<])", "Teléfono"),
     (r"(?<![\w>])Website(?![\w<])", "Sitio web"),
@@ -61,8 +65,13 @@ FIELD_FIXES = [
 
 
 def apply(path, src, ctx):
+    # Repair the earlier over-broad replacement before applying the guarded one.
+    src = src.replace("cade la empresa", "cada empresa")
+    src = src.replace("cade la inmobiliaria", "cada inmobiliaria")
     for a, b in ES_FIXES:
         src = src.replace(a, b)
+    for pat, rep in GUARDED_ES_FIXES:
+        src = re.sub(pat, rep, src)
     for pat, rep in FIELD_FIXES:
         src = re.sub(pat, rep, src)
     # "telefone" / "site" inside a comma-joined channel list
