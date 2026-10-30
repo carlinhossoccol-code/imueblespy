@@ -50,6 +50,8 @@ T = {
         "border": "Distancia a la frontera con Brasil",
         "seat": "Respecto de {seat}", "seat_val": "{km} km al {dir}",
         "natrank": "Posición nacional por población",
+        "nearest_pro": "Profesionales más próximos",
+        "nearest_pro_val": "{city}, a {km} km ({n} con sede)",
         "natrank_val": "{r} de {n} municipios relevados",
         "dirs": ["norte", "noreste", "este", "sureste", "sur", "suroeste", "oeste", "noroeste"],
     },
@@ -68,6 +70,8 @@ T = {
         "border": "Distância até a fronteira com o Brasil",
         "seat": "Em relação a {seat}", "seat_val": "{km} km a {dir}",
         "natrank": "Posição nacional por população",
+        "nearest_pro": "Profissionais mais próximos",
+        "nearest_pro_val": "{city}, a {km} km ({n} com sede)",
         "natrank_val": "{r} de {n} municípios pesquisados",
         "dirs": ["norte", "nordeste", "leste", "sudeste", "sul", "sudoeste", "oeste", "noroeste"],
     },
@@ -168,6 +172,14 @@ def apply(path, src, ctx):
     r, n = F.national_rank(key)
     if r:
         facts.append((t["natrank"], t["natrank_val"].format(r=r, n=n)))
+    # For a municipality with no seated professional, where the nearest one is
+    # matters more than any other fact on the page.
+    if not F.profiles.get(key):
+        np = F.nearest_with_professionals(key)
+        if np:
+            nk, nd, cnt = np
+            facts.append((t["nearest_pro"], t["nearest_pro_val"].format(
+                city=F.name_by_key.get(nk, nk), km=_km(nd), n=cnt)))
     if lang == "pt-br":
         cands = [(b, F.distance_km(key, b)) for b in BORDER if F.distance_km(key, b) is not None]
         if cands:

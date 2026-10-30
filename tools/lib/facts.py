@@ -205,6 +205,26 @@ class Facts:
                 return i, len(pops)
         return None, len(pops)
 
+    def nearest_with_professionals(self, key: str):
+        """(municipality key, km, count) for the closest place that has one.
+
+        For a municipality with no seated professional this is the single most
+        useful fact the dataset can offer a buyer: where the nearest one
+        actually is, and how far.
+        """
+        if key not in self.coords:
+            return None
+        best = None
+        for k in self.cities:
+            if k == key or not self.profiles.get(k):
+                continue
+            d = self.distance_km(key, k)
+            if d is None:
+                continue
+            if best is None or d < best[1]:
+                best = (k, d, self.profiles[k])
+        return best
+
     def nearest_municipalities(self, key: str, limit: int = 5) -> list:
         """(municipality key, km) for the closest other municipalities."""
         if key not in self.coords:
