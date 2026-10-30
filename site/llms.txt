@@ -28,6 +28,7 @@ La raíz del dominio redirige a `/es/`.
 - [Sobre el directorio](https://inmueblespy.com.py/es/acerca-de/)
 - [Corregir o retirar información](https://inmueblespy.com.py/es/correcciones/)
 - [Contacto](https://inmueblespy.com.py/es/contacto/)
+- [Política de publicidad](https://inmueblespy.com.py/es/politica-de-publicidad/): el portal publica publicidad propia identificada, que no influye en el directorio.
 
 ## Português
 
@@ -42,6 +43,7 @@ La raíz del dominio redirige a `/es/`.
 - [Sobre o portal](https://inmueblespy.com.py/pt-br/sobre/)
 - [Corrigir informações](https://inmueblespy.com.py/pt-br/correcoes/)
 - [Contato](https://inmueblespy.com.py/pt-br/contato/)
+- [Política de publicidade](https://inmueblespy.com.py/pt-br/politica-de-publicidade/)
 
 ## Datos y procedencia
 
