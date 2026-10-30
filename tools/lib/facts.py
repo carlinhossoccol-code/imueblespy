@@ -16,6 +16,13 @@ import corpus as C
 
 CITY_H1_RE = re.compile(r"Comprar propiedades en (.*?): ciudad e inmobiliarias")
 
+# Kept in step with tools/extract_dataset.py.
+CITY_NAME_ALIASES = {
+    "Juan León Mallorquín": "Doctor Juan León Mallorquín",
+    "Juan Emilio O\u2019Leary": "Juan Emiliano O'Leary",
+    "San Pedro del Ycuamandiyú": "San Pedro de Ycuamandiyú",
+}
+
 
 class Facts:
     def __init__(self, dataset: dict | None = None):
@@ -33,6 +40,12 @@ class Facts:
             if m:
                 self.key_by_name.setdefault(m.group(1).strip(), key)
                 self.name_by_key[key] = m.group(1).strip()
+        # The directory spells a few municipalities differently from their page.
+        # Without these, the professionals seated there resolve to no location
+        # and silently drop out of the proximity ranking.
+        for alias, canonical in CITY_NAME_ALIASES.items():
+            if canonical in self.key_by_name:
+                self.key_by_name.setdefault(alias, self.key_by_name[canonical])
 
         self.profiles: dict[str, int] = collections.defaultdict(int)
         self.with_channel: dict[str, int] = collections.defaultdict(int)

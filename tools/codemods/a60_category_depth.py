@@ -95,8 +95,11 @@ def apply(path, src, ctx):
     # 3. drop the department table duplicated from the city page
     src = DEPT_TABLE_RE.sub("", src, count=1)
 
-    # 4. cost-composition module, inserted before the data-area footnote
-    if COSTS_ID not in src:
+    # 4. cost-composition module, inserted before the data-area footnote.
+    # Removed first so an edit to category_content.py reaches pages that
+    # already carry an older version of the module.
+    src = re.sub(r"<section class=\"ep-module ep-costs\">.*?</section>", "", src, flags=re.S)
+    if True:
         rows = "".join(
             f"<tr><td><strong>{_esc(a)}</strong></td><td>{_esc(b)}</td></tr>"
             for a, b in data["costs"]

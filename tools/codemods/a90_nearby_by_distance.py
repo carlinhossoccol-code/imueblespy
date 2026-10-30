@@ -39,9 +39,13 @@ HEAD = {
               "Ordenados por distância a partir de {city}. Ter sede por perto não "
               "confirma atendimento nesta cidade: confirme antes de avançar."),
 }
+# Matches the original department-based block and the one this codemod emits,
+# so the list is regenerated whenever the data behind it changes. Matching only
+# the original meant a coordinate or seat correction never reached the pages.
 OLD_HEAD = re.compile(
     r"<h3>(?:Profesionales en otras ciudades del departamento|"
-    r"Profissionais em outras cidades do departamento)</h3>"
+    r"Profissionais em outras cidades do departamento|"
+    r"Profesionales más cercanos|Profissionais mais próximos)</h3>"
     r'<p class="hint">[^<]*</p><div class="stack">(.*?)</div>(?=<p class="disclosure")',
     re.S,
 )

@@ -6,7 +6,7 @@ alto-parana/doctor-raul-pena,alto-parana,Doctor Raúl Peña,-26.13495,-55.22489,
 alto-parana/domingo-martinez-de-irala,alto-parana,Domingo Martínez de Irala,-25.85822,-54.69024,11839936,ADM2,Domingo Martinez De Irala
 alto-parana/hernandarias,alto-parana,Hernandarias,-25.31506,-54.77781,11840171,ADM2,Hernandarias
 alto-parana/itakyry,alto-parana,Itakyry,-24.81418,-55.15267,11840113,ADM2,Itakyry
-alto-parana/juan-emiliano-o-leary,alto-parana,Juan Emiliano O'Leary,-25.41999,-55.37312,3437880,PPL,Juan Emiliano O’Leary
+alto-parana/juan-emiliano-o-leary,alto-parana,Juan Emiliano O'Leary,-25.48006,-55.36511,11840121,ADM2,Juan E. O´Leary
 alto-parana/los-cedrales,alto-parana,Los Cedrales,-25.68602,-54.75132,11839944,ADM2,Los Cedrales
 alto-parana/mbaracayu,alto-parana,Mbaracayú,-25.01529,-54.68915,11839953,ADM2,Mbaracayu
 alto-parana/minga-guazu,alto-parana,Minga Guazú,-25.50339,-54.84146,11840129,ADM2,Minga Guazu
@@ -26,17 +26,18 @@ amambay/cerro-cora,amambay,Cerro Corá,-22.62429,-55.84988,3439130,PPL,Cerro Cor
 amambay/pedro-juan-caballero,amambay,Pedro Juan Caballero,-22.79291,-55.98344,11840099,ADM2,Pedro Juan Caballero
 amambay/zanja-pyta,amambay,Zanja Pytá,-22.7719,-55.70878,11840013,ADM2,Zanja Pyta
 asuncion,asuncion,Asunción,-25.29121,-57.60494,11840061,ADM2,Asuncion
+boqueron/boqueron,boqueron,Boquerón,-22.66667,-60.11667,3867411,PPL,Colonia Neuland
 boqueron/filadelfia,boqueron,Filadelfia,-21.4374,-60.17867,11840009,ADM2,Filadelfia
 boqueron/loma-plata,boqueron,Loma Plata,-22.30512,-59.6906,11839974,ADM2,Loma Plata
 boqueron/mariscal-estigarribia,boqueron,Mariscal Estigarribia,-21.96421,-61.28682,11840039,ADM2,Mariscal Estigarribia
 caaguazu/caaguazu,caaguazu,Caaguazú,-25.41922,-56.05173,11840030,ADM2,Caaguazu
 caaguazu/carayao,caaguazu,Carayaó,-25.18748,-56.32904,11840142,ADM2,Carayao
 caaguazu/coronel-oviedo,caaguazu,Coronel Oviedo,-25.48658,-56.42111,11839960,ADM2,Coronel Oviedo
-caaguazu/doctor-juan-eulogio-estigarribia,caaguazu,Doctor Juan Eulogio Estigarribia,-25.37184,-55.70457,3437905,PPL,Doctor Juan Eulogio Estigarribia
+caaguazu/doctor-juan-eulogio-estigarribia,caaguazu,Doctor Juan Eulogio Estigarribia,-25.40286,-55.59406,11840072,ADM2,J Eulogio Estigarribia
 caaguazu/doctor-juan-manuel-frutos,caaguazu,Doctor Juan Manuel Frutos,-25.36211,-55.82163,11840148,ADM2,Dr. Juan Manuel Frutos
 caaguazu/jose-domingo-ocampos,caaguazu,José Domingo Ocampos,-25.44037,-55.43764,11839993,ADM2,Jose Domingo Ocampos
 caaguazu/mariscal-lopez,caaguazu,Mariscal López,-25.17948,-55.18013,11840002,ADM2,Mcal. Francisco Solano Lopez
-caaguazu/r-i-tres-corrales,caaguazu,R.I. Tres Corrales,-25.03333,-56.13333,3437173,PPL,R. I. Tres Corrales
+caaguazu/r-i-tres-corrales,caaguazu,R.I. Tres Corrales,-25.3536,-56.21978,11839941,ADM2,R.I. 3 Corrales
 caaguazu/raul-arsenio-oviedo,caaguazu,Raúl Arsenio Oviedo,-25.15375,-55.57547,11840149,ADM2,Raul Arsenio Oviedo
 caaguazu/repatriacion,caaguazu,Repatriación,-25.58395,-55.80308,11839957,ADM2,Repatriacion
 caaguazu/san-joaquin,caaguazu,San Joaquín,-25.04491,-56.05025,11840104,ADM2,San Joaquin
@@ -51,7 +52,7 @@ caazapa/caazapa,caazapa,Caazapá,-26.17881,-56.28831,11840162,ADM2,Caazapa
 caazapa/fulgencio-yegros,caazapa,Fulgencio Yegros,-26.54205,-56.56201,11840100,ADM2,Fulgencio Yegros
 caazapa/san-juan-nepomuceno,caazapa,San Juan Nepomuceno,-26.23146,-55.90066,11840016,ADM2,San Juan Nepomuceno
 caazapa/tavai,caazapa,Tavaí,-26.18824,-55.52995,11840035,ADM2,Tavai
-caazapa/tres-de-mayo,caazapa,Tres de Mayo,-26.48134,-56.09592,3436530,PPL,Tres de Mayo
+caazapa/tres-de-mayo,caazapa,Tres de Mayo,-26.40549,-56.06766,11840160,ADM2,3 De Mayo
 caazapa/yuty,caazapa,Yuty,-26.60724,-56.33523,11840093,ADM2,Yuty
 canindeyu/corpus-christi,canindeyu,Corpus Christi,-24.11047,-55.00993,11840125,ADM2,Corpus Christi
 canindeyu/curuguaty,canindeyu,Curuguaty,-24.33618,-55.77463,11839977,ADM2,Curuguaty
@@ -60,9 +61,9 @@ canindeyu/katuete,canindeyu,Katueté,-24.3429,-54.79242,11839999,ADM2,Katuete
 canindeyu/la-paloma-del-espiritu-santo,canindeyu,La Paloma del Espíritu Santo,-24.12957,-54.61376,3437853,PPL,La Paloma del Espíritu Santo
 canindeyu/maracana,canindeyu,Maracaná,-24.18904,-56.08401,13689984,PPL,Maracaná
 canindeyu/nueva-esperanza,canindeyu,Nueva Esperanza,-24.58166,-54.65388,11839972,ADM2,Nueva Esperanza
-canindeyu/salto-del-guaira,canindeyu,Salto del Guairá,-24.0633,-54.30763,3437148,PPLA,Salto del Guairá
+canindeyu/salto-del-guaira,canindeyu,Salto del Guairá,-24.18629,-54.46661,11839948,ADM2,Saltos Del Guaira
 canindeyu/villa-ygatimi,canindeyu,Villa Ygatimí,-24.13346,-55.48191,11840060,ADM2,Villa Ygatimí
-canindeyu/yasy-cany,canindeyu,Yasy Cañy,-24.52913,-55.88863,11719332,PPL,Yasy Cañy
+canindeyu/yasy-cany,canindeyu,Yasy Cañy,-24.56255,-55.86979,11840068,ADM2,Yasy Kañy
 canindeyu/yby-pyta,canindeyu,Yby Pytá,-24.34891,-55.38626,13689985,PPL,Yby Pytá
 canindeyu/ybyrarobana,canindeyu,Ybyrarobaná,-24.3509,-55.1162,11840134,ADM2,Ybyrarobana
 canindeyu/ypejhu,canindeyu,Ypejhú,-23.88693,-55.44186,3436575,PPL,Ypejhú
@@ -93,8 +94,8 @@ concepcion/horqueta,concepcion,Horqueta,-23.25651,-56.838,11840139,ADM2,Horqueta
 concepcion/loreto,concepcion,Loreto,-23.18896,-57.15119,11840081,ADM2,Loreto
 concepcion/paso-horqueta,concepcion,Paso Horqueta,-23.08806,-57.39472,3437990,PPL,Paso Horqueta
 concepcion/san-lazaro,concepcion,San Lázaro,-22.24718,-57.73504,11840109,ADM2,San Lazaro
-concepcion/sargento-jose-felix-lopez,concepcion,Sargento José Félix López,-22.3838,-56.92862,3438915,PPL,Sargento José Félix López
-concepcion/yby-yau,concepcion,Yby Yaú,-22.96611,-56.54066,3436622,PPL,Yby Yaú
+concepcion/sargento-jose-felix-lopez,concepcion,Sargento José Félix López,-22.53258,-56.94168,11840007,ADM2,Sgto. Jose Felix Lopez
+concepcion/yby-yau,concepcion,Yby Yaú,-22.99614,-56.38143,11840024,ADM2,Yvy Ya´U
 cordillera/altos,cordillera,Altos,-25.24593,-57.22165,11840012,ADM2,Altos
 cordillera/arroyos-y-esteros,cordillera,Arroyos y Esteros,-25.04278,-57.16247,11840163,ADM2,Arroyos Y Esteros
 cordillera/atyra,cordillera,Atyrá,-25.25993,-57.15459,11840126,ADM2,Atyra
@@ -166,8 +167,8 @@ paraguari/quiindy,paraguari,Quiindy,-26.01315,-57.31466,11840103,ADM2,Quiindy
 paraguari/san-roque,paraguari,San Roque,-25.87559,-57.29751,11839985,ADM2,San Roque Gonzalez
 paraguari/sapucai,paraguari,Sapucai,-25.67277,-56.95827,11840132,ADM2,Sapucai
 paraguari/yaguaron,paraguari,Yaguarón,-25.59869,-57.27476,11840040,ADM2,Yaguaron
-paraguari/ybycui,paraguari,Ybycuí,-26.02073,-57.0172,3436642,PPL,Ybycuí
-paraguari/ybytymi,paraguari,Ybytymí,-25.75882,-56.80257,3436627,PPL,Ybytymí
+paraguari/ybycui,paraguari,Ybycuí,-26.03839,-56.93766,11839983,ADM2,Yvycui
+paraguari/ybytymi,paraguari,Ybytymí,-25.78094,-56.76705,11840140,ADM2,Yvytimi
 presidente-hayes/benjamin-aceval,presidente-hayes,Benjamín Aceval,-24.39616,-58.04525,11840036,ADM2,Benjamin Aceval
 presidente-hayes/campo-aceval,presidente-hayes,Campo Aceval,-23.18333,-59.85,3439244,PPL,Campo Aceval
 presidente-hayes/nanawa,presidente-hayes,Nanawa,-25.28283,-57.70058,11840073,ADM2,Nanawa
@@ -179,7 +180,7 @@ san-pedro/capiibary,san-pedro,Capiibary,-24.74588,-55.9916,11839969,ADM2,Capiiba
 san-pedro/chore,san-pedro,Choré,-24.18431,-56.63288,11840090,ADM2,Chore
 san-pedro/general-elizardo-aquino,san-pedro,General Elizardo Aquino,-24.38336,-56.79333,11840127,ADM2,General Elizardo Aquino
 san-pedro/general-isidoro-resquin,san-pedro,General Isidoro Resquín,-24.06654,-56.44848,3438065,PPL,General Francisco Isidoro Resquín
-san-pedro/guayaibi,san-pedro,Guayaibí,-24.53333,-56.40392,3438034,PPL,Guajayvi
+san-pedro/guayaibi,san-pedro,Guayaibí,-24.40787,-56.34811,11840023,ADM2,Guajayvi
 san-pedro/itacurubi-del-rosario,san-pedro,Itacurubí del Rosario,-24.58239,-56.81959,11840116,ADM2,Itacurubi Del Rosario
 san-pedro/liberacion,san-pedro,Liberación,-24.1964,-56.37838,11840003,ADM2,Liberacion
 san-pedro/lima,san-pedro,Lima,-23.97833,-56.56935,11840047,ADM2,Lima

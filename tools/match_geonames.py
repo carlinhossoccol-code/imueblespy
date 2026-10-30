@@ -51,11 +51,31 @@ PINNED = {
     "paraguari/san-roque": "11839985",                # San Roque González
     "presidente-hayes/teniente-irala": "11840029",    # Tte 1ro Manuel Irala Fernández
     "san-pedro/san-pedro-de-ycuamandiyu": "11840133", # San Pedro del Ykuamandiyú
+    # Boquerón district was created by Ley N.º 6688 (2021) out of Mariscal
+    # Estigarribia, with its municipal seat in Colonia Neuland. GeoNames has no
+    # ADM2 for it, so the seat settlement is the reference point.
+    "boqueron/boqueron": "3867411",                   # Colonia Neuland
+    # Promoted from a populated-place match to the district (ADM2) after
+    # checking both signals: the names agree once orthographic variants are
+    # folded (Yvycui/Ybycuí, Yasy Kañy/Yasy Cañy, 3 de Mayo/Tres de Mayo) and
+    # the two points are close enough to be the same place. Candidates that
+    # were merely nearby, such as Cerro Corá against Zanja Pytã, were rejected.
+    "alto-parana/juan-emiliano-o-leary": "11840121",  # Juan E. O´Leary (6.7km)
+    "caaguazu/doctor-juan-eulogio-estigarribia": "11840072",  # J Eulogio Estigarribia (11.6km)
+    "caaguazu/r-i-tres-corrales": "11839941",  # R.I. 3 Corrales (36.7km)
+    "caazapa/tres-de-mayo": "11840160",  # 3 De Mayo (8.9km)
+    "canindeyu/salto-del-guaira": "11839948",  # Saltos Del Guaira (21.2km)
+    "canindeyu/yasy-cany": "11840068",  # Yasy Kañy (4.2km)
+    "concepcion/sargento-jose-felix-lopez": "11840007",  # Sgto. Jose Felix Lopez (16.6km)
+    "concepcion/yby-yau": "11840024",  # Yvy Ya´U (16.6km)
+    "paraguari/ybycui": "11839983",  # Yvycui (8.2km)
+    "paraguari/ybytymi": "11840140",  # Yvytimi (4.3km)
+    "san-pedro/guayaibi": "11840023",  # Guajayvi (15.1km)
 }
 
-# GeoNames has no ADM2 for this district; it is recorded as having no
-# coordinate rather than being matched to something approximate.
-KNOWN_MISSING = {"boqueron/boqueron"}
+# GeoNames has no ADM2 for districts created after its Paraguay extract, so
+# their seat settlement is used instead, with the law that created them noted.
+KNOWN_MISSING: set[str] = set()
 
 
 def norm(s: str) -> str:

@@ -37,14 +37,16 @@ BORDER = ["alto-parana/ciudad-del-este", "canindeyu/salto-del-guaira",
 T = {
     "es": {
         "h2": "Ubicación y distancias de {city}",
-        "lead": ("Coordenadas del punto de referencia del distrito y distancias en línea "
-                 "recta hasta otras localidades. No son distancias por ruta."),
+        "lead": ("Punto de referencia del municipio y distancias en línea recta hasta "
+                 "otras localidades. No son distancias por ruta."),
         "coords": "Coordenadas", "to_capital": "Distancia a Asunción",
         "nearest": "Municipio más cercano", "near_h3": "Localidades cercanas para ampliar la búsqueda",
         "c_place": "Localidad", "c_dist": "Distancia", "c_pop": "Habitantes (2022)",
         "c_prof": "Perfiles con sede",
-        "note": "Coordenadas: GeoNames (CC BY 4.0), identificador {gid}. "
-                "Distancia en línea recta calculada entre puntos de referencia.",
+        "note": "Coordenadas: GeoNames (CC BY 4.0), identificador {gid}; el punto es "
+                "{kind}. Distancia en línea recta entre puntos de referencia.",
+        "kind_adm2": "el centro del distrito",
+        "kind_place": "la localidad cabecera",
         "border": "Distancia a la frontera con Brasil",
         "seat": "Respecto de {seat}", "seat_val": "{km} km al {dir}",
         "natrank": "Posición nacional por población",
@@ -53,14 +55,16 @@ T = {
     },
     "pt-br": {
         "h2": "Localização e distâncias de {city}",
-        "lead": ("Coordenadas do ponto de referência do distrito e distâncias em linha "
-                 "reta até outras localidades. Não são distâncias por estrada."),
+        "lead": ("Ponto de referência do município e distâncias em linha reta até "
+                 "outras localidades. Não são distâncias por estrada."),
         "coords": "Coordenadas", "to_capital": "Distância até Assunção",
         "nearest": "Município mais próximo", "near_h3": "Localidades próximas para ampliar a busca",
         "c_place": "Localidade", "c_dist": "Distância", "c_pop": "Habitantes (2022)",
         "c_prof": "Perfis com sede",
-        "note": "Coordenadas: GeoNames (CC BY 4.0), identificador {gid}. "
-                "Distância em linha reta entre pontos de referência.",
+        "note": "Coordenadas: GeoNames (CC BY 4.0), identificador {gid}; o ponto é "
+                "{kind}. Distância em linha reta entre pontos de referência.",
+        "kind_adm2": "o centro do distrito",
+        "kind_place": "a localidade sede",
         "border": "Distância até a fronteira com o Brasil",
         "seat": "Em relação a {seat}", "seat_val": "{km} km a {dir}",
         "natrank": "Posição nacional por população",
@@ -83,7 +87,7 @@ def _facts():
         if os.path.exists(p):
             with open(p, encoding="utf-8", newline="") as fh:
                 for r in csv.DictReader(fh):
-                    _GID[r["municipality_key"]] = r["geonames_id"]
+                    _GID[r["municipality_key"]] = (r["geonames_id"], r["geonames_feature"])
     return _F
 
 
@@ -170,6 +174,8 @@ def apply(path, src, ctx):
             bk, bd = min(cands, key=lambda x: x[1])
             facts.append((t["border"], f"{F.name_by_key.get(bk, bk)} ({_km(bd)} km)"))
 
+    gid, feat = _GID.get(key, ("", ""))
+    note = t["note"].format(gid=gid, kind=t["kind_adm2"] if feat == "ADM2" else t["kind_place"])
     dl = "".join(
         f"<div class=\"ep-fact\"><dt>{_html.escape(a, quote=False)}</dt>"
         f"<dd>{_html.escape(b, quote=False)}</dd></div>" for a, b in facts)
@@ -196,6 +202,6 @@ def apply(path, src, ctx):
         f'<dl class="ep-facts">{dl}</dl>'
         f'<h3>{_html.escape(t["near_h3"], quote=False)}</h3>'
         f'{items}'
-        f'<p class="ep-note">{_html.escape(t["note"].format(gid=_GID.get(key, "")), quote=False)}</p>'
+        f'<p class="ep-note">{_html.escape(note, quote=False)}</p>'
         f"</section>")
     return src[:anchor] + mod + src[anchor:]
