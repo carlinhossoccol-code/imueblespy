@@ -73,3 +73,8 @@
 .gridlist:has(.catlink){grid-template-columns:minmax(0,1fr)}
 .gridlist a.catlink:hover .caticon{color:#12343b}
 @media(max-width:480px){.cattile .caticon{width:26px;height:26px;margin-bottom:8px}}
+/* Relevance labels on a professional card. Each is backed by a recorded fact:
+   a declared seat in this municipality, or a brand with seats in several. */
+.badge.seat,.badge.net{margin-left:6px;font-weight:650;letter-spacing:.01em}
+.badge.seat{background:#e3f2ea;border-color:#bcdfcd;color:#1f6b4f}
+.badge.net{background:#f3f0e6;border-color:#e2d8bf;color:#8a6a28}

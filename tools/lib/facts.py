@@ -11,6 +11,7 @@ import math
 import os
 import re
 import statistics
+import unicodedata
 
 import corpus as C
 
@@ -65,6 +66,7 @@ class Facts:
             v.sort()
 
         self._load_coordinates()
+        self._load_networks()
 
     # ------------------------------------------------------------------ #
     def _load_coordinates(self) -> None:
@@ -126,6 +128,51 @@ class Facts:
             out.append((pid, seat, d))
         out.sort(key=lambda t: (round(t[2], 3), int(t[0])))
         return out[:limit]
+
+    def _load_networks(self) -> None:
+        """Group agency records that are branches of the same brand.
+
+        A brand with declared seats in several municipalities is documented
+        evidence of regional presence, which is the one relevance signal this
+        dataset genuinely supports. It says nothing about specialisation by
+        property type, which is never recorded and so is never claimed.
+        """
+        groups: dict[str, list] = collections.defaultdict(list)
+        for pid, a in self.agencies.items():
+            if a.get("kind") != "agency" or not a.get("name"):
+                continue
+            groups[self._brand_key(a["name"])].append(pid)
+
+        self.network_of: dict[str, dict] = {}
+        self.networks: dict[str, dict] = {}
+        for key, ids in groups.items():
+            cities = {self.agencies[i].get("city") for i in ids if self.agencies[i].get("city")}
+            if len(cities) < 2:
+                continue
+            depts = {self.agencies[i].get("department") for i in ids if self.agencies[i].get("department")}
+            rec = {
+                "key": key,
+                "name": self._brand_name(self.agencies[sorted(ids, key=int)[0]]["name"]),
+                "ids": sorted(ids, key=int),
+                "cities": sorted(cities),
+                "departments": sorted(d for d in depts if d),
+            }
+            self.networks[key] = rec
+            for i in ids:
+                self.network_of[i] = rec
+
+    @staticmethod
+    def _brand_name(name: str) -> str:
+        n = re.split(r"\s+[—–-]\s+", name)[0].strip()
+        n = re.sub(r"\b(sucursal|agencia|agência|casa central|casa matriz|filial)\b.*", "",
+                   n, flags=re.I)
+        return n.strip(" -—,")
+
+    @classmethod
+    def _brand_key(cls, name: str) -> str:
+        n = unicodedata.normalize("NFD", cls._brand_name(name).lower())
+        n = "".join(c for c in n if unicodedata.category(c) != "Mn")
+        return re.sub(r"[^a-z0-9]+", " ", n).strip()
 
     def bearing_deg(self, a: str, b: str):
         """Initial bearing from a to b, in degrees, or None."""
