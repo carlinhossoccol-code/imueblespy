@@ -131,33 +131,54 @@ def extract_cities() -> dict:
     return out
 
 
+CATEGORY_SLUGS = {"terrenos", "casas", "departamentos", "comerciales"}
+
+
+def _price_from(path: str):
+    src = C.read(path)
+    m = re.search(r'<p class="v10-price-value">([^<]+)</p>', src)
+    if not m:
+        return None
+    d = re.search(r"fechado (\d{4}-\d{2}-\d{2})", src)
+    u = re.search(r'<a href="(https?://[^"]+)" rel="noopener noreferrer" target="_blank">Consultar la fuente', src)
+    return {
+        "value": m.group(1).strip(),
+        "dated": d.group(1) if d else None,
+        "source_url": u.group(1) if u else None,
+    }
+
+
 def extract_price_refs() -> dict:
-    """Observed asking-price references, keyed by 'dept/city/category'."""
+    """Observed asking-price references, keyed by 'municipality/category'.
+
+    Asunción is a department that is also a municipality, so its category pages
+    sit one level higher than everyone else's. Walking only the deeper shape
+    silently dropped its four references, and the pages published figures the
+    dataset did not know about.
+    """
     out: dict[str, dict] = {}
     base = os.path.join(C.SITE, "es", "venta")
     for dept in sorted(os.listdir(base)):
         dpath = os.path.join(base, dept)
         if not os.path.isdir(dpath):
             continue
-        for city in sorted(os.listdir(dpath)):
-            cpath = os.path.join(dpath, city)
-            if not os.path.isdir(cpath):
+        for entry in sorted(os.listdir(dpath)):
+            epath = os.path.join(dpath, entry)
+            if not os.path.isdir(epath):
                 continue
-            for cat in sorted(os.listdir(cpath)):
-                p = os.path.join(cpath, cat, "index.html")
-                if not os.path.exists(p):
-                    continue
-                src = C.read(p)
-                m = re.search(r'<p class="v10-price-value">([^<]+)</p>', src)
-                if not m:
-                    continue
-                d = re.search(r"fechado (\d{4}-\d{2}-\d{2})", src)
-                u = re.search(r'<a href="(https?://[^"]+)" rel="noopener noreferrer" target="_blank">Consultar la fuente', src)
-                out[f"{dept}/{city}/{cat}"] = {
-                    "value": m.group(1).strip(),
-                    "dated": d.group(1) if d else None,
-                    "source_url": u.group(1) if u else None,
-                }
+            if entry in CATEGORY_SLUGS:
+                # /es/venta/<municipality-department>/<category>/
+                rec = _price_from(os.path.join(epath, "index.html")) \
+                    if os.path.exists(os.path.join(epath, "index.html")) else None
+                if rec:
+                    out[f"{dept}/{entry}"] = rec
+                continue
+            for cat in sorted(os.listdir(epath)):
+                f = os.path.join(epath, cat, "index.html")
+                if os.path.exists(f):
+                    rec = _price_from(f)
+                    if rec:
+                        out[f"{dept}/{entry}/{cat}"] = rec
     return out
 
 

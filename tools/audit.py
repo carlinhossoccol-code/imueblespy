@@ -529,10 +529,15 @@ def c_contacts():
     that keep them from leaking referrer or passing ranking signals.
     """
     F = facts.Facts(CP.dataset)
+    # A few records hold two numbers in one field. Any of them is a correct
+    # destination; the concatenation of both is not.
     phones = {}
     for pid, a in F.agencies.items():
-        if a.get("phone"):
-            phones[pid] = re.sub(r"\D", "", a["phone"])
+        raw = (a.get("phone") or "").strip()
+        if not raw:
+            continue
+        parts = [p.strip() for p in re.split(r"[|/;·]", raw) if p.strip()]
+        phones[pid] = {re.sub(r"\D", "", p) for p in parts}
     bad = []
     card_re = re.compile(r'<article class="company">.*?</article>', re.S)
     id_re = re.compile(r'href="/(?:es/(?:inmobiliaria|agente)|pt-br/(?:imobiliaria|corretor))/(\d+)-')
@@ -547,8 +552,8 @@ def c_contacts():
                 digits = re.sub(r"\D", "", tel)
                 if pid not in phones:
                     bad.append((u, f"profile {pid} has no recorded phone but the card offers tel:{tel}"))
-                elif digits != phones[pid]:
-                    bad.append((u, f"profile {pid} card dials {digits}, dataset has {phones[pid]}"))
+                elif digits not in phones[pid]:
+                    bad.append((u, f"profile {pid} card dials {digits}, dataset has {sorted(phones[pid])}"))
             for wa in re.findall(r'href="https://wa\.me/([^"?]+)', card):
                 if not re.fullmatch(r"\d{8,15}", wa):
                     bad.append((u, f"malformed WhatsApp number {wa}"))
@@ -656,6 +661,43 @@ def c_network_evidence():
             m = id_re.search(card)
             if m and m.group(1) not in allowed:
                 bad.append((C.rel_url(p), f"profile {m.group(1)} shows a network label without evidence"))
+    return bad
+
+
+@check("prices", "A price figure appears only with its source, and never where none exists")
+def c_prices():
+    """Keeps the two price states from drifting into each other.
+
+    The survey holds an observed reference for 36 municipality/category pairs
+    whose value was never recovered. Those pages say so; they must not print a
+    figure. Pages that do publish one must carry its source and date, and no
+    page may do both at once.
+    """
+    F = facts.Facts(CP.dataset)
+    money = re.compile(r"US\$\s*[\d.,]+\s*/\s*m")
+    unpub = re.compile(r"no se publica una cotización|não publicamos cotação")
+    bad = []
+    for p, s in CP.pages(r"^/(es/venta|pt-br/comprar)/"):
+        u = C.rel_url(p)
+        has_block = "v10-price-evidence" in s
+        says_unpub = bool(unpub.search(s))
+        text = C.visible_text(s, main_only=True)
+        if has_block and says_unpub:
+            bad.append((u, "publishes a price and states no quotation is published"))
+        if money.search(text) and not has_block:
+            bad.append((u, "prints a price figure with no sourced price block"))
+        if has_block:
+            block = s[s.find("v10-price-evidence"):]
+            block = block[: block.find("</section>")]
+            if "href=" not in block:
+                bad.append((u, "price block has no link to its source"))
+            if not re.search(r"\d{4}-\d{2}-\d{2}", block):
+                bad.append((u, "price block has no observation date"))
+            key = F.city_key_from_url(u)
+            cat = u.rstrip("/").rsplit("/", 1)[-1]
+            cat = {"apartamentos": "departamentos", "comerciais": "comerciales"}.get(cat, cat)
+            if key and not F.price_ref(key, cat):
+                bad.append((u, f"publishes a price with no reference in the dataset for {cat}"))
     return bad
 
 

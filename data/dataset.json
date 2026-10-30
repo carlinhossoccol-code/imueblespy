@@ -397,7 +397,7 @@
    "id": "115",
    "kind": "agency",
    "name": "Las Vegas Inmobiliaria",
-   "phone": "+595 983622500 | +595 61 509628",
+   "phone": "+595 983622500 · +595 61 509628",
    "published_fields": [
     "Ciudad",
     "Dirección",
@@ -485,7 +485,7 @@
    "id": "119",
    "kind": "agency",
    "name": "ON Bienes Raíces",
-   "phone": "+595 981 001411 / +595 981 001441",
+   "phone": "+595 981 001411 · +595 981 001441",
    "published_fields": [
     "Ciudad",
     "Fuente",
@@ -792,7 +792,7 @@
    "id": "132",
    "kind": "agency",
    "name": "Rodan Inmobiliaria — Sucursal Ciudad del Este",
-   "phone": "+595 21 3284900 | +595 983999998",
+   "phone": "+595 21 3284900 · +595 983999998",
    "published_fields": [
     "Ciudad",
     "Dirección",
@@ -1029,7 +1029,7 @@
    "id": "142",
    "kind": "agency",
    "name": "Kala Huala S.A. — Casa Matriz",
-   "phone": "+595 61 570061 / +595 991 403852",
+   "phone": "+595 61 570061 · +595 991 403852",
    "published_fields": [
     "Ciudad",
     "Dirección",
@@ -1262,7 +1262,7 @@
    "id": "152",
    "kind": "agency",
    "name": "Rodan Inmobiliaria — Sucursal Minga Guazú",
-   "phone": "+595 21 3284900 | +595 983999998",
+   "phone": "+595 21 3284900 · +595 983999998",
    "published_fields": [
     "Ciudad",
     "Dirección",
@@ -2943,7 +2943,7 @@
    "id": "227",
    "kind": "agency",
    "name": "Kala Huala S.A. — Sucursal Asunción",
-   "phone": "+595 21 553644 / +595 981 328269",
+   "phone": "+595 21 553644 · +595 981 328269",
    "published_fields": [
     "Ciudad",
     "Dirección",
@@ -3974,7 +3974,7 @@
    "id": "276",
    "kind": "agency",
    "name": "Rodan Inmobiliaria — Casa Matriz Asunción",
-   "phone": "+595 21 213790 | +595 981427029",
+   "phone": "+595 21 213790 · +595 981427029",
    "published_fields": [
     "Ciudad",
     "Dirección",
@@ -11875,6 +11875,26 @@
    "dated": "2026-10-28",
    "source_url": "https://tulugar.com/es/mercado/paraguay/pedro-juan-caballero",
    "value": "US$ 94 / m²"
+  },
+  "asuncion/casas": {
+   "dated": "2026-10-28",
+   "source_url": "https://tulugar.com/es/mercado/paraguay/asuncion",
+   "value": "US$ 972 / m²"
+  },
+  "asuncion/comerciales": {
+   "dated": "2026-10-28",
+   "source_url": "https://tulugar.com/es/mercado/paraguay/asuncion",
+   "value": "US$ 988 / m²"
+  },
+  "asuncion/departamentos": {
+   "dated": "2026-10-28",
+   "source_url": "https://tulugar.com/es/mercado/paraguay/asuncion",
+   "value": "US$ 1.771 / m²"
+  },
+  "asuncion/terrenos": {
+   "dated": "2026-10-28",
+   "source_url": "https://tulugar.com/es/mercado/paraguay/asuncion",
+   "value": "US$ 493 / m²"
   },
   "caaguazu/caaguazu/casas": {
    "dated": "2026-10-28",
