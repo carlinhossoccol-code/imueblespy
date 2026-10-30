@@ -231,6 +231,70 @@ await journey('15. Enters through the domain root', {}, async (p, ok) => {
   ok('search is available', (await count(p, 'input[type="search"],input[name*="q"],form')) >= 1);
 });
 
+// 16 --------------------------------------------------------------------
+await journey('16. Can the visitor tell local from nearby?', {}, async (p, ok) => {
+  await go(p, '/es/venta/central/luque/terrenos/');
+  const seats = await count(p, '.badge.seat');
+  ok('firms seated here are labelled', seats >= 1);
+  const near = await p.evaluate(() => {
+    const h = [...document.querySelectorAll('h3')].find(x => /m[aá]s cercanos/i.test(x.textContent));
+    if (!h) return null;
+    let n = h.nextElementSibling, hint = '';
+    while (n && !n.classList.contains('stack')) { if (n.classList.contains('hint')) hint = n.textContent; n = n.nextElementSibling; }
+    const cards = n ? [...n.querySelectorAll('article.company')] : [];
+    return { hint, withSeatBadge: cards.filter(c => c.querySelector('.badge.seat')).length,
+             withDistance: cards.filter(c => /\d+\s*km/.test(c.textContent)).length, total: cards.length };
+  });
+  ok('a separate nearby section exists', near && near.total > 0);
+  ok('no nearby card is labelled as seated here', near && near.withSeatBadge === 0, String(near?.withSeatBadge));
+  ok('every nearby card shows a distance', near && near.withDistance === near.total);
+  ok('the nearby section says coverage is not confirmed', /no confirma/i.test(near?.hint || ''));
+  ok('specialisation is explicitly not claimed',
+     /no registra especializaci[oó]n/i.test(await txt(p)));
+});
+
+// 17 --------------------------------------------------------------------
+await journey('17. Does the advertising get in the way on mobile?', {}, async (p, ok) => {
+  await go(p, '/pt-br/comprar/central/luque/terrenos/');
+  const r = await p.evaluate(() => {
+    const ad = document.querySelector('.mnpb');
+    const firstCard = document.querySelector('article.company');
+    const vh = window.innerHeight;
+    const adBox = ad.getBoundingClientRect();
+    const overlaps = [...document.querySelectorAll('article.company, .btn')].some(el => {
+      const b = el.getBoundingClientRect();
+      return !(b.right < adBox.left || b.left > adBox.right || b.bottom < adBox.top || b.top > adBox.bottom);
+    });
+    return {
+      adTop: adBox.top + window.scrollY,
+      firstCardTop: firstCard.getBoundingClientRect().top + window.scrollY,
+      adHeightShare: adBox.height / vh,
+      position: getComputedStyle(ad).position,
+      overlaps,
+      labelled: !!ad.textContent.match(/Publicidade/),
+    };
+  });
+  ok('results come before the advertising', r.firstCardTop < r.adTop);
+  ok('advertising is not pinned over the content', r.position !== 'fixed' && r.position !== 'sticky');
+  ok('advertising overlaps no result or button', !r.overlaps);
+  ok(`advertising is under one screen tall (${r.adHeightShare.toFixed(2)})`, r.adHeightShare < 1);
+  ok('advertising is labelled as such', r.labelled);
+});
+
+// 18 --------------------------------------------------------------------
+await journey('18. Moving between neighbourhood, city and category', {}, async (p, ok) => {
+  await go(p, '/es/zonas/central/luque/barrios/laurelty/');
+  ok('breadcrumb climbs back to the city', (await count(p, 'nav[aria-label="Breadcrumb"] a[href*="/zonas/central/luque/"]')) >= 1);
+  ok('the neighbourhood page lists professionals', (await count(p, 'article.company')) >= 1);
+  await go(p, '/es/zonas/central/luque/');
+  const cats = await count(p, 'a.catlink');
+  ok('city page links every property category', cats >= 3, String(cats));
+  const href = await p.getAttribute('a.catlink', 'href');
+  await go(p, href);
+  ok('category page opens from the city', (await count(p, 'h1')) === 1);
+  ok('and leads back to other categories', (await count(p, 'a.catlink')) >= 2);
+});
+
 await browser.close();
 writeFileSync(`${OUT}/journeys.json`, JSON.stringify(results, null, 1));
 

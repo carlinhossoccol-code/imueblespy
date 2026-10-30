@@ -520,6 +520,55 @@ def c_doorway_cities():
     return bad
 
 
+@check("contacts", "Every contact action is safe, correctly marked up and matches the dataset")
+def c_contacts():
+    """A wrong tel: or wa.me number sends a buyer to a stranger.
+
+    Checks the destination of every action on a professional card against
+    data/professionals.csv, and that outbound links carry the rel attributes
+    that keep them from leaking referrer or passing ranking signals.
+    """
+    F = facts.Facts(CP.dataset)
+    phones = {}
+    for pid, a in F.agencies.items():
+        if a.get("phone"):
+            phones[pid] = re.sub(r"\D", "", a["phone"])
+    bad = []
+    card_re = re.compile(r'<article class="company">.*?</article>', re.S)
+    id_re = re.compile(r'href="/(?:es/(?:inmobiliaria|agente)|pt-br/(?:imobiliaria|corretor))/(\d+)-')
+    for p, s in CP.pages():
+        u = C.rel_url(p)
+        for card in card_re.findall(s):
+            m = id_re.search(card)
+            if not m:
+                continue
+            pid = m.group(1)
+            for tel in re.findall(r'href="tel:([^"]+)"', card):
+                digits = re.sub(r"\D", "", tel)
+                if pid not in phones:
+                    bad.append((u, f"profile {pid} has no recorded phone but the card offers tel:{tel}"))
+                elif digits != phones[pid]:
+                    bad.append((u, f"profile {pid} card dials {digits}, dataset has {phones[pid]}"))
+            for wa in re.findall(r'href="https://wa\.me/([^"?]+)', card):
+                if not re.fullmatch(r"\d{8,15}", wa):
+                    bad.append((u, f"malformed WhatsApp number {wa}"))
+        # Inspect the whole opening tag: rel may be written before or after href.
+        for tag in re.findall(r"<a\b[^>]*>", s):
+            href = re.search(r'href="(https?://[^"]+)"', tag)
+            if not href or href.group(1).startswith(C.CANONICAL_HOST):
+                continue
+            # Only a link that opens a new browsing context can hand the
+            # opener a window reference, so that is where these matter.
+            if 'target="_blank"' not in tag:
+                continue
+            rel = re.search(r'rel="([^"]*)"', tag)
+            have = set(rel.group(1).split()) if rel else set()
+            missing = {"noopener", "noreferrer"} - have
+            if missing:
+                bad.append((u, f"target=_blank link missing {'/'.join(sorted(missing))}: {href.group(1)[:52]}"))
+    return bad
+
+
 @check("orphans", "No indexable page is unreachable from internal links")
 def c_orphans():
     inbound = collections.Counter()
