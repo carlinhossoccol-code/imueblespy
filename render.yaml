@@ -4,6 +4,13 @@ services:
     runtime: static
     buildCommand: echo "Pre-rendered HTML checked before deployment"
     staticPublishPath: ./site
+    routes:
+      - type: redirect
+        source: /
+        destination: /es/
+      - type: redirect
+        source: /index.html
+        destination: /es/
     domains:
       - inmueblespy.com.py
     headers:

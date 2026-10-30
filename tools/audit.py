@@ -70,6 +70,9 @@ CP: Corpus = None  # type: ignore
 def c_canon():
     bad = []
     for p, s in CP.pages():
+        # A noindex redirect stub deliberately points at its destination.
+        if re.search(r'http-equiv="refresh"', s) and "noindex" in s:
+            continue
         m = re.search(r'<link href="([^"]+)" rel="canonical"', s) or re.search(
             r'<link rel="canonical" href="([^"]+)"', s
         )
