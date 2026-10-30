@@ -630,6 +630,35 @@ def c_widgets():
     return bad
 
 
+@check("network_evidence", "A network label is only shown where first-party evidence exists")
+def c_network_evidence():
+    """Guards the one claim on a card that is about company structure.
+
+    Sharing a name across municipalities is not evidence of a corporate
+    relationship, and a franchise's offices are independent businesses. The
+    label may appear only when every record for the brand was recovered from a
+    single first-party domain, which is what it says on screen.
+    """
+    F = facts.Facts(CP.dataset)
+    allowed = set(F.network_of)
+    bad = []
+    for key, n in F.networks.items():
+        if any(f in key for f in F.FRANCHISE_BRANDS):
+            bad.append(("data/networks.csv", f"{n['name']} is a franchise brand"))
+        if any(agg in n["domain"] for agg in F.AGGREGATOR_HOSTS):
+            bad.append(("data/networks.csv", f"{n['name']} evidenced by aggregator {n['domain']}"))
+    card_re = re.compile(r'<article class="company">.*?</article>', re.S)
+    id_re = re.compile(r'href="/(?:es/(?:inmobiliaria|agente)|pt-br/(?:imobiliaria|corretor))/(\d+)-')
+    for p, s in CP.pages():
+        for card in card_re.findall(s):
+            if 'class="badge net"' not in card:
+                continue
+            m = id_re.search(card)
+            if m and m.group(1) not in allowed:
+                bad.append((C.rel_url(p), f"profile {m.group(1)} shows a network label without evidence"))
+    return bad
+
+
 @check("orphans", "No indexable page is unreachable from internal links")
 def c_orphans():
     inbound = collections.Counter()

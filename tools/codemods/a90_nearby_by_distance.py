@@ -33,11 +33,15 @@ LIMIT = 6
 
 HEAD = {
     "es": ("Profesionales más cercanos",
-           "Ordenados por distancia desde {city}. Tener la sede cerca no confirma "
-           "que atiendan esta localidad: consultá antes de avanzar."),
+           "Distancia aproximada en línea recta entre los puntos de referencia de "
+           "{city} y del municipio donde la empresa declara su sede; no es la "
+           "distancia a una dirección. Tener la sede cerca no confirma que "
+           "atiendan esta localidad: consultá antes de avanzar."),
     "pt-br": ("Profissionais mais próximos",
-              "Ordenados por distância a partir de {city}. Ter sede por perto não "
-              "confirma atendimento nesta cidade: confirme antes de avançar."),
+              "Distância aproximada em linha reta entre os pontos de referência de "
+              "{city} e do município onde a empresa informa sua sede; não é a "
+              "distância até um endereço. Ter sede por perto não confirma "
+              "atendimento nesta cidade: confirme antes de avançar."),
 }
 # Matches the original department-based block and the one this codemod emits,
 # so the list is regenerated whenever the data behind it changes. Matching only
@@ -143,7 +147,7 @@ def apply(path, src, ctx):
             place = kept.split("·")[0].strip()
             if not place:
                 place = _s
-            return f'<p class="meta">{_html.escape(place, quote=False)} · a {_km(_d)} km</p>'
+            return f'<p class="meta">{_html.escape(place, quote=False)} · ~{_km(_d)} km</p>'
 
         out.append(META_RE.sub(meta, card, count=1))
     if not out:

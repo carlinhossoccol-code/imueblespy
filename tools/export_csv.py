@@ -144,6 +144,22 @@ def main() -> int:
             "whatsapp", "website", "source", "source_url", "researched_date", "published_fields"],
            prof_rows)
 
+    # Networks: one row per published location, with the domain that evidences it
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "lib"))
+    import facts as FA
+
+    F = FA.Facts()
+    net_rows = []
+    for key, n in sorted(F.networks.items()):
+        for pid in n["ids"]:
+            a = agencies[pid]
+            net_rows.append([n["name"], n["domain"], len(n["ids"]), pid,
+                             a.get("name") or "", a.get("city") or "",
+                             a.get("source_url") or ""])
+    _write("networks.csv",
+           ["brand", "evidence_domain", "locations", "professional_id",
+            "professional_name", "city", "source_url"], net_rows)
+
     price_rows = []
     for k, v in sorted(prices.items()):
         parts = k.split("/")

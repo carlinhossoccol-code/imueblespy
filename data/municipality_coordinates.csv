@@ -1,5 +1,5 @@
 municipality_key,department_slug,name,latitude,longitude,geonames_id,geonames_feature,geonames_name
-alto-paraguay/puerto-casado,alto-paraguay,Puerto Casado,-21.66691,-58.97986,11840136,ADM2,Puerto Casado
+alto-paraguay/puerto-casado,alto-paraguay,Puerto Casado,-22.28671,-57.94457,3437380,PPL,Puerto Casado
 alto-parana/ciudad-del-este,alto-parana,Ciudad del Este,-25.49796,-54.67974,11840124,ADM2,Ciudad Del Este
 alto-parana/doctor-juan-leon-mallorquin,alto-parana,Doctor Juan León Mallorquín,-25.48375,-55.25453,11840138,ADM2,Dr. Juan Leon Mallorquin
 alto-parana/doctor-raul-pena,alto-parana,Doctor Raúl Peña,-26.13495,-55.22489,11840064,ADM2,Dr. Raul Peña
@@ -27,9 +27,9 @@ amambay/pedro-juan-caballero,amambay,Pedro Juan Caballero,-22.79291,-55.98344,11
 amambay/zanja-pyta,amambay,Zanja Pytá,-22.7719,-55.70878,11840013,ADM2,Zanja Pyta
 asuncion,asuncion,Asunción,-25.29121,-57.60494,11840061,ADM2,Asuncion
 boqueron/boqueron,boqueron,Boquerón,-22.66667,-60.11667,3867411,PPL,Colonia Neuland
-boqueron/filadelfia,boqueron,Filadelfia,-21.4374,-60.17867,11840009,ADM2,Filadelfia
+boqueron/filadelfia,boqueron,Filadelfia,-22.33936,-60.03157,3867291,PPLA,Filadelfia
 boqueron/loma-plata,boqueron,Loma Plata,-22.30512,-59.6906,11839974,ADM2,Loma Plata
-boqueron/mariscal-estigarribia,boqueron,Mariscal Estigarribia,-21.96421,-61.28682,11840039,ADM2,Mariscal Estigarribia
+boqueron/mariscal-estigarribia,boqueron,Mariscal Estigarribia,-22.03389,-60.59364,3867236,PPL,Mariscal José Félix Estigarribia
 caaguazu/caaguazu,caaguazu,Caaguazú,-25.41922,-56.05173,11840030,ADM2,Caaguazu
 caaguazu/carayao,caaguazu,Carayaó,-25.18748,-56.32904,11840142,ADM2,Carayao
 caaguazu/coronel-oviedo,caaguazu,Coronel Oviedo,-25.48658,-56.42111,11839960,ADM2,Coronel Oviedo
@@ -89,7 +89,7 @@ central/ypane,central,Ypané,-25.4604,-57.50929,11840046,ADM2,Ypane
 concepcion/arroyito,concepcion,Arroyito,-23.17505,-56.77806,3439400,PPL,Arroyito
 concepcion/azotey,concepcion,Azotey,-23.32344,-56.50114,11840098,ADM2,Azotey
 concepcion/belen,concepcion,Belén,-23.4278,-57.23169,11840069,ADM2,Belen
-concepcion/concepcion,concepcion,Concepción,-22.87931,-57.36778,11840042,ADM2,Concepcion
+concepcion/concepcion,concepcion,Concepción,-23.39985,-57.43236,3438834,PPLA,Concepción
 concepcion/horqueta,concepcion,Horqueta,-23.25651,-56.838,11840139,ADM2,Horqueta
 concepcion/loreto,concepcion,Loreto,-23.18896,-57.15119,11840081,ADM2,Loreto
 concepcion/paso-horqueta,concepcion,Paso Horqueta,-23.08806,-57.39472,3437990,PPL,Paso Horqueta
@@ -169,12 +169,12 @@ paraguari/sapucai,paraguari,Sapucai,-25.67277,-56.95827,11840132,ADM2,Sapucai
 paraguari/yaguaron,paraguari,Yaguarón,-25.59869,-57.27476,11840040,ADM2,Yaguaron
 paraguari/ybycui,paraguari,Ybycuí,-26.03839,-56.93766,11839983,ADM2,Yvycui
 paraguari/ybytymi,paraguari,Ybytymí,-25.78094,-56.76705,11840140,ADM2,Yvytimi
-presidente-hayes/benjamin-aceval,presidente-hayes,Benjamín Aceval,-24.39616,-58.04525,11840036,ADM2,Benjamin Aceval
+presidente-hayes/benjamin-aceval,presidente-hayes,Benjamín Aceval,-24.9974,-57.55239,3439348,PPL,Benjamín Aceval
 presidente-hayes/campo-aceval,presidente-hayes,Campo Aceval,-23.18333,-59.85,3439244,PPL,Campo Aceval
 presidente-hayes/nanawa,presidente-hayes,Nanawa,-25.28283,-57.70058,11840073,ADM2,Nanawa
-presidente-hayes/puerto-pinasco,presidente-hayes,Puerto Pinasco,-22.75881,-58.49017,11840167,ADM2,Puerto Pinasco
+presidente-hayes/puerto-pinasco,presidente-hayes,Puerto Pinasco,-22.6458,-57.84111,3437352,PPL,Puerto Pinasco
 presidente-hayes/teniente-irala,presidente-hayes,Teniente Irala,-23.03236,-59.6142,11840029,ADM2,Tte 1ro Manuel Irala Fernandez
-presidente-hayes/villa-hayes,presidente-hayes,Villa Hayes,-23.78075,-58.04735,11839929,ADM2,Villa Hayes
+presidente-hayes/villa-hayes,presidente-hayes,Villa Hayes,-25.093,-57.52725,3436725,PPLA,Villa Hayes
 san-pedro/25-de-diciembre,san-pedro,25 de Diciembre,-24.77256,-56.80126,11840025,ADM2,25 De Diciembre
 san-pedro/capiibary,san-pedro,Capiibary,-24.74588,-55.9916,11839969,ADM2,Capiibary
 san-pedro/chore,san-pedro,Choré,-24.18431,-56.63288,11840090,ADM2,Chore

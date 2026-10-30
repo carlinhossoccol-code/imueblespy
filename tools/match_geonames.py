@@ -55,6 +55,17 @@ PINNED = {
     # Estigarribia, with its municipal seat in Colonia Neuland. GeoNames has no
     # ADM2 for it, so the seat settlement is the reference point.
     "boqueron/boqueron": "3867411",                   # Colonia Neuland
+    # Districts large enough that their centroid falls tens of kilometres from
+    # the town of the same name - the Chaco ones span whole regions. For a
+    # property site the town is the meaningful reference, so these point at
+    # the settlement; the page states which kind of point it is showing.
+    "alto-paraguay/puerto-casado": "3437380",  # Puerto Casado
+    "boqueron/filadelfia": "3867291",  # Filadelfia
+    "boqueron/mariscal-estigarribia": "3867236",  # Mariscal José Félix Estigarribia
+    "concepcion/concepcion": "3438834",  # Concepción
+    "presidente-hayes/benjamin-aceval": "3439348",  # Benjamín Aceval
+    "presidente-hayes/puerto-pinasco": "3437352",  # Puerto Pinasco
+    "presidente-hayes/villa-hayes": "3436725",  # Villa Hayes
     # Promoted from a populated-place match to the district (ADM2) after
     # checking both signals: the names agree once orthographic variants are
     # folded (Yvycui/Ybycuí, Yasy Kañy/Yasy Cañy, 3 de Mayo/Tres de Mayo) and

@@ -9,9 +9,15 @@ a firm shown on a "terrenos" page sells land.
 
 Three labels, each backed by a field in data/professionals.csv:
 
-  Sede aquí          the declared seat is this municipality
-  Red · N ciudades   the brand has declared seats in N municipalities
-  (no label)         an ordinary listing; the distance already says where it is
+  Sede aquí            the declared seat is this municipality
+  N sedes · sitio      the company's own website lists N locations, and every
+                       record for it was recovered from that domain
+  (no label)           neither applies; the distance already says where it is
+
+The second label deliberately describes the evidence rather than asserting a
+corporate relationship. Sharing a name across municipalities proves nothing,
+and a franchise's offices are independent businesses, so franchise brands and
+groups known only from directory listings carry no label at all.
 """
 import html as _html
 import os
@@ -32,16 +38,20 @@ ID_RE = re.compile(r'href="/(?:es/(?:inmobiliaria|agente)|pt-br/(?:imobiliaria|c
 BADGE_RE = re.compile(r'(<span class="badge">[^<]*</span>)((?:<span class="badge [^"]*">[^<]*</span>)*)')
 
 T = {
-    "es": {"seat": "Sede aquí", "net": "Red · {n} ciudades",
+    "es": {"seat": "Sede aquí", "net": "{n} sedes · sitio oficial",
            "lead_local": "Profesionales con sede declarada en esta ciudad. "
-                         "El directorio no registra especialización por tipo de inmueble."},
-    "pt-br": {"seat": "Sede aqui", "net": "Rede · {n} cidades",
+                         "El directorio no registra especialización por tipo de inmueble; "
+                         "«sedes · sitio oficial» indica cuántas ubicaciones publica la "
+                         "propia empresa en su web."},
+    "pt-br": {"seat": "Sede aqui", "net": "{n} sedes · site oficial",
               "lead_local": "Profissionais com sede informada nesta cidade. "
-                            "O diretório não registra especialização por tipo de imóvel."},
+                            "O diretório não registra especialização por tipo de imóvel; "
+                            "«sedes · site oficial» indica quantos endereços a própria "
+                            "empresa publica no site dela."},
 }
 OLD_LEAD = re.compile(
-    r'<p class="section-lead">(?:Profesionales con sede declarada en esta ciudad[^<]*|'
-    r'Profissionais com sede informada nesta cidade[^<]*)</p>')
+    r'<p class="section-lead">(?:Profesionales con sede declarada en esta ciudad|'
+    r'Profissionais com sede informada nesta cidade)[^<]*</p>')
 
 _F = None
 
@@ -92,7 +102,7 @@ def apply(path, src, ctx):
             chips.append(f'<span class="badge seat">{_html.escape(t["seat"], quote=False)}</span>')
         net = F.network_of.get(pid)
         if net:
-            label = t["net"].format(n=len(net["cities"]))
+            label = t["net"].format(n=len(net["ids"]))
             chips.append(f'<span class="badge net">{_html.escape(label, quote=False)}</span>')
         # rebuild deterministically: drop previous chips, then add current ones
         return BADGE_RE.sub(lambda b: b.group(1) + "".join(chips), block, count=1)

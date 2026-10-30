@@ -37,8 +37,9 @@ BORDER = ["alto-parana/ciudad-del-este", "canindeyu/salto-del-guaira",
 T = {
     "es": {
         "h2": "Ubicación y distancias de {city}",
-        "lead": ("Punto de referencia del municipio y distancias en línea recta hasta "
-                 "otras localidades. No son distancias por ruta."),
+        "lead": ("Punto de referencia del municipio y distancias aproximadas en línea "
+                 "recta hasta los puntos de referencia de otras localidades. No son "
+                 "distancias por ruta ni corresponden a una dirección concreta."),
         "coords": "Coordenadas", "to_capital": "Distancia a Asunción",
         "nearest": "Municipio más cercano", "near_h3": "Localidades cercanas para ampliar la búsqueda",
         "c_place": "Localidad", "c_dist": "Distancia", "c_pop": "Habitantes (2022)",
@@ -48,17 +49,18 @@ T = {
         "kind_adm2": "el centro del distrito",
         "kind_place": "la localidad cabecera",
         "border": "Distancia a la frontera con Brasil",
-        "seat": "Respecto de {seat}", "seat_val": "{km} km al {dir}",
+        "seat": "Respecto de {seat}", "seat_val": "~{km} km al {dir}",
         "natrank": "Posición nacional por población",
         "nearest_pro": "Profesionales más próximos",
-        "nearest_pro_val": "{city}, a {km} km ({n} con sede)",
+        "nearest_pro_val": "{city}, ~{km} km ({n} con sede)",
         "natrank_val": "{r} de {n} municipios relevados",
         "dirs": ["norte", "noreste", "este", "sureste", "sur", "suroeste", "oeste", "noroeste"],
     },
     "pt-br": {
         "h2": "Localização e distâncias de {city}",
-        "lead": ("Ponto de referência do município e distâncias em linha reta até "
-                 "outras localidades. Não são distâncias por estrada."),
+        "lead": ("Ponto de referência do município e distâncias aproximadas em linha "
+                 "reta até os pontos de referência de outras localidades. Não são "
+                 "distâncias por estrada nem correspondem a um endereço específico."),
         "coords": "Coordenadas", "to_capital": "Distância até Assunção",
         "nearest": "Município mais próximo", "near_h3": "Localidades próximas para ampliar a busca",
         "c_place": "Localidade", "c_dist": "Distância", "c_pop": "Habitantes (2022)",
@@ -68,10 +70,10 @@ T = {
         "kind_adm2": "o centro do distrito",
         "kind_place": "a localidade sede",
         "border": "Distância até a fronteira com o Brasil",
-        "seat": "Em relação a {seat}", "seat_val": "{km} km a {dir}",
+        "seat": "Em relação a {seat}", "seat_val": "~{km} km a {dir}",
         "natrank": "Posição nacional por população",
         "nearest_pro": "Profissionais mais próximos",
-        "nearest_pro_val": "{city}, a {km} km ({n} com sede)",
+        "nearest_pro_val": "{city}, ~{km} km ({n} com sede)",
         "natrank_val": "{r} de {n} municípios pesquisados",
         "dirs": ["norte", "nordeste", "leste", "sudeste", "sul", "sudoeste", "oeste", "noroeste"],
     },
@@ -155,9 +157,9 @@ def apply(path, src, ctx):
     facts = [(t["coords"], f"{_num(lat, 4)} · {_num(lon, 4)}")]
     d_cap = F.distance_km(key, "asuncion")
     if d_cap is not None and key != "asuncion":
-        facts.append((t["to_capital"], f"{_km(d_cap)} km"))
+        facts.append((t["to_capital"], f"~{_km(d_cap)} km"))
     nk, nd = near[0]
-    facts.append((t["nearest"], f"{F.name_by_key.get(nk, nk)} ({_km(nd)} km)"))
+    facts.append((t["nearest"], f"{F.name_by_key.get(nk, nk)} (~{_km(nd)} km)"))
 
     # Orientation relative to the department's largest municipality: the
     # quickest way for a reader to place a district they do not know.
@@ -197,7 +199,7 @@ def apply(path, src, ctx):
     rows = "".join(
         f'<tr><td><a href="{_url(k, lang)}">'
         f'{_html.escape(F.name_by_key.get(k, k), quote=False)}</a></td>'
-        f"<td>{_km(d)} km</td>"
+        f"<td>~{_km(d)} km</td>"
         f"<td>{_pop(F.population(k))}</td>"
         f"<td>{F.profiles[k]}</td></tr>" for k, d in near)
     items = (

@@ -17,6 +17,15 @@ import corpus as C
 
 CITY_H1_RE = re.compile(r"Comprar propiedades en (.*?): ciudad e inmobiliarias")
 
+# Hosts that list many unrelated businesses: being found on one says nothing
+# about who owns whom.
+AGGREGATOR_HOSTS_DEFAULT = (
+    "google.com", "agentiz.com", "cybo.com", "inmobiliaria.com.py",
+    "infocasas", "slideprop", "viaparaguay", "dnb.com", "acipinmuebles",
+)
+# Franchises license a brand to independently owned offices.
+FRANCHISE_BRANDS_DEFAULT = ("century 21", "re max", "remax", "coldwell", "keller williams")
+
 # Kept in step with tools/extract_dataset.py.
 CITY_NAME_ALIASES = {
     "Juan León Mallorquín": "Doctor Juan León Mallorquín",
@@ -26,6 +35,9 @@ CITY_NAME_ALIASES = {
 
 
 class Facts:
+    AGGREGATOR_HOSTS = AGGREGATOR_HOSTS_DEFAULT
+    FRANCHISE_BRANDS = FRANCHISE_BRANDS_DEFAULT
+
     def __init__(self, dataset: dict | None = None):
         ds = dataset or C.load_json("dataset.json", {}) or {}
         self.raw = ds
@@ -130,12 +142,18 @@ class Facts:
         return out[:limit]
 
     def _load_networks(self) -> None:
-        """Group agency records that are branches of the same brand.
+        """Records the company's own website lists as its locations.
 
-        A brand with declared seats in several municipalities is documented
-        evidence of regional presence, which is the one relevance signal this
-        dataset genuinely supports. It says nothing about specialisation by
-        property type, which is never recorded and so is never claimed.
+        Sharing a name across municipalities proves nothing: two firms can be
+        called the same thing, and a franchise's offices are independent
+        businesses that merely license a brand. The only claim this dataset
+        supports is the narrow, documentary one: every record was recovered
+        from the same first-party domain, so that company publishes those
+        locations itself.
+
+        A group therefore qualifies only when all of its records cite a source
+        on one domain that is neither a directory nor a map listing, and the
+        brand is not a known franchise. Everything else is left unlabelled.
         """
         groups: dict[str, list] = collections.defaultdict(list)
         for pid, a in self.agencies.items():
@@ -149,6 +167,18 @@ class Facts:
             cities = {self.agencies[i].get("city") for i in ids if self.agencies[i].get("city")}
             if len(cities) < 2:
                 continue
+            if any(f in key for f in self.FRANCHISE_BRANDS):
+                continue
+            domains = set()
+            for i in ids:
+                url = self.agencies[i].get("source_url") or ""
+                m = re.match(r"https?://([^/]+)", url)
+                domains.add(m.group(1).lower().replace("www.", "") if m else "")
+            first_party = {d for d in domains if d and not any(
+                agg in d for agg in self.AGGREGATOR_HOSTS)}
+            # one first-party domain, and nothing sourced from nowhere at all
+            if len(first_party) != 1 or "" in domains:
+                continue
             depts = {self.agencies[i].get("department") for i in ids if self.agencies[i].get("department")}
             rec = {
                 "key": key,
@@ -156,6 +186,7 @@ class Facts:
                 "ids": sorted(ids, key=int),
                 "cities": sorted(cities),
                 "departments": sorted(d for d in depts if d),
+                "domain": next(iter(first_party)),
             }
             self.networks[key] = rec
             for i in ids:
