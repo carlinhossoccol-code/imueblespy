@@ -60,3 +60,12 @@
 .ep-near a{display:inline-flex;align-items:center;min-height:26px;font-weight:600}
 .ep-near span{color:#5a6b6e;font-size:13.5px;font-variant-numeric:tabular-nums;white-space:nowrap}
 .ep-location .ep-facts{margin-top:14px}
+/* Property-category icons. Decorative line drawings that inherit text colour. */
+.caticon{flex:none;display:block;color:#1f6b4f}
+.cattile .tilebody{display:flex;flex-direction:column;align-items:flex-start}
+.cattile .caticon{margin-bottom:10px;width:30px;height:30px}
+.cattile:hover .caticon,.cattile:focus-visible .caticon{color:#12343b}
+.catlink{display:flex!important;align-items:center;gap:10px;min-height:44px}
+.catlink span{min-width:0}
+.gridlist a.catlink:hover .caticon{color:#12343b}
+@media(max-width:480px){.cattile .caticon{width:26px;height:26px;margin-bottom:8px}}
