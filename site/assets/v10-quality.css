@@ -70,7 +70,10 @@
    below, which pushed the sidebar past the viewport. Letting the label wrap
    keeps the floor small, so the column stays flexible at every width. */
 .catlink span{min-width:0;overflow-wrap:anywhere}
-.gridlist:has(.catlink){grid-template-columns:minmax(0,1fr)}
+/* auto-fit with min(..,100%) keeps several columns where there is room and
+   collapses to one in the narrow sidebar, without the min-content floor
+   that pushed the document past the viewport. */
+.gridlist:has(.catlink){grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr))}
 .gridlist a.catlink:hover .caticon{color:#12343b}
 @media(max-width:480px){.cattile .caticon{width:26px;height:26px;margin-bottom:8px}}
 /* Relevance labels on a professional card. Each is backed by a recorded fact:
@@ -84,3 +87,10 @@
    tables and lists carry their own position and styling. */
 .reading p a,.disclosure a,.ep-note a,.ep-footnote a,.v6-note a,.hint a,
 .v10-source a,.fine a,.section-lead a{text-decoration:underline;text-underline-offset:2px}
+/* Directory listings run full width on their own pages, where a single column
+   of cards left most of a desktop screen empty and made an 18-firm city a long
+   scroll. auto-fit with min(..,100%) gives two columns where there is room and
+   stays at one inside the narrower article column of a category page. */
+.stack{display:grid;grid-auto-rows:min-content;grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));align-items:stretch}
+.stack > .company{height:100%}
+.stack > .callout{grid-column:1/-1}
