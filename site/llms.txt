@@ -1,0 +1,62 @@
+# InmueblesPY
+
+> Directorio inmobiliario de Paraguay y plataforma de información territorial
+> para personas que quieren comprar un inmueble en el país. Publica perfiles de
+> inmobiliarias y agentes, páginas de departamentos, municipios y barrios, y
+> guías de compra. Diretório imobiliário do Paraguai, com versão em português
+> brasileiro.
+
+InmueblesPY no publica anuncios de inmuebles individuales, no intermedia
+operaciones y no trabaja con alquiler: cubre exclusivamente compra y venta.
+Los perfiles se elaboran a partir de fuentes públicas y se identifican con la
+ciudad de sede declarada; el portal no afirma que un profesional atienda una
+localidad o una categoría que no esté documentada.
+
+Idiomas: español paraguayo en `/es/`, portugués brasileño en `/pt-br/`.
+La raíz del dominio redirige a `/es/`.
+
+## Español
+
+- [Inicio](https://inmueblespy.com.py/es/): buscador, ciudades destacadas y categorías.
+- [Ciudades y departamentos](https://inmueblespy.com.py/es/zonas/): 18 departamentos y 195 municipios, con población del Censo 2022.
+- [Comprar propiedades](https://inmueblespy.com.py/es/venta/): páginas por municipio y por categoría (terrenos, casas, departamentos, inmuebles comerciales).
+- [Directorio de inmobiliarias](https://inmueblespy.com.py/es/inmobiliarias/): listado por ciudad.
+- [Todos los profesionales](https://inmueblespy.com.py/es/todos-los-profesionales/): índice alfabético de los 500 perfiles publicados.
+- [Guías de compra](https://inmueblespy.com.py/es/guias/): documentación del inmueble y cómo elegir una inmobiliaria.
+- [Metodología](https://inmueblespy.com.py/es/metodologia/): cómo se construyen los datos y qué límites tienen.
+- [Fuentes](https://inmueblespy.com.py/es/fuentes/): referencias públicas utilizadas.
+- [Sobre el directorio](https://inmueblespy.com.py/es/acerca-de/)
+- [Corregir o retirar información](https://inmueblespy.com.py/es/correcciones/)
+- [Contacto](https://inmueblespy.com.py/es/contacto/)
+
+## Português
+
+- [Início](https://inmueblespy.com.py/pt-br/)
+- [Cidades e departamentos](https://inmueblespy.com.py/pt-br/regioes/)
+- [Comprar imóveis](https://inmueblespy.com.py/pt-br/comprar/)
+- [Diretório de imobiliárias](https://inmueblespy.com.py/pt-br/imobiliarias/)
+- [Todos os profissionais](https://inmueblespy.com.py/pt-br/todos-os-profissionais/)
+- [Guias de compra](https://inmueblespy.com.py/pt-br/guias/)
+- [Metodologia](https://inmueblespy.com.py/pt-br/metodologia/)
+- [Fontes](https://inmueblespy.com.py/pt-br/fontes/)
+- [Sobre o portal](https://inmueblespy.com.py/pt-br/sobre/)
+- [Corrigir informações](https://inmueblespy.com.py/pt-br/correcoes/)
+- [Contato](https://inmueblespy.com.py/pt-br/contato/)
+
+## Datos y procedencia
+
+- Población: Censo Nacional 2022. Fuente oficial: https://portalgeoestad.ine.gov.py/
+- Perfiles de profesionales: relevamiento propio a partir de fuentes públicas,
+  con la fuente y la fecha de consulta indicadas en cada perfil.
+- Referencias de precio pedido: se publican sólo donde existe una observación
+  con fuente y fecha, identificadas como referencia y nunca como tasación,
+  precio de cierre ni oferta de un inmueble concreto.
+- Sin datos inventados: cuando un dato no está disponible, la página lo indica.
+
+## Contacto
+
+contacto@inmueblespy.com.py
+
+## Mapa del sitio
+
+https://inmueblespy.com.py/sitemap.xml

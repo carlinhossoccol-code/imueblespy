@@ -1,3 +1,49 @@
+# InmueblesPY — https://inmueblespy.com.py/
+# All public pages are open to crawling. Nothing here is a ranking signal;
+# these blocks exist so that search and AI-search discovery does not depend on
+# a wildcard being interpreted generously.
+
 User-agent: *
 Allow: /
+
+# Search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# AI search and assistant browsing. These fetch pages to answer a user's
+# question and to cite sources, which is the same purpose as a search crawler.
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Crawlers whose stated purpose is collecting training data (for example GPTBot
+# and Google-Extended) are not named here. They therefore fall under the
+# "User-agent: *" rule above, which is this site's current position and allows
+# them. Restricting training collection is an owner decision: add an explicit
+# block for the agent and record the choice alongside the editorial policy
+# rather than relying on this file alone.
+
 Sitemap: https://inmueblespy.com.py/sitemap.xml

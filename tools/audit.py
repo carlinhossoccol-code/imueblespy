@@ -207,20 +207,31 @@ def c_sitemap_shape():
     return bad
 
 
-@check("lastmod", "Sitemap lastmod reflects content, not build time", blocking=False)
+@check("lastmod", "Sitemap lastmod is derived from page content")
 def c_lastmod():
+    store = C.load_json("lastmod.json", {}) or {}
+    if not store:
+        return [("data/lastmod.json", "missing; run tools/build_sitemaps.py")]
     bad = []
-    stamps = C.load_json("lastmod.json", {}) or {}
-    seen = collections.Counter()
     for f in glob.glob(os.path.join(C.SITE, "sitemaps", "*.xml")):
+        rel = "/" + os.path.relpath(f, C.SITE).replace(os.sep, "/")
         for url in ET.parse(f).getroot().findall(f"{SM_NS}url"):
+            loc = url.find(f"{SM_NS}loc").text.strip()
+            u = loc[len(C.CANONICAL_HOST):]
             lm = url.find(f"{SM_NS}lastmod")
-            if lm is None:
-                continue
-            seen[lm.text.strip()] += 1
-    if not stamps and len(seen) == 1 and sum(seen.values()) > 100:
-        only = next(iter(seen))
-        bad.append(("sitemaps/*", f"all {sum(seen.values())} URLs share lastmod {only}; not content-derived"))
+            rec = store.get(u)
+            if rec is None:
+                bad.append((rel, f"{u} is not tracked in lastmod.json"))
+            elif lm is None:
+                bad.append((rel, f"{u} has no lastmod"))
+            elif lm.text.strip() != rec["lastmod"]:
+                bad.append((rel, f"{u} lastmod {lm.text.strip()} != tracked {rec['lastmod']}"))
+    # The store must reflect the pages actually on disk.
+    for p in CP.paths:
+        u = C.rel_url(p)
+        rec = store.get(u)
+        if rec and rec["hash"] != C.content_fingerprint(CP.src[p]):
+            bad.append((u, "content changed since the last sitemap build"))
     return bad
 
 
@@ -599,9 +610,19 @@ def c_llms():
             rel = u[len(C.CANONICAL_HOST):]
             if rel and rel not in CP.urls and not rel.startswith("/sitemap") and rel != "/robots.txt":
                 bad.append(("/llms.txt", f"URL does not exist: {rel}"))
-    for claim in ("alquiler", "aluguel", "garantiza", "certifica"):
-        if claim in s.lower():
-            bad.append(("/llms.txt", f"questionable claim {claim!r}"))
+    # Only affirmative claims are a problem: the file legitimately states that
+    # the portal does NOT deal in rentals and does NOT certify anyone.
+    low = s.lower()
+    for pat, why in (
+        (r"(?<!no )(?<!não )(?:ofrece|publica|incluye) [^.\n]*alqu", "appears to offer rentals"),
+        (r"(?<!não )(?:oferece|publica|inclui) [^.\n]*alugu", "appears to offer rentals"),
+        (r"(?<!no )garantiza", "unsupported guarantee"),
+        (r"(?<!no )certifica", "unsupported certification"),
+        (r"recomendaci[oó]n (?:garantizada|asegurada)", "claims guaranteed AI recommendation"),
+    ):
+        m = re.search(pat, low)
+        if m:
+            bad.append(("/llms.txt", f"{why}: {m.group(0)[:60]!r}"))
     return bad
 
 
