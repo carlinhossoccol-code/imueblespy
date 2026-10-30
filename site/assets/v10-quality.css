@@ -65,7 +65,11 @@
 .cattile .tilebody{display:flex;flex-direction:column;align-items:flex-start}
 .cattile .caticon{margin-bottom:10px;width:30px;height:30px}
 .cattile:hover .caticon,.cattile:focus-visible .caticon{color:#12343b}
-.catlink{display:flex!important;align-items:center;gap:10px;min-height:44px}
-.catlink span{min-width:0}
+.catlink{display:flex!important;align-items:center;gap:10px;min-height:44px;min-width:0}
+/* A flex row sets a min-content floor that a 1fr grid column cannot shrink
+   below, which pushed the sidebar past the viewport. Letting the label wrap
+   keeps the floor small, so the column stays flexible at every width. */
+.catlink span{min-width:0;overflow-wrap:anywhere}
+.gridlist:has(.catlink){grid-template-columns:minmax(0,1fr)}
 .gridlist a.catlink:hover .caticon{color:#12343b}
 @media(max-width:480px){.cattile .caticon{width:26px;height:26px;margin-bottom:8px}}

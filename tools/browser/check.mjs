@@ -22,6 +22,8 @@ const PAGES = [
   ['all-prof-es', '/es/todos-los-profesionales/'],
   ['thin-city-es', '/es/venta/alto-parana/mbaracayu/terrenos/'],
   ['guides-pt', '/pt-br/guias/'],
+  ['ad-policy-es', '/es/politica-de-publicidad/'],
+  ['ad-policy-pt', '/pt-br/politica-de-publicidade/'],
   ['root', '/'],
 ];
 
