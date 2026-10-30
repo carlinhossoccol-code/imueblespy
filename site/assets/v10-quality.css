@@ -42,3 +42,15 @@
 .company .actions{min-width:0;max-width:100%}
 }
 @media(max-width:360px){.gridlist{grid-template-columns:minmax(0,1fr)}.gridlist a{min-width:0;overflow-wrap:anywhere}}
+/* WCAG 2.2 AA, 2.5.8 Target Size (Minimum): standalone links sat at 17-21px
+   tall. Links that sit inside a sentence are exempt under the inline
+   exception and are deliberately left alone so body typography is unchanged.
+   The hit area grows; the text position and type scale do not. */
+.footer-columns a,
+.ep-footer-directory a{display:inline-flex;align-items:center;min-height:26px}
+.crumb a{display:inline-block;padding-block:4px}
+.company h3 a{display:inline-block;padding-block:3px}
+.v6-related ul li a{display:inline-block;padding-block:4px}
+.ep-table td a{display:inline-block;padding-block:4px}
+.sectiongrid aside .panel > a{display:inline-flex;align-items:center;min-height:26px}
+.az-index a{min-height:38px}
