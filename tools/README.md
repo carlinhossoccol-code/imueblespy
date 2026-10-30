@@ -23,12 +23,20 @@ necessary once because the site arrived with no generator. Day to day, edit the
 CSV and run the codemods; do not re-derive the data from pages the codemods
 themselves wrote.
 
+Or run the whole thing with `./tools/run_all.sh`
+(`WITH_LIGHTHOUSE=1` adds the Lighthouse pass).
+
 For the browser suite, serve the site first:
 
 ```sh
-cd site && python3 -m http.server 8899 --bind 127.0.0.1
-BASE=http://127.0.0.1:8899 OUT=/tmp/shots node tools/browser/check.mjs
+python3 -I tools/serve.py 8899
 ```
+
+Use that server, not `python3 -m http.server`. The default one answers a
+single request at a time, which queues subresources and then shows up as the
+page's own latency: the full directory page measured Lighthouse 92 with
+570 ms of server latency on the serial server, and 100 with 0 ms on this one.
+A performance number taken against a serial server is measuring the server.
 
 ## What lives where
 
@@ -48,6 +56,10 @@ BASE=http://127.0.0.1:8899 OUT=/tmp/shots node tools/browser/check.mjs
 | `tools/check_environment.py` | Publishable files, headers, CSP, 404, secrets |
 | `tools/browser/journeys.mjs` | Fifteen end-to-end journeys with assertions |
 | `tools/browser/overflow-debug.mjs` | Finds what actually widens the document |
+| `tools/browser/a11y.mjs` | Zoom reflow, contrast, reduced motion, focus visibility |
+| `tools/browser/lighthouse.mjs` | Lighthouse, mobile and desktop |
+| `tools/serve.py` | Threaded local server, used by every browser check |
+| `tools/run_all.sh` | The whole pipeline, in the only correct order |
 
 ## Rules for a codemod
 

@@ -569,6 +569,36 @@ def c_contacts():
     return bad
 
 
+@check("nosales_only", "No rental content anywhere: the portal covers purchase only")
+def c_nosales_only():
+    """The site states it deals only in buying and selling.
+
+    Rental wording would contradict that on the page, in llms.txt and in the
+    structured data, so it is checked in the visible text rather than the
+    source, where a slug or a URL could match harmlessly.
+    """
+    terms = [
+        r"\ben alquiler\b", r"\bpara alquilar\b", r"\balquileres\b",
+        r"\bpara alugar\b", r"\balugu[eé]is\b", r"\bde aluguel\b",
+        r"\bfor rent\b", r"\brenta mensual\b", r"\baluguel mensal\b",
+    ]
+    bad = []
+    for p, s in CP.pages():
+        txt = C.visible_text(s)
+        for t in terms:
+            m = re.search(t, txt, re.I)
+            if m:
+                bad.append((C.rel_url(p), f"rental wording in visible text: {m.group(0)!r}"))
+    for extra in ("llms.txt", "robots.txt"):
+        f = os.path.join(C.SITE, extra)
+        if os.path.exists(f):
+            body = C.read(f)
+            for t in (r"\ben alquiler\b", r"\bpara alugar\b"):
+                if re.search(t, body, re.I):
+                    bad.append((f"/{extra}", "rental wording"))
+    return bad
+
+
 @check("orphans", "No indexable page is unreachable from internal links")
 def c_orphans():
     inbound = collections.Counter()
