@@ -77,4 +77,10 @@
    a declared seat in this municipality, or a brand with seats in several. */
 .badge.seat,.badge.net{margin-left:6px;font-weight:650;letter-spacing:.01em}
 .badge.seat{background:#e3f2ea;border-color:#bcdfcd;color:#1f6b4f}
-.badge.net{background:#f3f0e6;border-color:#e2d8bf;color:#8a6a28}
+/* #8a6a28 measured 4.41:1 on this background, just under WCAG AA. */
+.badge.net{background:#f3f0e6;border-color:#e2d8bf;color:#7d5f20}
+/* WCAG 1.4.1: a link inside a block of text must not be distinguished by
+   colour alone. Underline links in prose; standalone links in cards, nav,
+   tables and lists carry their own position and styling. */
+.reading p a,.disclosure a,.ep-note a,.ep-footnote a,.v6-note a,.hint a,
+.v10-source a,.fine a,.section-lead a{text-decoration:underline;text-underline-offset:2px}
