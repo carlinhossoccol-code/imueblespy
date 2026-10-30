@@ -557,6 +557,15 @@ def c_contacts():
             for wa in re.findall(r'href="https://wa\.me/([^"?]+)', card):
                 if not re.fullmatch(r"\d{8,15}", wa):
                     bad.append((u, f"malformed WhatsApp number {wa}"))
+        # A profile with a recorded phone must offer some way to use it. Some
+        # lead with WhatsApp rather than a dial link, which is equally direct,
+        # so either counts. A cleanup regex once stripped the dial button from
+        # 3,000 pages and only one browser journey noticed; this makes the loss
+        # a static failure.
+        m = re.match(r"^/(?:es/(?:inmobiliaria|agente)|pt-br/(?:imobiliaria|corretor))/(\d+)-", u)
+        if m and m.group(1) in phones and "tel:" not in s and "wa.me/" not in s:
+            bad.append((u, f"profile {m.group(1)} records a phone but offers no direct contact action"))
+
         # Inspect the whole opening tag: rel may be written before or after href.
         for tag in re.findall(r"<a\b[^>]*>", s):
             href = re.search(r'href="(https?://[^"]+)"', tag)

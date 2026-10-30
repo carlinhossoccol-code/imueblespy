@@ -21,11 +21,15 @@ LIB = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 
 sys.path.insert(0, LIB)
 import corpus as C
 
-ORDER = 35
+# Runs last: a90 rebuilds the nearby-professional cards from markup it reads
+# off disk, so anything added to a card before it runs is discarded.
+ORDER = 200
 TITLE = "Show both recorded phone numbers legibly and make the first dialable"
 SELECT = None
 
-SPLIT = re.compile(r"\s*[|/;]\s*")
+# Includes the separator this codemod itself writes, so a re-extracted
+# dataset is still recognised as holding two numbers.
+SPLIT = re.compile(r"\s*[|/;·]\s*")
 CALL = {"es": "Llamar", "pt-br": "Ligar"}
 
 _MULTI = None
@@ -68,7 +72,18 @@ def apply(path, src, ctx):
             return block
         _display, first, _slug = multi[pid]
         btn = f'<a class="btn" href="tel:{first}">{_html.escape(CALL[lang], quote=False)}</a>'
-        return block.replace('<div class="actions">', f'<div class="actions">{btn}', 1)
+        # Appended, not prepended: every card puts the ghost "view profile"
+        # link first, and inserting ahead of it broke that order.
+        i = block.find('<div class="actions">')
+        j = block.find("</div>", i)
+        if j <= i:
+            return block
+        actions = block[i:j]
+        # Calling is the stronger action, so an existing website button steps
+        # down to the ghost style. Two buttons of equal weight in one colour
+        # read as a single control.
+        actions = re.sub(r'<a class="btn"(\s+href="https?://)', r'<a class="btn ghost"\1', actions)
+        return block[:i] + actions + btn + block[j:]
 
     for pid, (_d, _f, slug) in multi.items():
         # the professional's own page
