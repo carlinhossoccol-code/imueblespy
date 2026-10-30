@@ -1,0 +1,195 @@
+municipality_key,department_slug,name,latitude,longitude,geonames_id,geonames_feature,geonames_name
+alto-paraguay/puerto-casado,alto-paraguay,Puerto Casado,-21.66691,-58.97986,11840136,ADM2,Puerto Casado
+alto-parana/ciudad-del-este,alto-parana,Ciudad del Este,-25.49796,-54.67974,11840124,ADM2,Ciudad Del Este
+alto-parana/doctor-juan-leon-mallorquin,alto-parana,Doctor Juan León Mallorquín,-25.48375,-55.25453,11840138,ADM2,Dr. Juan Leon Mallorquin
+alto-parana/doctor-raul-pena,alto-parana,Doctor Raúl Peña,-26.13495,-55.22489,11840064,ADM2,Dr. Raul Peña
+alto-parana/domingo-martinez-de-irala,alto-parana,Domingo Martínez de Irala,-25.85822,-54.69024,11839936,ADM2,Domingo Martinez De Irala
+alto-parana/hernandarias,alto-parana,Hernandarias,-25.31506,-54.77781,11840171,ADM2,Hernandarias
+alto-parana/itakyry,alto-parana,Itakyry,-24.81418,-55.15267,11840113,ADM2,Itakyry
+alto-parana/juan-emiliano-o-leary,alto-parana,Juan Emiliano O'Leary,-25.41999,-55.37312,3437880,PPL,Juan Emiliano O’Leary
+alto-parana/los-cedrales,alto-parana,Los Cedrales,-25.68602,-54.75132,11839944,ADM2,Los Cedrales
+alto-parana/mbaracayu,alto-parana,Mbaracayú,-25.01529,-54.68915,11839953,ADM2,Mbaracayu
+alto-parana/minga-guazu,alto-parana,Minga Guazú,-25.50339,-54.84146,11840129,ADM2,Minga Guazu
+alto-parana/minga-pora,alto-parana,Minga Porá,-24.86667,-54.91667,10293321,ADM2,Minga Pora District
+alto-parana/nacunday,alto-parana,Ñacunday,-26.06949,-54.78158,11840159,ADM2,Ñacunday
+alto-parana/naranjal,alto-parana,Naranjal,-25.95662,-55.2035,11840079,ADM2,Naranjal
+alto-parana/presidente-franco,alto-parana,Presidente Franco,-25.59666,-54.6415,11840105,ADM2,Presidente Franco
+alto-parana/san-alberto,alto-parana,San Alberto,-24.97604,-54.90623,11839952,ADM2,San Alberto
+alto-parana/san-cristobal,alto-parana,San Cristóbal,-25.78346,-55.38483,11840106,ADM2,San Cristobal
+alto-parana/santa-rita,alto-parana,Santa Rita,-25.77466,-55.13601,11840010,ADM2,Santa Rita
+alto-parana/santa-rosa-del-monday,alto-parana,Santa Rosa del Monday,-25.84562,-54.92318,11840146,ADM2,Santa Rosa Del Monday
+alto-parana/tavapy,alto-parana,Tavapy,-25.62452,-55.07143,11840083,ADM2,Tavapy
+alto-parana/yguazu,alto-parana,Yguazú,-25.41779,-55.10024,11840021,ADM2,Yguazu
+amambay/bella-vista-norte,amambay,Bella Vista Norte,-22.12226,-56.51523,3439353,PPL,Bella Vista
+amambay/capitan-bado,amambay,Capitán Bado,-23.42418,-55.81292,11839989,ADM2,Capitan Bado
+amambay/cerro-cora,amambay,Cerro Corá,-22.62429,-55.84988,3439130,PPL,Cerro Corá
+amambay/pedro-juan-caballero,amambay,Pedro Juan Caballero,-22.79291,-55.98344,11840099,ADM2,Pedro Juan Caballero
+amambay/zanja-pyta,amambay,Zanja Pytá,-22.7719,-55.70878,11840013,ADM2,Zanja Pyta
+asuncion,asuncion,Asunción,-25.29121,-57.60494,11840061,ADM2,Asuncion
+boqueron/filadelfia,boqueron,Filadelfia,-21.4374,-60.17867,11840009,ADM2,Filadelfia
+boqueron/loma-plata,boqueron,Loma Plata,-22.30512,-59.6906,11839974,ADM2,Loma Plata
+boqueron/mariscal-estigarribia,boqueron,Mariscal Estigarribia,-21.96421,-61.28682,11840039,ADM2,Mariscal Estigarribia
+caaguazu/caaguazu,caaguazu,Caaguazú,-25.41922,-56.05173,11840030,ADM2,Caaguazu
+caaguazu/carayao,caaguazu,Carayaó,-25.18748,-56.32904,11840142,ADM2,Carayao
+caaguazu/coronel-oviedo,caaguazu,Coronel Oviedo,-25.48658,-56.42111,11839960,ADM2,Coronel Oviedo
+caaguazu/doctor-juan-eulogio-estigarribia,caaguazu,Doctor Juan Eulogio Estigarribia,-25.37184,-55.70457,3437905,PPL,Doctor Juan Eulogio Estigarribia
+caaguazu/doctor-juan-manuel-frutos,caaguazu,Doctor Juan Manuel Frutos,-25.36211,-55.82163,11840148,ADM2,Dr. Juan Manuel Frutos
+caaguazu/jose-domingo-ocampos,caaguazu,José Domingo Ocampos,-25.44037,-55.43764,11839993,ADM2,Jose Domingo Ocampos
+caaguazu/mariscal-lopez,caaguazu,Mariscal López,-25.17948,-55.18013,11840002,ADM2,Mcal. Francisco Solano Lopez
+caaguazu/r-i-tres-corrales,caaguazu,R.I. Tres Corrales,-25.03333,-56.13333,3437173,PPL,R. I. Tres Corrales
+caaguazu/raul-arsenio-oviedo,caaguazu,Raúl Arsenio Oviedo,-25.15375,-55.57547,11840149,ADM2,Raul Arsenio Oviedo
+caaguazu/repatriacion,caaguazu,Repatriación,-25.58395,-55.80308,11839957,ADM2,Repatriacion
+caaguazu/san-joaquin,caaguazu,San Joaquín,-25.04491,-56.05025,11840104,ADM2,San Joaquin
+caaguazu/san-jose-de-los-arroyos,caaguazu,San José de los Arroyos,-25.53943,-56.69861,11840011,ADM2,San Jose De Los Arroyos
+caaguazu/santa-rosa-del-mbutuy,caaguazu,Santa Rosa del Mbutuy,-24.93261,-56.25358,11839981,ADM2,Santa Rosa Del Mbutuy
+caaguazu/tembiapora,caaguazu,Tembiaporá,-25.25878,-55.39049,11840130,ADM2,Tembiapora
+caaguazu/tres-de-febrero,caaguazu,Tres de Febrero,-25.21261,-55.80808,11840137,ADM2,3 De Febrero
+caaguazu/vaqueria,caaguazu,Vaquería,-24.97494,-55.76291,11840173,ADM2,Vaqueria
+caaguazu/yhu,caaguazu,Yhú,-25.05949,-55.90861,11840165,ADM2,Yhu
+caazapa/abai,caazapa,Abaí,-25.88262,-55.70886,11839943,ADM2,Abai
+caazapa/caazapa,caazapa,Caazapá,-26.17881,-56.28831,11840162,ADM2,Caazapa
+caazapa/fulgencio-yegros,caazapa,Fulgencio Yegros,-26.54205,-56.56201,11840100,ADM2,Fulgencio Yegros
+caazapa/san-juan-nepomuceno,caazapa,San Juan Nepomuceno,-26.23146,-55.90066,11840016,ADM2,San Juan Nepomuceno
+caazapa/tavai,caazapa,Tavaí,-26.18824,-55.52995,11840035,ADM2,Tavai
+caazapa/tres-de-mayo,caazapa,Tres de Mayo,-26.48134,-56.09592,3436530,PPL,Tres de Mayo
+caazapa/yuty,caazapa,Yuty,-26.60724,-56.33523,11840093,ADM2,Yuty
+canindeyu/corpus-christi,canindeyu,Corpus Christi,-24.11047,-55.00993,11840125,ADM2,Corpus Christi
+canindeyu/curuguaty,canindeyu,Curuguaty,-24.33618,-55.77463,11839977,ADM2,Curuguaty
+canindeyu/general-alvarez,canindeyu,General Álvarez,-24.15653,-54.71145,11839956,ADM2,Francisco Caballero Alvarez
+canindeyu/katuete,canindeyu,Katueté,-24.3429,-54.79242,11839999,ADM2,Katuete
+canindeyu/la-paloma-del-espiritu-santo,canindeyu,La Paloma del Espíritu Santo,-24.12957,-54.61376,3437853,PPL,La Paloma del Espíritu Santo
+canindeyu/maracana,canindeyu,Maracaná,-24.18904,-56.08401,13689984,PPL,Maracaná
+canindeyu/nueva-esperanza,canindeyu,Nueva Esperanza,-24.58166,-54.65388,11839972,ADM2,Nueva Esperanza
+canindeyu/salto-del-guaira,canindeyu,Salto del Guairá,-24.0633,-54.30763,3437148,PPLA,Salto del Guairá
+canindeyu/villa-ygatimi,canindeyu,Villa Ygatimí,-24.13346,-55.48191,11840060,ADM2,Villa Ygatimí
+canindeyu/yasy-cany,canindeyu,Yasy Cañy,-24.52913,-55.88863,11719332,PPL,Yasy Cañy
+canindeyu/yby-pyta,canindeyu,Yby Pytá,-24.34891,-55.38626,13689985,PPL,Yby Pytá
+canindeyu/ybyrarobana,canindeyu,Ybyrarobaná,-24.3509,-55.1162,11840134,ADM2,Ybyrarobana
+canindeyu/ypejhu,canindeyu,Ypejhú,-23.88693,-55.44186,3436575,PPL,Ypejhú
+central/aregua,central,Areguá,-25.29391,-57.38634,11839988,ADM2,Aregua
+central/capiata,central,Capiatá,-25.37722,-57.4519,11839945,ADM2,Capiata
+central/fernando-de-la-mora,central,Fernando de la Mora,-25.32782,-57.55071,11840034,ADM2,Fernando De La Mora
+central/guarambare,central,Guarambaré,-25.48865,-57.45182,11840038,ADM2,Guarambare
+central/ita,central,Itá,-25.52973,-57.37439,11840147,ADM2,Ita
+central/itaugua,central,Itauguá,-25.3936,-57.35327,11840177,ADM2,Itaugua
+central/julian-augusto-saldivar,central,Julián Augusto Saldívar,-25.43268,-57.43389,11840074,ADM2,J Augusto Saldivar
+central/lambare,central,Lambaré,-25.35362,-57.61576,11840075,ADM2,Lambare
+central/limpio,central,Limpio,-25.15747,-57.47505,11840155,ADM2,Limpio
+central/luque,central,Luque,-25.25053,-57.45708,11840058,ADM2,Luque
+central/mariano-roque-alonso,central,Mariano Roque Alonso,-25.20126,-57.53121,11840101,ADM2,Mariano Roque Alonso
+central/nemby,central,Ñemby,-25.39696,-57.53774,11839987,ADM2,Ñemby
+central/nueva-italia,central,Nueva Italia,-25.77312,-57.4769,11840141,ADM2,Nueva Italia
+central/san-antonio,central,San Antonio,-25.41834,-57.56195,11839939,ADM2,San Antonio
+central/san-lorenzo,central,San Lorenzo,-25.35072,-57.51094,11840117,ADM2,San Lorenzo
+central/villa-elisa,central,Villa Elisa,-25.37376,-57.58744,11840048,ADM2,Villa Elisa
+central/villeta,central,Villeta,-25.71155,-57.60714,11840152,ADM2,Villeta
+central/ypacarai,central,Ypacaraí,-25.39331,-57.26419,11840166,ADM2,Ypacarai
+central/ypane,central,Ypané,-25.4604,-57.50929,11840046,ADM2,Ypane
+concepcion/arroyito,concepcion,Arroyito,-23.17505,-56.77806,3439400,PPL,Arroyito
+concepcion/azotey,concepcion,Azotey,-23.32344,-56.50114,11840098,ADM2,Azotey
+concepcion/belen,concepcion,Belén,-23.4278,-57.23169,11840069,ADM2,Belen
+concepcion/concepcion,concepcion,Concepción,-22.87931,-57.36778,11840042,ADM2,Concepcion
+concepcion/horqueta,concepcion,Horqueta,-23.25651,-56.838,11840139,ADM2,Horqueta
+concepcion/loreto,concepcion,Loreto,-23.18896,-57.15119,11840081,ADM2,Loreto
+concepcion/paso-horqueta,concepcion,Paso Horqueta,-23.08806,-57.39472,3437990,PPL,Paso Horqueta
+concepcion/san-lazaro,concepcion,San Lázaro,-22.24718,-57.73504,11840109,ADM2,San Lazaro
+concepcion/sargento-jose-felix-lopez,concepcion,Sargento José Félix López,-22.3838,-56.92862,3438915,PPL,Sargento José Félix López
+concepcion/yby-yau,concepcion,Yby Yaú,-22.96611,-56.54066,3436622,PPL,Yby Yaú
+cordillera/altos,cordillera,Altos,-25.24593,-57.22165,11840012,ADM2,Altos
+cordillera/arroyos-y-esteros,cordillera,Arroyos y Esteros,-25.04278,-57.16247,11840163,ADM2,Arroyos Y Esteros
+cordillera/atyra,cordillera,Atyrá,-25.25993,-57.15459,11840126,ADM2,Atyra
+cordillera/caacupe,cordillera,Caacupé,-25.38041,-57.12673,11840157,ADM2,Caacupe
+cordillera/caraguatay,cordillera,Caraguatay,-25.2151,-56.77737,11839996,ADM2,Caraguatay
+cordillera/emboscada,cordillera,Emboscada,-25.12883,-57.36295,11840051,ADM2,Emboscada
+cordillera/eusebio-ayala,cordillera,Eusebio Ayala,-25.36119,-56.97145,11840097,ADM2,Eusebio Ayala
+cordillera/isla-pucu,cordillera,Isla Pucú,-25.30084,-56.8961,11839931,ADM2,Isla Pucu
+cordillera/itacurubi-de-la-cordillera,cordillera,Itacurubí de la Cordillera,-25.45227,-56.86402,11840176,ADM2,Itacurubi De La Cordillera
+cordillera/juan-de-mena,cordillera,Juan de Mena,-24.99495,-56.77291,11839992,ADM2,Juan De Mena
+cordillera/piribebuy,cordillera,Piribebuy,-25.49637,-57.04219,11839997,ADM2,Piribebuy
+cordillera/san-bernardino,cordillera,San Bernardino,-25.29314,-57.29328,11840076,ADM2,San Bernardino
+cordillera/tobati,cordillera,Tobatí,-25.21599,-57.04655,11839976,ADM2,Tobati
+cordillera/valenzuela,cordillera,Valenzuela,-25.58852,-56.87065,11840054,ADM2,Valenzuela
+guaira/borja,guaira,Borja,-26.03433,-56.61027,11840067,ADM2,Borja
+guaira/capitan-mauricio-jose-troche,guaira,Capitán Mauricio José Troche,-25.62137,-56.1542,11839984,ADM2,Mauricio Jose Troche
+guaira/general-eugenio-a-garay,guaira,General Eugenio A. Garay,-25.94156,-56.1976,11840031,ADM2,General Eugenio A. Garay
+guaira/independencia,guaira,Independencia,-25.691,-56.26781,3437982,PPL,Independencia
+guaira/itape,guaira,Itapé,-25.85451,-56.56678,11840144,ADM2,Itape
+guaira/iturbe,guaira,Iturbe,-26.07228,-56.47103,11840175,ADM2,Iturbe
+guaira/jose-fassardi,guaira,José Fassardi,-25.9285,-56.09385,11840041,ADM2,Jose Fassardi
+guaira/mbocayaty-del-guaira,guaira,Mbocayaty del Guairá,-25.70773,-56.36579,11840135,ADM2,Mbocayaty
+guaira/paso-yobai,guaira,Paso Yobái,-25.73917,-55.91326,11840049,ADM2,Paso Yobai
+guaira/villarrica,guaira,Villarrica,-25.83098,-56.40837,11839935,ADM2,Villarrica
+itapua/alto-vera,itapua,Alto Verá,-26.5883,-55.74206,11839982,ADM2,Alto Vera
+itapua/bella-vista-sur,itapua,Bella Vista Sur,-26.99528,-55.54513,11840077,ADM2,Bella Vista
+itapua/cambyreta,itapua,Cambyretá,-27.35643,-55.76349,11840001,ADM2,Cambyreta
+itapua/capitan-meza,itapua,Capitán Meza,-26.82882,-55.29086,11840037,ADM2,Capitan Meza
+itapua/capitan-miranda,itapua,Capitán Miranda,-27.18966,-55.81169,11840123,ADM2,Capitan Miranda
+itapua/carlos-antonio-lopez,itapua,Carlos Antonio López,-26.35738,-54.9257,11840151,ADM2,Carlos Antonio Lopez
+itapua/carmen-del-parana,itapua,Carmen del Paraná,-27.20845,-56.09826,11840086,ADM2,Carmen Del Parana
+itapua/coronel-bogado,itapua,Coronel Bogado,-27.18629,-56.27949,11839951,ADM2,Coronel Bogado
+itapua/edelira,itapua,Edelira,-26.58082,-55.38199,11840059,ADM2,Edelira
+itapua/encarnacion,itapua,Encarnación,-27.26225,-55.89523,11839995,ADM2,Encarnacion
+itapua/fram,itapua,Fram,-27.07413,-56.01183,11840032,ADM2,Fram
+itapua/general-artigas,itapua,General Artigas,-26.90516,-56.37593,11840050,ADM2,General Artigas
+itapua/general-delgado,itapua,General Delgado,-27.05952,-56.5522,11840178,ADM2,General Delgado
+itapua/hohenau,itapua,Hohenau,-27.0869,-55.64417,11840004,ADM2,Hohenau
+itapua/itapua-poty,itapua,Itapúa Poty,-26.56135,-55.54526,11840092,ADM2,Itapua Poty
+itapua/jesus,itapua,Jesús,-27.05364,-55.77418,11839938,ADM2,Jesus
+itapua/mayor-otano,itapua,Mayor Otaño,-26.27843,-54.76885,11840094,ADM2,Mayor Otaño
+itapua/natalio,itapua,Natalio,-26.73436,-55.13926,11840168,ADM2,Natalio
+itapua/obligado,itapua,Obligado,-26.92183,-55.70839,11839942,ADM2,Obligado
+itapua/pirapo,itapua,Pirapó,-26.83341,-55.51474,11840169,ADM2,Pirapo
+itapua/san-cosme-y-damian,itapua,San Cosme y Damián,-27.35494,-56.50419,11839927,ADM2,San Cosme y Damian
+itapua/san-juan-del-parana,itapua,San Juan del Paraná,-27.30785,-55.971,11839961,ADM2,San Juan del Parana
+itapua/san-pedro-del-parana,itapua,San Pedro del Paraná,-26.73011,-56.00858,11839949,ADM2,San Pedro Del Parana
+itapua/san-rafael-del-parana,itapua,San Rafael del Paraná,-26.43968,-55.10063,11840089,ADM2,San Rafael Del Parana
+itapua/tomas-romero-pereira,itapua,Tomás Romero Pereira,-26.47347,-55.28248,11840020,ADM2,Tomas Romero Pereira
+itapua/trinidad,itapua,Trinidad,-27.13435,-55.73089,11840084,ADM2,Trinidad
+itapua/yatytay,itapua,Yatytay,-26.67186,-55.05177,11840119,ADM2,Yatytay
+misiones/ayolas,misiones,Ayolas,-27.37014,-56.9749,11840065,ADM2,Ayolas
+misiones/san-ignacio-guazu,misiones,San Ignacio Guazú,-26.88759,-57.02302,3436929,PPL,San Ignacio
+misiones/san-juan-bautista,misiones,San Juan Bautista,-26.7122,-57.40589,11840096,ADM2,San Juan Bautista
+misiones/san-miguel,misiones,San Miguel,-26.58091,-56.96765,11840006,ADM2,San Miguel
+misiones/santa-maria-de-fe,misiones,Santa María de Fe,-26.78371,-56.94333,3436977,PPL,Santa María
+misiones/santa-rosa-de-lima,misiones,Santa Rosa de Lima,-26.8873,-56.84905,3436959,PPL,Santa Rosa
+misiones/santiago,misiones,Santiago,-27.12983,-56.78376,11840085,ADM2,Santiago
+neembucu/alberdi,neembucu,Alberdi,-26.18992,-58.0709,11839933,ADM2,Alberdi
+neembucu/pilar,neembucu,Pilar,-26.90314,-58.2168,11840145,ADM2,Pilar
+paraguari/acahay,paraguari,Acahay,-25.88932,-57.07659,11839986,ADM2,Acahay
+paraguari/caapucu,paraguari,Caapucú,-26.33745,-57.3845,11840056,ADM2,Caapucu
+paraguari/carapegua,paraguari,Carapeguá,-25.75907,-57.32885,11839955,ADM2,Carapegua
+paraguari/la-colmena,paraguari,La Colmena,-25.90225,-56.82312,11840071,ADM2,La Colmena
+paraguari/mbuyapey,paraguari,Mbuyapey,-26.28711,-56.81099,11839971,ADM2,Mbuyapey
+paraguari/paraguari,paraguari,Paraguarí,-25.67994,-57.1421,11840022,ADM2,Paraguari
+paraguari/pirayu,paraguari,Pirayú,-25.47717,-57.21446,11840014,ADM2,Pirayu
+paraguari/quiindy,paraguari,Quiindy,-26.01315,-57.31466,11840103,ADM2,Quiindy
+paraguari/san-roque,paraguari,San Roque,-25.87559,-57.29751,11839985,ADM2,San Roque Gonzalez
+paraguari/sapucai,paraguari,Sapucai,-25.67277,-56.95827,11840132,ADM2,Sapucai
+paraguari/yaguaron,paraguari,Yaguarón,-25.59869,-57.27476,11840040,ADM2,Yaguaron
+paraguari/ybycui,paraguari,Ybycuí,-26.02073,-57.0172,3436642,PPL,Ybycuí
+paraguari/ybytymi,paraguari,Ybytymí,-25.75882,-56.80257,3436627,PPL,Ybytymí
+presidente-hayes/benjamin-aceval,presidente-hayes,Benjamín Aceval,-24.39616,-58.04525,11840036,ADM2,Benjamin Aceval
+presidente-hayes/campo-aceval,presidente-hayes,Campo Aceval,-23.18333,-59.85,3439244,PPL,Campo Aceval
+presidente-hayes/nanawa,presidente-hayes,Nanawa,-25.28283,-57.70058,11840073,ADM2,Nanawa
+presidente-hayes/puerto-pinasco,presidente-hayes,Puerto Pinasco,-22.75881,-58.49017,11840167,ADM2,Puerto Pinasco
+presidente-hayes/teniente-irala,presidente-hayes,Teniente Irala,-23.03236,-59.6142,11840029,ADM2,Tte 1ro Manuel Irala Fernandez
+presidente-hayes/villa-hayes,presidente-hayes,Villa Hayes,-23.78075,-58.04735,11839929,ADM2,Villa Hayes
+san-pedro/25-de-diciembre,san-pedro,25 de Diciembre,-24.77256,-56.80126,11840025,ADM2,25 De Diciembre
+san-pedro/capiibary,san-pedro,Capiibary,-24.74588,-55.9916,11839969,ADM2,Capiibary
+san-pedro/chore,san-pedro,Choré,-24.18431,-56.63288,11840090,ADM2,Chore
+san-pedro/general-elizardo-aquino,san-pedro,General Elizardo Aquino,-24.38336,-56.79333,11840127,ADM2,General Elizardo Aquino
+san-pedro/general-isidoro-resquin,san-pedro,General Isidoro Resquín,-24.06654,-56.44848,3438065,PPL,General Francisco Isidoro Resquín
+san-pedro/guayaibi,san-pedro,Guayaibí,-24.53333,-56.40392,3438034,PPL,Guajayvi
+san-pedro/itacurubi-del-rosario,san-pedro,Itacurubí del Rosario,-24.58239,-56.81959,11840116,ADM2,Itacurubi Del Rosario
+san-pedro/liberacion,san-pedro,Liberación,-24.1964,-56.37838,11840003,ADM2,Liberacion
+san-pedro/lima,san-pedro,Lima,-23.97833,-56.56935,11840047,ADM2,Lima
+san-pedro/nueva-germania,san-pedro,Nueva Germania,-23.85997,-56.67184,11839970,ADM2,Nueva Germania
+san-pedro/san-estanislao,san-pedro,San Estanislao,-24.64582,-56.39245,11839928,ADM2,San Estanislao
+san-pedro/san-pedro-de-ycuamandiyu,san-pedro,San Pedro de Ycuamandiyú,-23.77219,-57.05951,11840133,ADM2,San Pedro Del Ykuamandiyu
+san-pedro/san-vicente-pancholo,san-pedro,San Vicente Pancholo,-24.00541,-56.13293,13689983,PPL,San Vicente Pancholo
+san-pedro/santa-rosa-del-aguaray,san-pedro,Santa Rosa del Aguaray,-23.75906,-56.27188,11840170,ADM2,Santa Rosa Del Aguaray
+san-pedro/tacuati,san-pedro,Tacuatí,-23.5425,-56.59278,11840118,ADM2,Tacuati
+san-pedro/union,san-pedro,Unión,-24.8699,-56.5309,11839946,ADM2,Union
+san-pedro/villa-del-rosario,san-pedro,Villa del Rosario,-24.56109,-57.07704,11839940,ADM2,Villa Del Rosario
+san-pedro/yataity-del-norte,san-pedro,Yataity del Norte,-24.83738,-56.32904,11840008,ADM2,Yataity Del Norte
+san-pedro/yrybucua,san-pedro,Yrybucuá,-24.47975,-56.08563,12171509,PPL,Yrybucuá
