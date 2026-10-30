@@ -482,8 +482,7 @@ def c_doorway():
     return bad
 
 
-@check("doorway_cities", "Same-category pages in different cities carry city-specific substance",
-       blocking=False)
+@check("doorway_cities", "Same-category pages in different cities carry city-specific substance")
 def c_doorway_cities():
     """The second doorway axis: one category compared across municipalities.
 

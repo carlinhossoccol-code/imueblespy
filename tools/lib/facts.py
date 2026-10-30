@@ -6,6 +6,9 @@ is always compared against — and rewritten from — the same authority.
 from __future__ import annotations
 
 import collections
+import csv
+import math
+import os
 import re
 import statistics
 
@@ -47,6 +50,109 @@ class Facts:
             self.dept_cities[c["department_slug"]].append(key)
         for v in self.dept_cities.values():
             v.sort()
+
+        self._load_coordinates()
+
+    # ------------------------------------------------------------------ #
+    def _load_coordinates(self) -> None:
+        """Municipality coordinates, and each professional's seat location.
+
+        Sourced from GeoNames via tools/match_geonames.py. One municipality
+        (Boquerón) has no coordinate; everything here degrades to an empty
+        result for it rather than guessing a position.
+        """
+        self.coords: dict[str, tuple] = {}
+        path = os.path.join(C.DATA, "municipality_coordinates.csv")
+        if os.path.exists(path):
+            with open(path, encoding="utf-8", newline="") as fh:
+                for r in csv.DictReader(fh):
+                    self.coords[r["municipality_key"]] = (
+                        float(r["latitude"]), float(r["longitude"]))
+
+        # professional id -> municipality key of its declared seat
+        self.seat_of: dict[str, str] = {}
+        for pid, a in self.agencies.items():
+            city = a.get("city")
+            if not city:
+                continue
+            key = self.key_by_name.get(city)
+            if key:
+                self.seat_of[pid] = key
+
+    def distance_km(self, a: str, b: str):
+        """Great-circle distance between two municipalities, or None."""
+        pa, pb = self.coords.get(a), self.coords.get(b)
+        if not pa or not pb:
+            return None
+        R = 6371.0
+        la1, lo1, la2, lo2 = map(math.radians, (pa[0], pa[1], pb[0], pb[1]))
+        h = (math.sin((la2 - la1) / 2) ** 2
+             + math.cos(la1) * math.cos(la2) * math.sin((lo2 - lo1) / 2) ** 2)
+        return R * 2 * math.asin(math.sqrt(h))
+
+    def local_professionals(self, key: str) -> list:
+        """Professional ids whose declared seat is this municipality."""
+        return sorted((pid for pid, k in self.seat_of.items() if k == key), key=int)
+
+    def nearest_professionals(self, key: str, limit: int = 6) -> list:
+        """(professional id, seat key, km) for the closest seats elsewhere.
+
+        Ranked by real distance rather than by department membership, so two
+        neighbouring municipalities no longer receive an identical list. A
+        distance says where a firm is, never that it covers this municipality.
+        """
+        if key not in self.coords:
+            return []
+        out = []
+        for pid, seat in self.seat_of.items():
+            if seat == key:
+                continue
+            d = self.distance_km(key, seat)
+            if d is None:
+                continue
+            out.append((pid, seat, d))
+        out.sort(key=lambda t: (round(t[2], 3), int(t[0])))
+        return out[:limit]
+
+    def bearing_deg(self, a: str, b: str):
+        """Initial bearing from a to b, in degrees, or None."""
+        pa, pb = self.coords.get(a), self.coords.get(b)
+        if not pa or not pb:
+            return None
+        la1, lo1, la2, lo2 = map(math.radians, (pa[0], pa[1], pb[0], pb[1]))
+        dl = lo2 - lo1
+        y = math.sin(dl) * math.cos(la2)
+        x = math.cos(la1) * math.sin(la2) - math.sin(la1) * math.cos(la2) * math.cos(dl)
+        return (math.degrees(math.atan2(y, x)) + 360) % 360
+
+    def dept_seat(self, key: str):
+        """The most populous municipality of this department."""
+        d = self.dept_of(key)
+        best, bestpop = None, -1
+        for k in self.dept_cities[d]:
+            p = self.population(k) or 0
+            if p > bestpop:
+                best, bestpop = k, p
+        return best
+
+    def national_rank(self, key: str):
+        """1-based rank by population among all municipalities in the dataset."""
+        pops = sorted(
+            ((self.population(k) or 0, k) for k in self.cities),
+            key=lambda t: (-t[0], t[1]))
+        for i, (_p, k) in enumerate(pops, 1):
+            if k == key:
+                return i, len(pops)
+        return None, len(pops)
+
+    def nearest_municipalities(self, key: str, limit: int = 5) -> list:
+        """(municipality key, km) for the closest other municipalities."""
+        if key not in self.coords:
+            return []
+        out = [(k, self.distance_km(key, k)) for k in self.coords if k != key]
+        out = [(k, d) for k, d in out if d is not None]
+        out.sort(key=lambda t: (round(t[1], 3), t[0]))
+        return out[:limit]
 
     # ------------------------------------------------------------------ #
     def dept_of(self, key: str) -> str:

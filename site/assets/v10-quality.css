@@ -54,3 +54,9 @@
 .ep-table td a{display:inline-block;padding-block:4px}
 .sectiongrid aside .panel > a{display:inline-flex;align-items:center;min-height:26px}
 .az-index a{min-height:38px}
+/* Nearest-municipality list in the location module. */
+.ep-near{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:8px}
+.ep-near li{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 13px;background:#f3f8f6;border-radius:9px}
+.ep-near a{display:inline-flex;align-items:center;min-height:26px;font-weight:600}
+.ep-near span{color:#5a6b6e;font-size:13.5px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.ep-location .ep-facts{margin-top:14px}
