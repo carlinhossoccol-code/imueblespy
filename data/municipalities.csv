@@ -1,0 +1,196 @@
+key,department_slug,city_slug,name,population_2022,neighbourhood_count
+alto-paraguay/puerto-casado,alto-paraguay,puerto-casado,Puerto Casado,5439,0
+alto-parana/ciudad-del-este,alto-parana,ciudad-del-este,Ciudad del Este,325819,8
+alto-parana/doctor-juan-leon-mallorquin,alto-parana,doctor-juan-leon-mallorquin,Doctor Juan León Mallorquín,16144,0
+alto-parana/doctor-raul-pena,alto-parana,doctor-raul-pena,Doctor Raúl Peña,5617,0
+alto-parana/domingo-martinez-de-irala,alto-parana,domingo-martinez-de-irala,Domingo Martínez de Irala,5035,0
+alto-parana/hernandarias,alto-parana,hernandarias,Hernandarias,83285,1
+alto-parana/itakyry,alto-parana,itakyry,Itakyry,27340,0
+alto-parana/juan-emiliano-o-leary,alto-parana,juan-emiliano-o-leary,Juan Emiliano O'Leary,16092,0
+alto-parana/los-cedrales,alto-parana,los-cedrales,Los Cedrales,7258,0
+alto-parana/mbaracayu,alto-parana,mbaracayu,Mbaracayú,6406,0
+alto-parana/minga-guazu,alto-parana,minga-guazu,Minga Guazú,81072,0
+alto-parana/minga-pora,alto-parana,minga-pora,Minga Porá,11959,0
+alto-parana/nacunday,alto-parana,nacunday,Ñacunday,6468,0
+alto-parana/naranjal,alto-parana,naranjal,Naranjal,6608,0
+alto-parana/presidente-franco,alto-parana,presidente-franco,Presidente Franco,88744,4
+alto-parana/san-alberto,alto-parana,san-alberto,San Alberto,11162,0
+alto-parana/san-cristobal,alto-parana,san-cristobal,San Cristóbal,8563,0
+alto-parana/santa-rita,alto-parana,santa-rita,Santa Rita,27249,0
+alto-parana/santa-rosa-del-monday,alto-parana,santa-rosa-del-monday,Santa Rosa del Monday,5923,0
+alto-parana/tavapy,alto-parana,tavapy,Tavapy,6903,0
+alto-parana/yguazu,alto-parana,yguazu,Yguazú,8131,0
+amambay/bella-vista-norte,amambay,bella-vista-norte,Bella Vista Norte,12027,0
+amambay/capitan-bado,amambay,capitan-bado,Capitán Bado,18851,0
+amambay/cerro-cora,amambay,cerro-cora,Cerro Corá,10690,0
+amambay/pedro-juan-caballero,amambay,pedro-juan-caballero,Pedro Juan Caballero,127437,0
+amambay/zanja-pyta,amambay,zanja-pyta,Zanja Pytá,5419,0
+asuncion,asuncion,asuncion,Asunción,462241,14
+boqueron/boqueron,boqueron,boqueron,Boquerón,16764,0
+boqueron/filadelfia,boqueron,filadelfia,Filadelfia,20595,0
+boqueron/loma-plata,boqueron,loma-plata,Loma Plata,20545,0
+boqueron/mariscal-estigarribia,boqueron,mariscal-estigarribia,Mariscal Estigarribia,13174,0
+caaguazu/caaguazu,caaguazu,caaguazu,Caaguazú,98200,0
+caaguazu/carayao,caaguazu,carayao,Carayaó,10832,0
+caaguazu/coronel-oviedo,caaguazu,coronel-oviedo,Coronel Oviedo,98323,0
+caaguazu/doctor-juan-eulogio-estigarribia,caaguazu,doctor-juan-eulogio-estigarribia,Doctor Juan Eulogio Estigarribia,38894,0
+caaguazu/doctor-juan-manuel-frutos,caaguazu,doctor-juan-manuel-frutos,Doctor Juan Manuel Frutos,20451,0
+caaguazu/jose-domingo-ocampos,caaguazu,jose-domingo-ocampos,José Domingo Ocampos,7459,0
+caaguazu/mariscal-lopez,caaguazu,mariscal-lopez,Mariscal López,5338,0
+caaguazu/r-i-tres-corrales,caaguazu,r-i-tres-corrales,R.I. Tres Corrales,6021,0
+caaguazu/raul-arsenio-oviedo,caaguazu,raul-arsenio-oviedo,Raúl Arsenio Oviedo,12543,0
+caaguazu/repatriacion,caaguazu,repatriacion,Repatriación,24459,0
+caaguazu/san-joaquin,caaguazu,san-joaquin,San Joaquín,11949,0
+caaguazu/san-jose-de-los-arroyos,caaguazu,san-jose-de-los-arroyos,San José de los Arroyos,13926,0
+caaguazu/santa-rosa-del-mbutuy,caaguazu,santa-rosa-del-mbutuy,Santa Rosa del Mbutuy,8467,0
+caaguazu/tembiapora,caaguazu,tembiapora,Tembiaporá,12877,0
+caaguazu/tres-de-febrero,caaguazu,tres-de-febrero,Tres de Febrero,7492,0
+caaguazu/vaqueria,caaguazu,vaqueria,Vaquería,10498,0
+caaguazu/yhu,caaguazu,yhu,Yhú,22524,0
+caazapa/abai,caazapa,abai,Abaí,21964,0
+caazapa/caazapa,caazapa,caazapa,Caazapá,23654,0
+caazapa/fulgencio-yegros,caazapa,fulgencio-yegros,Fulgencio Yegros,5072,0
+caazapa/san-juan-nepomuceno,caazapa,san-juan-nepomuceno,San Juan Nepomuceno,28233,0
+caazapa/tavai,caazapa,tavai,Tavaí,16409,0
+caazapa/tres-de-mayo,caazapa,tres-de-mayo,Tres de Mayo,12923,0
+caazapa/yuty,caazapa,yuty,Yuty,14924,0
+canindeyu/corpus-christi,canindeyu,corpus-christi,Corpus Christi,7739,0
+canindeyu/curuguaty,canindeyu,curuguaty,Curuguaty,33561,0
+canindeyu/general-alvarez,canindeyu,general-alvarez,General Álvarez,7842,0
+canindeyu/katuete,canindeyu,katuete,Katueté,10774,0
+canindeyu/la-paloma-del-espiritu-santo,canindeyu,la-paloma-del-espiritu-santo,La Paloma del Espíritu Santo,7284,0
+canindeyu/maracana,canindeyu,maracana,Maracaná,15357,0
+canindeyu/nueva-esperanza,canindeyu,nueva-esperanza,Nueva Esperanza,11069,0
+canindeyu/salto-del-guaira,canindeyu,salto-del-guaira,Salto del Guairá,28553,0
+canindeyu/villa-ygatimi,canindeyu,villa-ygatimi,Villa Ygatimí,13074,0
+canindeyu/yasy-cany,canindeyu,yasy-cany,Yasy Cañy,20399,0
+canindeyu/yby-pyta,canindeyu,yby-pyta,Yby Pytá,12284,0
+canindeyu/ybyrarobana,canindeyu,ybyrarobana,Ybyrarobaná,8468,0
+canindeyu/ypejhu,canindeyu,ypejhu,Ypejhú,8607,0
+central/aregua,central,aregua,Areguá,70298,5
+central/capiata,central,capiata,Capiatá,236999,0
+central/fernando-de-la-mora,central,fernando-de-la-mora,Fernando de la Mora,110255,10
+central/guarambare,central,guarambare,Guarambaré,27695,0
+central/ita,central,ita,Itá,69049,0
+central/itaugua,central,itaugua,Itauguá,93213,0
+central/julian-augusto-saldivar,central,julian-augusto-saldivar,Julián Augusto Saldívar,60162,0
+central/lambare,central,lambare,Lambaré,127150,10
+central/limpio,central,limpio,Limpio,139652,3
+central/luque,central,luque,Luque,259705,10
+central/mariano-roque-alonso,central,mariano-roque-alonso,Mariano Roque Alonso,85133,8
+central/nemby,central,nemby,Ñemby,116383,4
+central/nueva-italia,central,nueva-italia,Nueva Italia,9941,0
+central/san-antonio,central,san-antonio,San Antonio,57843,0
+central/san-lorenzo,central,san-lorenzo,San Lorenzo,225395,6
+central/villa-elisa,central,villa-elisa,Villa Elisa,71383,5
+central/villeta,central,villeta,Villeta,35941,0
+central/ypacarai,central,ypacarai,Ypacaraí,21030,5
+central/ypane,central,ypane,Ypané,66700,0
+concepcion/arroyito,concepcion,arroyito,Arroyito,8292,0
+concepcion/azotey,concepcion,azotey,Azotey,6731,0
+concepcion/belen,concepcion,belen,Belén,10605,0
+concepcion/concepcion,concepcion,concepcion,Concepción,73360,0
+concepcion/horqueta,concepcion,horqueta,Horqueta,39548,0
+concepcion/loreto,concepcion,loreto,Loreto,13580,0
+concepcion/paso-horqueta,concepcion,paso-horqueta,Paso Horqueta,7646,0
+concepcion/san-lazaro,concepcion,san-lazaro,San Lázaro,11192,0
+concepcion/sargento-jose-felix-lopez,concepcion,sargento-jose-felix-lopez,Sargento José Félix López,6153,0
+concepcion/yby-yau,concepcion,yby-yau,Yby Yaú,19468,0
+cordillera/altos,cordillera,altos,Altos,14461,4
+cordillera/arroyos-y-esteros,cordillera,arroyos-y-esteros,Arroyos y Esteros,20347,0
+cordillera/atyra,cordillera,atyra,Atyrá,15988,0
+cordillera/caacupe,cordillera,caacupe,Caacupé,50409,0
+cordillera/caraguatay,cordillera,caraguatay,Caraguatay,10143,0
+cordillera/emboscada,cordillera,emboscada,Emboscada,21182,0
+cordillera/eusebio-ayala,cordillera,eusebio-ayala,Eusebio Ayala,19334,0
+cordillera/isla-pucu,cordillera,isla-pucu,Isla Pucú,5304,0
+cordillera/itacurubi-de-la-cordillera,cordillera,itacurubi-de-la-cordillera,Itacurubí de la Cordillera,8961,0
+cordillera/juan-de-mena,cordillera,juan-de-mena,Juan de Mena,6341,0
+cordillera/piribebuy,cordillera,piribebuy,Piribebuy,25758,0
+cordillera/san-bernardino,cordillera,san-bernardino,San Bernardino,12216,5
+cordillera/tobati,cordillera,tobati,Tobatí,27435,0
+cordillera/valenzuela,cordillera,valenzuela,Valenzuela,5907,0
+guaira/borja,guaira,borja,Borja,7758,0
+guaira/capitan-mauricio-jose-troche,guaira,capitan-mauricio-jose-troche,Capitán Mauricio José Troche,9590,0
+guaira/general-eugenio-a-garay,guaira,general-eugenio-a-garay,General Eugenio A. Garay,6752,0
+guaira/independencia,guaira,independencia,Independencia,19235,0
+guaira/itape,guaira,itape,Itapé,6070,0
+guaira/iturbe,guaira,iturbe,Iturbe,7166,0
+guaira/jose-fassardi,guaira,jose-fassardi,José Fassardi,5139,0
+guaira/mbocayaty-del-guaira,guaira,mbocayaty-del-guaira,Mbocayaty del Guairá,8003,0
+guaira/paso-yobai,guaira,paso-yobai,Paso Yobái,20562,0
+guaira/villarrica,guaira,villarrica,Villarrica,62565,0
+itapua/alto-vera,itapua,alto-vera,Alto Verá,11503,0
+itapua/bella-vista-sur,itapua,bella-vista-sur,Bella Vista Sur,10447,0
+itapua/cambyreta,itapua,cambyreta,Cambyretá,47717,0
+itapua/capitan-meza,itapua,capitan-meza,Capitán Meza,9253,0
+itapua/capitan-miranda,itapua,capitan-miranda,Capitán Miranda,9528,0
+itapua/carlos-antonio-lopez,itapua,carlos-antonio-lopez,Carlos Antonio López,13792,0
+itapua/carmen-del-parana,itapua,carmen-del-parana,Carmen del Paraná,6417,0
+itapua/coronel-bogado,itapua,coronel-bogado,Coronel Bogado,17192,0
+itapua/edelira,itapua,edelira,Edelira,17362,0
+itapua/encarnacion,itapua,encarnacion,Encarnación,106842,8
+itapua/fram,itapua,fram,Fram,8357,0
+itapua/general-artigas,itapua,general-artigas,General Artigas,8623,0
+itapua/general-delgado,itapua,general-delgado,General Delgado,5695,0
+itapua/hohenau,itapua,hohenau,Hohenau,12809,0
+itapua/itapua-poty,itapua,itapua-poty,Itapúa Poty,9273,0
+itapua/jesus,itapua,jesus,Jesús,5197,0
+itapua/mayor-otano,itapua,mayor-otano,Mayor Otaño,10101,0
+itapua/natalio,itapua,natalio,Natalio,14865,0
+itapua/obligado,itapua,obligado,Obligado,13606,0
+itapua/pirapo,itapua,pirapo,Pirapó,6075,0
+itapua/san-cosme-y-damian,itapua,san-cosme-y-damian,San Cosme y Damián,7397,0
+itapua/san-juan-del-parana,itapua,san-juan-del-parana,San Juan del Paraná,9083,0
+itapua/san-pedro-del-parana,itapua,san-pedro-del-parana,San Pedro del Paraná,22318,0
+itapua/san-rafael-del-parana,itapua,san-rafael-del-parana,San Rafael del Paraná,14166,0
+itapua/tomas-romero-pereira,itapua,tomas-romero-pereira,Tomás Romero Pereira,25419,0
+itapua/trinidad,itapua,trinidad,Trinidad,7972,0
+itapua/yatytay,itapua,yatytay,Yatytay,8651,0
+misiones/ayolas,misiones,ayolas,Ayolas,17337,0
+misiones/san-ignacio-guazu,misiones,san-ignacio-guazu,San Ignacio Guazú,29430,0
+misiones/san-juan-bautista,misiones,san-juan-bautista,San Juan Bautista,20979,0
+misiones/san-miguel,misiones,san-miguel,San Miguel,5116,0
+misiones/santa-maria-de-fe,misiones,santa-maria-de-fe,Santa María de Fe,7481,0
+misiones/santa-rosa-de-lima,misiones,santa-rosa-de-lima,Santa Rosa de Lima,16403,0
+misiones/santiago,misiones,santiago,Santiago,5995,0
+neembucu/alberdi,neembucu,alberdi,Alberdi,7536,0
+neembucu/pilar,neembucu,pilar,Pilar,34741,0
+paraguari/acahay,paraguari,acahay,Acahay,12646,0
+paraguari/caapucu,paraguari,caapucu,Caapucú,6045,0
+paraguari/carapegua,paraguari,carapegua,Carapeguá,29351,0
+paraguari/la-colmena,paraguari,la-colmena,La Colmena,5254,0
+paraguari/mbuyapey,paraguari,mbuyapey,Mbuyapey,6838,0
+paraguari/paraguari,paraguari,paraguari,Paraguarí,20678,0
+paraguari/pirayu,paraguari,pirayu,Pirayú,17419,0
+paraguari/quiindy,paraguari,quiindy,Quiindy,14488,0
+paraguari/san-roque,paraguari,san-roque,San Roque,9637,0
+paraguari/sapucai,paraguari,sapucai,Sapucai,5218,0
+paraguari/yaguaron,paraguari,yaguaron,Yaguarón,29242,0
+paraguari/ybycui,paraguari,ybycui,Ybycuí,17972,0
+paraguari/ybytymi,paraguari,ybytymi,Ybytymí,5360,0
+presidente-hayes/benjamin-aceval,presidente-hayes,benjamin-aceval,Benjamín Aceval,22008,0
+presidente-hayes/campo-aceval,presidente-hayes,campo-aceval,Campo Aceval,5848,0
+presidente-hayes/nanawa,presidente-hayes,nanawa,Nanawa,6005,0
+presidente-hayes/puerto-pinasco,presidente-hayes,puerto-pinasco,Puerto Pinasco,9241,0
+presidente-hayes/teniente-irala,presidente-hayes,teniente-irala,Teniente Irala,20145,0
+presidente-hayes/villa-hayes,presidente-hayes,villa-hayes,Villa Hayes,47967,0
+san-pedro/25-de-diciembre,san-pedro,25-de-diciembre,25 de Diciembre,8703,0
+san-pedro/capiibary,san-pedro,capiibary,Capiibary,30570,0
+san-pedro/chore,san-pedro,chore,Choré,23548,0
+san-pedro/general-elizardo-aquino,san-pedro,general-elizardo-aquino,General Elizardo Aquino,16971,0
+san-pedro/general-isidoro-resquin,san-pedro,general-isidoro-resquin,General Isidoro Resquín,10019,0
+san-pedro/guayaibi,san-pedro,guayaibi,Guayaibí,28214,0
+san-pedro/itacurubi-del-rosario,san-pedro,itacurubi-del-rosario,Itacurubí del Rosario,10507,0
+san-pedro/liberacion,san-pedro,liberacion,Liberación,19100,0
+san-pedro/lima,san-pedro,lima,Lima,10303,0
+san-pedro/nueva-germania,san-pedro,nueva-germania,Nueva Germania,5690,0
+san-pedro/san-estanislao,san-pedro,san-estanislao,San Estanislao,46405,0
+san-pedro/san-pedro-de-ycuamandiyu,san-pedro,san-pedro-de-ycuamandiyu,San Pedro de Ycuamandiyú,32267,0
+san-pedro/san-vicente-pancholo,san-pedro,san-vicente-pancholo,San Vicente Pancholo,11571,0
+san-pedro/santa-rosa-del-aguaray,san-pedro,santa-rosa-del-aguaray,Santa Rosa del Aguaray,39643,0
+san-pedro/tacuati,san-pedro,tacuati,Tacuatí,13847,0
+san-pedro/union,san-pedro,union,Unión,5032,0
+san-pedro/villa-del-rosario,san-pedro,villa-del-rosario,Villa del Rosario,8617,0
+san-pedro/yataity-del-norte,san-pedro,yataity-del-norte,Yataity del Norte,10113,0
+san-pedro/yrybucua,san-pedro,yrybucua,Yrybucuá,12271,0
