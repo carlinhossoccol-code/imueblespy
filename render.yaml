@@ -1,0 +1,36 @@
+services:
+  - type: web
+    name: inmueblespy
+    runtime: static
+    buildCommand: echo "Pre-rendered HTML checked before deployment"
+    staticPublishPath: ./site
+    domains:
+      - inmueblespy.com.py
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
+      - path: /*
+        name: Permissions-Policy
+        value: camera=(), microphone=(), geolocation=()
+      - path: /*
+        name: Content-Security-Policy
+        value: "default-src 'self'; img-src 'self' https://morarnoparaguai.com.br data:; style-src 'self'; script-src 'self'; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; upgrade-insecure-requests"
+      - path: /assets/*
+        name: Cache-Control
+        value: public, max-age=86400
+      - path: /sitemaps/*
+        name: Cache-Control
+        value: public, max-age=3600
+      - path: /es/*
+        name: Cache-Control
+        value: public, max-age=600, must-revalidate
+      - path: /pt-br/*
+        name: Cache-Control
+        value: public, max-age=600, must-revalidate

@@ -1,0 +1,44 @@
+/* v10 verified UI refinements: mobile-first and accessible controls */
+@media(max-width:740px){
+.searchbar{display:flex;flex-direction:row;align-items:center;gap:6px;padding:8px;min-height:62px}
+.searchbar input{flex:1 1 auto;width:0;min-width:0;height:45px;padding:0 10px;font-size:14px}
+.searchbar button{flex:0 0 auto;width:auto;min-width:78px;min-height:44px;padding:8px 11px;font-size:13px}
+.hero-in{padding:35px 0 37px}
+.hero h1{font-size:clamp(29px,7.4vw,42px);line-height:1.12}
+.company .actions .btn{min-height:44px}
+}
+@media(max-width:360px){.shell{width:calc(100% - 24px)}.searchbar{gap:3px}.searchbar button{min-width:72px;padding:7px 8px;font-size:12px}.searchbar input{font-size:13px;padding-left:8px}.hero h1{font-size:28px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.tile,.btn{transition:none!important;transform:none!important}}
+.v10-price-evidence,.v10-national-help{margin-top:24px;margin-bottom:24px;padding:24px;border:1px solid #c9ded7;border-radius:16px;background:#fff}
+.v10-price-evidence h2,.v10-national-help h2{font-size:clamp(20px,2.2vw,26px);margin:0 0 12px;line-height:1.3}
+.v10-price-evidence p,.v10-national-help p{max-width:75ch;color:#36575c;line-height:1.65;margin:0 0 11px}
+.v10-price-evidence .v10-price-value{font-size:clamp(26px,4vw,34px);font-weight:800;color:#12343b;font-variant-numeric:tabular-nums}
+.v10-price-evidence .v10-source{font-size:14px}
+.v10-price-evidence .v10-source a{text-decoration:underline;text-underline-offset:3px}
+:where(.v10-price-evidence,.v10-national-help) a:focus-visible{outline:3px solid #d6b67c;outline-offset:3px}
+@media(min-width:1050px){.v10-price-evidence,.v10-national-help{width:min(1240px,calc(100% - 40px))}}
+/* 320px device repair, verified with DOM geometry. */
+@media(max-width:360px){
+.nav{gap:6px;justify-content:space-between}
+.logo{min-width:0;flex:0 1 151px}
+.logo img{width:142px;max-width:100%}
+.rightnav{gap:5px;flex-shrink:0}
+.lang{padding:7px 8px;font-size:12px}
+.mobile-toggle{width:44px;height:44px;flex-shrink:0}
+.footer-columns{grid-template-columns:minmax(0,1fr);gap:18px}
+.footer-columns>*{min-width:0;overflow-wrap:anywhere}
+}
+/* Wide source tables scroll within their own panel, never widen a phone viewport. */
+.ep-module{min-width:0;max-width:100%;overflow:hidden}
+.ep-table-wrap{display:block;width:100%;max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+.ep-table-wrap table{table-layout:auto}
+/* Prevent intrinsic width of long agency names from expanding 320px grids. */
+@media(max-width:740px){
+.sectiongrid{grid-template-columns:minmax(0,1fr)}
+.sectiongrid>*{min-width:0;max-width:100%}
+.company{min-width:0;grid-template-columns:52px minmax(0,1fr)}
+.company>*{min-width:0}
+.company h3,.company .meta{overflow-wrap:anywhere}
+.company .actions{min-width:0;max-width:100%}
+}
+@media(max-width:360px){.gridlist{grid-template-columns:minmax(0,1fr)}.gridlist a{min-width:0;overflow-wrap:anywhere}}
