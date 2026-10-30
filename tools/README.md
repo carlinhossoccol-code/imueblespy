@@ -8,12 +8,20 @@ change reproducible across thousands of URLs and checkable afterwards.
 ## Everyday use
 
 ```sh
-python3 tools/extract_dataset.py     # recover facts from the corpus
+python3 tools/validate_data.py       # check data/ before anything reads it
 python3 tools/apply_codemods.py      # apply every transformation (idempotent)
 python3 tools/build_sitemaps.py      # refresh lastmod from page content
 python3 tools/audit.py               # gate: non-zero exit if a check fails
-node    tools/browser/check.mjs      # real-browser checks (needs a local server)
+python3 tools/check_environment.py   # what the host will publish and send
+node    tools/browser/check.mjs      # responsiveness and accessibility
+node    tools/browser/journeys.mjs   # the fifteen user journeys
 ```
+
+The data files are the input. `tools/extract_dataset.py` and
+`tools/export_csv.py` exist to *recover* them from the rendered HTML, which was
+necessary once because the site arrived with no generator. Day to day, edit the
+CSV and run the codemods; do not re-derive the data from pages the codemods
+themselves wrote.
 
 For the browser suite, serve the site first:
 
@@ -35,6 +43,11 @@ BASE=http://127.0.0.1:8899 OUT=/tmp/shots node tools/browser/check.mjs
 | `tools/build_sitemaps.py` | Content-derived `<lastmod>`, stored in `data/lastmod.json` |
 | `data/dataset.json` | Ground truth: agencies, cities, price references, counts |
 | `data/lastmod.json` | Per-URL content hash and the date it last changed |
+| `data/*.csv` | The source of truth: departments, municipalities, neighbourhoods, professionals, prices, coordinates |
+| `tools/match_geonames.py` | Attaches GeoNames coordinates to municipalities |
+| `tools/check_environment.py` | Publishable files, headers, CSP, 404, secrets |
+| `tools/browser/journeys.mjs` | Fifteen end-to-end journeys with assertions |
+| `tools/browser/overflow-debug.mjs` | Finds what actually widens the document |
 
 ## Rules for a codemod
 
@@ -54,11 +67,34 @@ same figure, and when they were maintained separately 96 pages ended up
 contradicting themselves. `facts.Facts` is the single authority, and
 `audit.py`'s `counts` check fails if any published figure disagrees with it.
 
-## Known limitation
+## Differentiating municipalities
 
-`doorway_cities` is a warning, not a blocker. 121 of 195 municipalities have no
-seated professional, no registered neighbourhood and no price reference, so
-population is the only datum that distinguishes their category pages. More
-prose cannot fix that; either per-city data is acquired, or the thin
-municipalities' four category pages are consolidated into the city page with
-redirects.
+`doorway_cities` is a blocking check. It compares the same category across
+municipalities, which is the axis that breaks when shared guidance is added to
+every page.
+
+It was resolved with geography, not with prose. `data/municipality_coordinates.csv`
+carries a GeoNames coordinate for 194 of 195 municipalities, which lets two
+things be real rather than approximated:
+
+- nearby professionals are ranked by actual distance, so neighbouring
+  municipalities no longer list identical firms in identical order
+- each municipality publishes its own location facts: distance to Asunción,
+  orientation relative to the department's largest city, national population
+  rank, and the five nearest localities with population and professional counts
+
+All 195 municipalities have a different set of nearest neighbours, so this is
+each page's own content. Measured over 2,860 cross-municipality pairs, maximum
+similarity fell from 0.859 to 0.718.
+
+If a future change pushes the check back over its threshold, add data rather
+than text. Padding pages with generic prose to move a number is the failure
+mode this check exists to catch.
+
+## What is not recoverable here
+
+The original generators and CSVs were never in this repository: `git log
+--diff-filter=A` shows only rendered output. The pages themselves record that
+an observed price reference exists for 36 municipality/category pairs whose
+value was never published, so the upstream source held more than the HTML
+exposes. Those values can only come from that source.

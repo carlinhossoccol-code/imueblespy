@@ -42,6 +42,16 @@ for (const [name, path] of PAGES) {
     page.on('pageerror', e => consoleErrors.push(String(e)));
     try {
       await page.goto(BASE + path, { waitUntil: 'load', timeout: 20000 });
+      if (name === 'root') {
+        // The root redirects to /es/. Confirm that and move on: evaluating in
+        // a context that is navigating away is not a defect.
+        await page.waitForURL(/\/es\/$/, { timeout: 8000 }).catch(() => {});
+        if (!/\/es\/$/.test(page.url())) {
+          results.errors.push({ name, w, errors: [`root did not redirect, at ${page.url()}`] });
+        }
+        await ctx.close();
+        continue;
+      }
       const info = await page.evaluate(() => {
         const de = document.documentElement;
         const over = [];
@@ -77,6 +87,7 @@ for (const [name, path] of PAGES) {
 
 // ------------------------------------------------- a11y + metrics + interaction
 for (const [name, path] of PAGES) {
+  if (name === 'root') continue;   // verified in the overflow pass above
   const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
   const page = await ctx.newPage();
   try {
