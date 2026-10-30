@@ -38,6 +38,13 @@ page's own latency: the full directory page measured Lighthouse 92 with
 570 ms of server latency on the serial server, and 100 with 0 ms on this one.
 A performance number taken against a serial server is measuring the server.
 
+## Deploying
+
+See `DEPLOY.md`. In short: run `./tools/run_all.sh` green, deploy to the
+temporary Render host, then `python3 -I tools/check_http.py <url>` and require
+the eleven platform checks to pass there before touching the definitive
+domain.
+
 ## What lives where
 
 | Path | Role |
@@ -60,6 +67,7 @@ A performance number taken against a serial server is measuring the server.
 | `tools/browser/lighthouse.mjs` | Lighthouse, mobile and desktop |
 | `tools/serve.py` | Threaded local server, used by every browser check |
 | `tools/run_all.sh` | The whole pipeline, in the only correct order |
+| `tools/check_http.py` | Verifies a deployed host over real HTTP |
 
 ## Rules for a codemod
 
