@@ -4,13 +4,16 @@ services:
     runtime: static
     buildCommand: echo "Pre-rendered HTML checked before deployment"
     staticPublishPath: ./site
-    routes:
-      - type: redirect
-        source: /
-        destination: /es/
-      - type: redirect
-        source: /index.html
-        destination: /es/
+    # No redirect route for the site root: Render documents that it "does not
+    # apply redirect or rewrite rules to a path if a resource exists at that
+    # path", and that rules cannot be applied to the domain root at all. A rule
+    # here was dead config - verified against production, where both / and
+    # /index.html answer 200 and serve the file.
+    #
+    # site/index.html is therefore the mechanism: a noindex stub whose canonical
+    # points at /es/ and which refreshes there immediately. For a real 301, add
+    # a Redirect Rule at Cloudflare, which sits in front of this domain. See
+    # DEPLOY.md.
     domains:
       - inmueblespy.com.py
     headers:

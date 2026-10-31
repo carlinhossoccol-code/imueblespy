@@ -56,6 +56,36 @@ BASE=https://inmueblespy.onrender.com node tools/browser/check.mjs
 Both read `BASE`, so the same 18 journeys and the same nine widths run against
 the deployed host.
 
+## The site root: a known platform limitation
+
+`/` does not answer with an HTTP redirect, and on Render it cannot. Their
+documentation states that Render "does not apply redirect or rewrite rules to a
+path if a resource exists at that path", and that rules cannot be applied to
+the domain root at all. Verified against production: both `/` and
+`/index.html` answer `200` and serve the file.
+
+What ships instead is `site/index.html`: a `noindex` stub whose canonical points
+at `/es/` and which refreshes there immediately. A visitor lands on the Spanish
+homepage either way; a crawler follows the canonical. It costs one extra round
+trip and is a weaker signal than a `301`.
+
+**To get a real 301**, add a Redirect Rule at Cloudflare, which already sits in
+front of this domain:
+
+| Field | Value |
+| --- | --- |
+| When incoming requests match | `http.request.uri.path eq "/"` |
+| Then | Static redirect |
+| Type | Permanent (301) |
+| Target URL | `https://inmueblespy.com.py/es/` |
+
+Leave `site/index.html` in place as the fallback. After adding the rule,
+re-run `python3 -I tools/check_http.py https://inmueblespy.com.py`; the
+`root-redirect` line should then read `301 -> …/es/` instead of naming the stub.
+
+Nothing in this repository changes Cloudflare, and nothing here should: that
+rule is yours to add.
+
 ## Only then, the definitive domain
 
 Point `inmueblespy.com.py` at the service once the temporary host passes, and

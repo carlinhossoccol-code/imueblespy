@@ -37,14 +37,22 @@ def fetch(url, method="GET", redirect=True):
     opener = urllib.request.build_opener(*([] if redirect else [NoRedirect]))
     req = urllib.request.Request(url, method=method,
                                  headers={"User-Agent": UA, "Accept-Encoding": "gzip"})
+    def body_of(resp):
+        raw = resp.read()
+        if _lower(resp.headers).get("content-encoding") == "gzip":
+            try:
+                return gzip.GzipFile(fileobj=io.BytesIO(raw)).read()
+            except OSError:
+                return raw
+        return raw
+
     try:
         r = opener.open(req, timeout=25)
-        body = r.read()
-        if r.headers.get("Content-Encoding") == "gzip":
-            body = gzip.GzipFile(fileobj=io.BytesIO(body)).read()
-        return r.status, _lower(r.headers), body
+        return r.status, _lower(r.headers), body_of(r)
     except urllib.error.HTTPError as e:
-        return e.code, _lower(e.headers), e.read()
+        # An error response is compressed too; reading it raw hid the fact
+        # that the production 404 really does serve site/404.html.
+        return e.code, _lower(e.headers), body_of(e)
     except Exception as e:  # noqa: BLE001
         return 0, {}, str(e).encode()
 
@@ -60,10 +68,19 @@ def main() -> int:
         results.append((name, ok, detail, platform))
 
     # --- root behaviour -----------------------------------------------
-    st, hd, _ = fetch(base + "/", redirect=False)
+    st, hd, body = fetch(base + "/", redirect=False)
     loc = hd.get("location", "")
-    record("root-redirect", st in (301, 302, 308) and loc.rstrip("/").endswith("/es"),
-           f"{st} -> {loc or 'no Location'}", platform=True)
+    if st in (301, 302, 308) and loc.rstrip("/").endswith("/es"):
+        record("root-redirect", True, f"{st} -> {loc}")
+    else:
+        # Render cannot redirect the domain root, so the shipped fallback is a
+        # noindex stub that refreshes to /es/. That is a pass for the visitor;
+        # an edge-level 301 would still be better for crawlers.
+        stub = (st == 200 and b"noindex" in body.lower()
+                and b'url=/es/' in body.replace(b" ", b""))
+        record("root-redirect", stub,
+               f"{st}, noindex stub refreshing to /es/ (no edge 301; see DEPLOY.md)"
+               if stub else f"{st} -> {loc or 'no Location'}, and no working fallback")
 
     # --- page families -------------------------------------------------
     for path in ("/es/", "/pt-br/", "/es/venta/central/luque/terrenos/",
