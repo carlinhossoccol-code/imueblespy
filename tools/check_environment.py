@@ -73,8 +73,19 @@ for name, value in REQUIRED.items():
         fail(f"render.yaml sets {name} but not to {value}")
 if "name: Strict-Transport-Security" not in render:
     fail("render.yaml does not set Strict-Transport-Security")
-if "type: redirect" not in render:
-    fail("render.yaml has no redirect route for the site root")
+# Render cannot redirect the domain root, so the stub is the mechanism; what
+# matters is that it exists, is noindex, and points at /es/.
+root = os.path.join(C.SITE, "index.html")
+if not os.path.exists(root):
+    fail("site/index.html is missing: nothing answers the domain root")
+else:
+    body = C.read(root)
+    if "noindex" not in body:
+        fail("site/index.html is not noindex; it would compete with /es/")
+    if 'url=/es/' not in body.replace(" ", ""):
+        fail("site/index.html does not send the visitor to /es/")
+    if 'rel="canonical" href="https://inmueblespy.com.py/es/"' not in body:
+        fail("site/index.html does not declare /es/ as its canonical")
 ok("security headers declared in render.yaml")
 
 # --------------------------------------------------------- CSP compatibility
