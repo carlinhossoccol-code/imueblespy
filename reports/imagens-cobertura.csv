@@ -1,0 +1,274 @@
+profile_id,nome,cidade,origem_identidade,escopo,fotos_na_pasta,aproveitadas,tipos,situacao,rejeitadas_conteudo
+7,AYRES SOLUCIONES INMOBILIARIAS,,revisao_manual,completo,2,2,"fachada,fachada",com_imagens,0
+20,EDIPAR,,revisao_manual,principal,4,1,logo,com_imagens,2
+25,GESTION INMOBILIARIA NAVARRO,,revisao_manual,completo,10,3,"fachada,fachada,institucional",com_imagens,5
+27,GREENLAND PROPERTIES & PARTNERS,,revisao_manual,principal,10,1,logo,com_imagens,9
+28,Guilhem Costa,,revisao_manual,principal,5,1,logo,com_imagens,1
+31,IDEES,,revisao_manual,principal,2,1,institucional,com_imagens,1
+32,IN ASESORES INMOBILIARIOS,,revisao_manual,completo,2,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,2
+34,INMUEBLES ROQUE ALONSO,,revisao_manual,completo,1,1,logo,com_imagens,0
+43,M2 INMOBILIARIA,,revisao_manual,completo,10,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,10
+58,PRANA DESARROLLO INMOBILIARIO,,revisao_manual,completo,2,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,2
+65,ROSARITO RAMIREZ INMOBILIARIA,,revisao_manual,completo,10,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,10
+71,SOMELSON PROPIEDADES,,revisao_manual,completo,2,2,"logo,fachada",com_imagens,0
+74,TEAM DELFI CHASE,,revisao_manual,principal,1,1,logo,com_imagens,0
+82,VMB EMPRENDIMIENTOS INMOBILIARIOS,,revisao_manual,completo,1,1,logo,com_imagens,0
+86,ZARACHO PROPIEDADES,,revisao_manual,completo,1,1,logo,com_imagens,0
+89,Atlántica de Inmuebles S.A. — Ciudad del Este,Ciudad del Este,regras,completo,10,1,fachada,com_imagens,9
+90,Bigal Servicios Inmobiliarios,Ciudad del Este,regras,completo,1,1,logo,com_imagens,0
+91,C4 Inmuebles,Ciudad del Este,revisao_manual,completo,10,2,"interior,institucional",com_imagens,8
+92,Centro Inmobiliaria,Ciudad del Este,regras,completo,9,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,9
+93,CENTURY 21 Invest,Ciudad del Este,regras,completo,3,3,"fachada,interior,interior",com_imagens,0
+95,CENTURY 21 Premium,Ciudad del Este,regras,completo,1,1,logo,com_imagens,0
+103,Gavilán Emprendimientos,Ciudad del Este,regras,completo,2,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,2
+105,HB Inmobiliaria S.A.,Ciudad del Este,revisao_manual,completo,4,1,logo,com_imagens,3
+106,Inmobiliaria del Este (IDESA) - Ciudad del Este,Ciudad del Este,regras,completo,10,2,"fachada,fachada",com_imagens,7
+108,Inmobiliaria My House Py,Ciudad del Este,regras,completo,10,1,fachada,com_imagens,9
+110,Inmo Loteamientos — Ciudad del Este,Ciudad del Este,regras,completo,1,1,logo,com_imagens,0
+111,INOVA INMOBILIARIA S.A.,Ciudad del Este,regras,completo,9,2,"interior,interior",com_imagens,1
+113,Jonathan Helbich — Asesor Inmobiliario,Ciudad del Este,regras,completo,3,2,"equipe,equipe",com_imagens,1
+116,Locadora Atlantic S.A.,Ciudad del Este,regras,completo,10,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,10
+117,Mi Casa Inmobiliaria — Ciudad del Este,Ciudad del Este,revisao_manual,completo,2,1,fachada,com_imagens,1
+118,Ñandejára Imóveis,Ciudad del Este,regras,completo,2,1,logo,com_imagens,1
+122,Primar S.A. Inmobiliaria,Ciudad del Este,regras,completo,3,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,3
+123,Propar S.R.L. — Sucursal Ciudad del Este,Ciudad del Este,regras,completo,8,4,"logo,fachada,fachada,interior",com_imagens,2
+124,Provia Inmobiliaria & Constructora S.A.,Ciudad del Este,regras,completo,10,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,10
+125,Raíces Real Estate — Agencia Ciudad del Este,Ciudad del Este,revisao_manual,completo,3,3,"fachada,interior,interior",com_imagens,0
+126,RE/MAX EXCLUSIVE,Ciudad del Este,regras,completo,3,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,3
+127,RE/MAX INVESTOR,Ciudad del Este,regras,completo,2,2,"logo,interior",com_imagens,0
+128,RE/MAX PORTAL,Ciudad del Este,regras,completo,3,1,fachada,com_imagens,2
+130,RE/MAX QUALITY,Ciudad del Este,regras,completo,1,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,1
+132,Rodan Inmobiliaria — Sucursal Ciudad del Este,Ciudad del Este,regras,completo,7,2,"fachada,fachada",com_imagens,2
+134,Tres Fronteras Inmobiliaria S.A.,Ciudad del Este,regras,completo,10,3,"logo,interior,interior",com_imagens,6
+139,World Imóveis CDE,Ciudad del Este,regras,completo,6,3,"logo,fachada,fachada",com_imagens,3
+141,Inmobiliaria Versátil,Hernandarias,regras,completo,10,2,"fachada,fachada",com_imagens,8
+142,Kala Huala S.A. — Casa Matriz,Hernandarias,regras,completo,10,2,"fachada,fachada",com_imagens,7
+144,SkyOne Empower,Hernandarias,regras,completo,4,2,"logo,equipe",com_imagens,2
+146,Creser Inmobiliaria / Vale do Mel,Itakyry,regras,completo,1,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,1
+148,EMSA Inmobiliaria — Juan E. O’Leary,Juan Emilio O’Leary,regras,completo,1,1,fachada,com_imagens,0
+150,VM GROUP Inmobiliaria,Juan León Mallorquín,revisao_manual,completo,5,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,5
+151,NISA Inmobiliaria — Casa Central,Minga Guazú,regras,completo,4,2,"fachada,fachada",com_imagens,2
+152,Rodan Inmobiliaria — Sucursal Minga Guazú,Minga Guazú,regras,completo,3,2,"fachada,fachada",com_imagens,0
+153,SAAMA Inmobiliaria S.A.,Minga Guazú,regras,completo,2,2,"logo,fachada",com_imagens,0
+156,Inmobiliaria Monday S.A.,Presidente Franco,regras,completo,3,1,logo,com_imagens,2
+157,Mored S.A. Inmobiliaria,Presidente Franco,regras,completo,3,3,"fachada,interior,interior",com_imagens,0
+160,Inmobiliaria Don Leopoldo,Santa Rita,regras,completo,6,3,"fachada,fachada,interior",com_imagens,1
+161,Inmobiliaria Santacruz Dos Santos,Santa Rita,regras,completo,10,1,fachada,com_imagens,9
+162,RE/MAX TERRA,Santa Rita,regras,completo,4,4,"fachada,fachada,interior,interior",com_imagens,0
+163,Inmo Loteamientos — Colonia Yguazú,Yguazú,regras,completo,2,1,fachada,com_imagens,1
+164,EMSA Inmobiliaria — Pedro Juan Caballero,Pedro Juan Caballero,regras,completo,10,2,"fachada,fachada",com_imagens,8
+165,Ideal Emprendimientos S.A.,Pedro Juan Caballero,regras,completo,1,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,1
+166,Inmobiliaria Aquidaban,Pedro Juan Caballero,regras,completo,10,5,"logo,fachada,fachada,interior,interior",com_imagens,3
+167,Montecristo Inmobiliaria S.A.,Pedro Juan Caballero,regras,completo,1,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,1
+168,Prime Real Estate,Pedro Juan Caballero,regras,completo,10,4,"fachada,fachada,interior,interior",com_imagens,4
+169,Raíces Real Estate — Agencia PJC,Pedro Juan Caballero,revisao_manual,completo,6,4,"fachada,fachada,interior,interior",com_imagens,1
+170,Abas Inmobiliaria,Asunción,revisao_manual,completo,10,4,"fachada,fachada,interior,interior",com_imagens,6
+173,Atlántica de Inmuebles S.A. — Agencia Aviadores,Asunción,regras,completo,10,3,"fachada,fachada,interior",com_imagens,7
+174,Atlántica de Inmuebles S.A. — Casa Central,Asunción,regras,completo,10,3,"fachada,interior,interior",com_imagens,4
+175,Aurora Inmobiliaria S.A.,Asunción,regras,completo,10,3,"fachada,fachada,interior",com_imagens,7
+178,Casablanca Inmobiliaria,Asunción,revisao_manual,completo,10,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,10
+179,CENTURY 21 Access,Asunción,regras,completo,3,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,3
+180,CENTURY 21 Adventure,Asunción,regras,completo,1,1,logo,com_imagens,0
+181,CENTURY 21 Alliance,Asunción,regras,completo,2,2,"fachada,fachada",com_imagens,0
+184,CENTURY 21 Black,Asunción,regras,completo,6,2,"fachada,fachada",com_imagens,0
+185,CENTURY 21 Bonanza,Asunción,regras,completo,10,4,"fachada,fachada,interior,interior",com_imagens,0
+186,CENTURY 21 Capital,Asunción,regras,completo,3,2,"fachada,fachada",com_imagens,0
+189,CENTURY 21 Emporio,Asunción,regras,completo,1,1,equipe,com_imagens,0
+191,CENTURY 21 Faro,Asunción,regras,completo,1,1,fachada,com_imagens,0
+192,CENTURY 21 Focus,Asunción,regras,completo,3,3,"logo,fachada,institucional",com_imagens,0
+193,CENTURY 21 Golden,Asunción,regras,completo,9,5,"fachada,fachada,interior,equipe,equipe",com_imagens,2
+194,CENTURY 21 Infinity,Asunción,regras,completo,2,2,"fachada,fachada",com_imagens,0
+196,CENTURY 21 Liberty,Asunción,regras,completo,5,3,"logo,interior,interior",com_imagens,1
+197,CENTURY 21 Magna,Asunción,regras,completo,2,1,interior,com_imagens,1
+198,CENTURY 21 Marfil,Asunción,regras,completo,10,4,"fachada,interior,interior,equipe",com_imagens,0
+199,CENTURY 21 Muñoz Poletti,Asunción,regras,completo,1,1,logo,com_imagens,0
+202,CENTURY 21 Platinum,Asunción,regras,completo,1,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,1
+203,CENTURY 21 Prestigio,Asunción,regras,completo,10,3,"logo,fachada,interior",com_imagens,5
+205,CENTURY 21 Real Property,Asunción,regras,completo,10,4,"fachada,fachada,interior,interior",com_imagens,3
+206,CENTURY 21 Rivas,Asunción,regras,completo,7,3,"logo,fachada,fachada",com_imagens,2
+207,CENTURY 21 Select,Asunción,regras,completo,10,5,"fachada,fachada,interior,equipe,equipe",com_imagens,0
+208,CENTURY 21 Seven,Asunción,regras,completo,9,4,"fachada,fachada,interior,interior",com_imagens,1
+209,CENTURY 21 Signature,Asunción,regras,completo,3,3,"interior,equipe,equipe",com_imagens,0
+210,CENTURY 21 Sky,Asunción,regras,completo,2,1,interior,com_imagens,1
+212,CENTURY 21 Territorio,Asunción,regras,completo,7,4,"fachada,fachada,interior,interior",com_imagens,0
+213,CENTURY 21 White,Asunción,regras,completo,5,1,interior,com_imagens,4
+214,CENTURY 21 Wilson-Chihan,Asunción,regras,completo,5,2,"fachada,fachada",com_imagens,2
+215,Crecer Inmobiliaria - Casa Central,Asunción,regras,completo,7,4,"logo,fachada,fachada,institucional",com_imagens,3
+216,EMSA Inmobiliaria — Casa Central,Asunción,regras,completo,9,1,fachada,com_imagens,8
+217,Grupo Inmobiliario 123 S.A.,Asunción,revisao_manual,completo,10,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,10
+218,Home Hunters Py - Inmobiliaria,Asunción,regras,completo,2,2,"fachada,fachada",com_imagens,0
+219,Inmobiliaria AMERICANA SRL,Asunción,regras,completo,3,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,3
+220,Inmobiliaria del Este (IDESA) — Casa Central Lynch Center,Asunción,regras,completo,3,1,interior,com_imagens,2
+221,Inmobiliaria del Este (IDESA) — Paseo Los Laureles,Asunción,regras,completo,6,4,"fachada,fachada,interior,interior",com_imagens,2
+222,Inmobiliaria del Este (IDESA) — Shopping Mariscal,Asunción,regras,completo,4,1,fachada,com_imagens,3
+223,Inmobiliaria del Este S.A. — Agencia Centro,Asunción,regras,completo,10,2,"interior,interior",com_imagens,8
+224,Inmobiliaria General S.A. — Casa Matriz,Asunción,regras,completo,1,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,1
+225,Inmobiliaria Nueva Alianza Propiedades,Asunción,regras,completo,10,4,"fachada,fachada,interior,interior",com_imagens,3
+227,Kala Huala S.A. — Sucursal Asunción,Asunción,regras,completo,6,2,"fachada,fachada",com_imagens,4
+229,La Loteadora Inmobiliaria S.A.,Asunción,regras,completo,9,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,9
+232,Paraguay Agency,Asunción,regras,completo,1,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,1
+234,Propar S.R.L. — Sucursal Asunción,Asunción,regras,completo,1,1,fachada,com_imagens,0
+235,Propietario Inmobiliaria,Asunción,regras,completo,2,2,"fachada,fachada",com_imagens,0
+236,Raíces Real Estate — Agencia Asunción,Asunción,revisao_manual,principal,8,1,fachada,com_imagens,1
+237,RE/MAX BLACK,Asunción,regras,completo,2,1,fachada,com_imagens,1
+238,RE/MAX CENTRAL,Asunción,regras,completo,3,2,"fachada,fachada",com_imagens,0
+239,RE/MAX CITY,Asunción,regras,completo,2,2,"fachada,fachada",com_imagens,0
+240,RE/MAX Conexión,Asunción,regras,completo,10,4,"fachada,fachada,interior,interior",com_imagens,5
+241,RE/MAX Contigo,Asunción,revisao_manual,completo,1,1,fachada,com_imagens,0
+242,RE/MAX COSMOPOLITA,Asunción,regras,completo,8,3,"interior,interior,equipe",com_imagens,0
+243,RE/MAX CUMBRE,Asunción,regras,completo,10,2,"equipe,equipe",com_imagens,5
+244,RE/MAX ELITE,Asunción,regras,completo,5,2,"fachada,interior",com_imagens,3
+245,RE/MAX EXPERIENCE,Asunción,regras,completo,4,3,"logo,interior,interior",com_imagens,1
+246,RE/MAX FAMILY,Asunción,regras,completo,10,5,"logo,fachada,interior,interior,equipe",com_imagens,3
+249,RE/MAX GÉNESIS,Asunción,regras,completo,4,1,logo,com_imagens,2
+251,RE/MAX GUIMAR,Asunción,regras,completo,5,1,logo,com_imagens,4
+255,RE/MAX Paraguay,Asunción,regras,completo,7,3,"fachada,fachada,equipe",com_imagens,4
+257,RE/MAX PREMIER,Asunción,regras,completo,7,4,"logo,fachada,interior,equipe",com_imagens,3
+258,RE/MAX Premier III,Asunción,regras,completo,1,1,fachada,com_imagens,0
+260,RE/MAX PRIME,Asunción,regras,completo,2,1,logo,com_imagens,1
+261,RE/MAX PRIMICIAS,Asunción,regras,completo,5,2,"fachada,fachada",com_imagens,0
+264,RE/MAX PUNTO,Asunción,regras,completo,10,4,"fachada,fachada,interior,interior",com_imagens,1
+267,RE/MAX SELECTION,Asunción,regras,completo,1,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,1
+269,RE/MAX SIENNA,Asunción,regras,completo,6,3,"fachada,equipe,equipe",com_imagens,3
+270,RE/MAX SINERGY,Asunción,regras,completo,1,1,fachada,com_imagens,0
+272,RE/MAX TERRAMAX,Asunción,regras,completo,6,4,"fachada,fachada,interior,interior",com_imagens,2
+274,RE/MAX URBANA,Asunción,regras,completo,1,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,1
+276,Rodan Inmobiliaria — Casa Matriz Asunción,Asunción,regras,completo,2,2,"fachada,interior",com_imagens,0
+277,San Gerardo Inmobiliaria,Asunción,regras,completo,4,1,interior,com_imagens,3
+280,Urba Inmobiliaria,Asunción,regras,completo,10,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,10
+281,View Inmobiliaria,Asunción,regras,completo,1,1,logo,com_imagens,0
+283,Tierras del Chaco,Boquerón,revisao_manual,completo,3,2,"logo,institucional",com_imagens,1
+284,Betel Arquitectura - Inmobiliaria,Filadelfia,regras,completo,1,1,fachada,com_imagens,0
+285,Inmobiliaria Renueva,Filadelfia,regras,completo,2,2,"fachada,fachada",com_imagens,0
+287,RE/MAX LEGACY,Filadelfia,regras,completo,10,2,"fachada,interior",com_imagens,8
+289,Inmobiliaria DAKA,Loma Plata,regras,completo,6,2,"fachada,fachada",com_imagens,0
+290,Inmobiliaria Gestiones Chaco S.R.L.,Loma Plata,regras,completo,6,1,logo,com_imagens,5
+291,Inmobiliaria Multipropiedades,Loma Plata,regras,completo,1,1,fachada,com_imagens,0
+292,Inmobiliaria SIA,Loma Plata,revisao_manual,completo,2,1,equipe,com_imagens,1
+293,Loma Plata Homes S.R.L.,Loma Plata,regras,completo,1,1,fachada,com_imagens,0
+294,RE/MAX NOBLE,Loma Plata,regras,completo,1,1,logo,com_imagens,0
+295,Atlántica de Inmuebles S.A. — Caaguazú,Caaguazú,regras,completo,8,3,"fachada,interior,interior",com_imagens,4
+296,AyP Group Inmobiliaria Caaguazú,Caaguazú,regras,completo,1,1,logo,com_imagens,0
+297,EMSA Inmobiliaria — Caaguazú,Caaguazú,regras,completo,1,1,fachada,com_imagens,0
+298,Inmo Loteamientos — Caaguazú,Caaguazú,regras,completo,2,1,fachada,com_imagens,1
+299,Karmar Inmobiliaria — Agencia Caaguazú,Caaguazú,regras,completo,1,1,fachada,com_imagens,0
+302,Atalaya de Inmuebles S.R.L. - Coronel Oviedo,Coronel Oviedo,regras,completo,1,1,interior,com_imagens,0
+303,DIGSA Inmobiliaria - Coronel Oviedo,Coronel Oviedo,regras,completo,5,4,"fachada,fachada,interior,interior",com_imagens,1
+305,Inmobiliaria Propar S.R.L. Coronel Oviedo,Coronel Oviedo,revisao_manual,completo,1,1,logo,com_imagens,0
+306,Inmo Loteamientos — Coronel Oviedo,Coronel Oviedo,regras,completo,2,1,fachada,com_imagens,1
+307,Karmar Inmobiliaria - Agencia Oviedo,Coronel Oviedo,regras,completo,1,1,fachada,com_imagens,0
+309,La Paraguaya Inmobiliaria S.A. — Coronel Oviedo,Coronel Oviedo,revisao_manual,completo,1,1,fachada,com_imagens,0
+310,Legua Inmobiliaria SRL,Coronel Oviedo,regras,completo,6,2,"fachada,fachada",com_imagens,1
+311,Loteadora Yvy Porã,Coronel Oviedo,regras,completo,10,1,institucional,com_imagens,9
+312,Propar S.R.L. — Sucursal Coronel Oviedo,Coronel Oviedo,revisao_manual,completo,1,1,logo,com_imagens,0
+314,Campo 9 Inmobiliaria,Doctor Juan Eulogio Estigarribia,regras,completo,10,2,"logo,fachada",com_imagens,8
+316,Inmobiliaria Nuevo Horizonte,Doctor Juan Eulogio Estigarribia,regras,completo,5,2,"fachada,institucional",com_imagens,3
+317,Mi Tierra S.A. — Casa Central Campo 9,Doctor Juan Eulogio Estigarribia,regras,completo,10,1,fachada,com_imagens,9
+323,Dianel Inmobiliaria y Constructora S.A.,Caazapá,regras,completo,5,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,5
+329,Essence Inmobiliaria del Norte E.A.S. (EIDN),Curuguaty,regras,completo,1,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,1
+330,JM Emprendimientos,Curuguaty,revisao_manual,completo,5,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,5
+331,Urbana Propiedades,Curuguaty,regras,completo,3,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,3
+334,EMSA Inmobiliaria — Katueté,Katueté,regras,completo,2,2,"fachada,fachada",com_imagens,0
+335,José Gutierrez — Agente Inmobiliario,La Paloma del Espíritu Santo,regras,completo,10,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,10
+337,Akram House Inmobiliaria y Constructora,Salto del Guairá,revisao_manual,completo,10,1,fachada,com_imagens,9
+340,Mi Lotecito,Areguá,regras,completo,6,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,6
+344,Ventas Paraguay de Héctor Rotela,Capiatá,regras,completo,1,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,1
+346,Inmobiliaria Realisa,Fernando de la Mora,regras,completo,4,2,"fachada,fachada",com_imagens,2
+351,RE/MAX EVOLUTION,Fernando de la Mora,regras,completo,1,1,logo,com_imagens,0
+352,RE/MAX FIDELITY,Fernando de la Mora,regras,completo,10,4,"fachada,fachada,interior,interior",com_imagens,1
+353,RE/MAX SIGMA,Fernando de la Mora,regras,completo,6,3,"fachada,fachada,interior",com_imagens,2
+355,Fermar Emprendimientos Inmobiliarios,Itá,regras,completo,6,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,6
+357,Imperio Inmobiliaria,Itauguá,regras,completo,5,1,logo,com_imagens,4
+358,Inmobiliaria Don Fernando - Oficinas,Itauguá,regras,completo,3,1,fachada,com_imagens,2
+359,RE/MAX Cosmopolita III,Lambaré,regras,completo,4,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,4
+360,SkyOne Nova,Lambaré,regras,completo,2,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,2
+364,La Paraguaya Inmobiliaria S.A. — Limpio,Limpio,revisao_manual,completo,1,1,fachada,com_imagens,0
+365,GEO AV Inmobiliaria S.R.L.,Luque,regras,completo,10,1,fachada,com_imagens,9
+366,NISA Inmobiliaria — Luque,Luque,regras,completo,2,1,fachada,com_imagens,1
+369,DIGSA Inmobiliaria,Mariano Roque Alonso,regras,completo,2,1,fachada,com_imagens,1
+370,Inmobiliaria del Este (IDESA) — Shopping Mariano,Mariano Roque Alonso,regras,completo,2,1,fachada,com_imagens,1
+372,Rectora Inmobiliaria,Mariano Roque Alonso,regras,completo,8,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,8
+373,RE/MAX SINERGY II,Mariano Roque Alonso,revisao_manual,completo,1,1,fachada,com_imagens,0
+374,ABAS Inmobiliaria - Ñemby,Ñemby,regras,completo,4,3,"fachada,interior,interior",com_imagens,0
+375,IDEAL SRL Servicios Inmobiliarios,Ñemby,regras,completo,5,3,"interior,interior,institucional",com_imagens,1
+376,Terra Inmobiliaria S.R.L.,Ñemby,regras,completo,2,1,logo,com_imagens,1
+377,Taita Inmobiliaria,San Antonio,regras,completo,3,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,3
+379,CENTURY 21 Catedral,San Lorenzo,regras,completo,5,3,"logo,fachada,fachada",com_imagens,0
+381,Inmo Loteamientos — San Lorenzo,San Lorenzo,regras,completo,3,3,"fachada,interior,interior",com_imagens,0
+382,JC Bienes Raíces,San Lorenzo,revisao_manual,completo,1,1,logo,com_imagens,0
+383,La Paraguaya Inmobiliaria S.A. — San Lorenzo,San Lorenzo,revisao_manual,completo,3,1,fachada,com_imagens,2
+384,RE/MAX EXECUTIVE,San Lorenzo,regras,completo,10,5,"fachada,fachada,interior,interior,institucional",com_imagens,0
+385,RE/MAX MAGNIFICAT,San Lorenzo,regras,completo,3,2,"fachada,interior",com_imagens,1
+387,Ivan Propiedades,Villa Elisa,regras,completo,4,1,logo,com_imagens,3
+388,Spaini Propiedades,Villa Elisa,regras,completo,2,1,logo,com_imagens,1
+392,Danna Inmobiliaria E.A.S.,Ypané,regras,completo,6,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,6
+393,Patria Inmobiliaria S.R.L.,Ypané,regras,completo,2,1,logo,com_imagens,1
+397,Global Génesis Inmobiliaria - Casa Central,Concepción,regras,completo,4,2,"logo,fachada",com_imagens,2
+398,RE/MAX Zafiro,Concepción,regras,completo,1,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,1
+399,Global Génesis Inmobiliaria - Horqueta,Horqueta,regras,completo,1,1,fachada,com_imagens,0
+400,La Inmobiliaria de Altos,Altos,regras,completo,10,3,"fachada,fachada,interior",com_imagens,6
+401,Comercial Angel Sebastián,Arroyos y Esteros,regras,completo,6,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,6
+403,Vittoria S.A.,Atyrá,regras,completo,2,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,2
+404,ADLER Real Estate,Caacupé,regras,completo,6,2,"fachada,fachada",com_imagens,2
+405,Inmobiliaria del Este — Agencia Caacupé,Caacupé,regras,completo,3,3,"fachada,fachada,interior",com_imagens,0
+406,Inmo Loteamientos — Caacupé,Caacupé,regras,completo,1,1,interior,com_imagens,0
+408,Sina Constructora e Inmobiliaria,Caacupé,revisao_manual,completo,10,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,10
+409,GEO Inmobiliaria S.R.L.,Emboscada,revisao_manual,completo,6,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,6
+411,LD Emprendimientos Inmobiliarios,Eusebio Ayala,revisao_manual,completo,2,1,institucional,com_imagens,1
+413,Inmo Loteamientos — Piribebuy,Piribebuy,revisao_manual,principal,5,1,fachada,com_imagens,3
+414,Casa Blanca Inmobiliaria,San Bernardino,regras,completo,10,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,10
+415,Inmobiliaria Esteche,San Bernardino,regras,completo,4,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,4
+416,RE/MAX SUMMER,San Bernardino,regras,completo,5,3,"fachada,interior,institucional",com_imagens,2
+421,Dinámica Urbana S.R.L.,Villarrica,regras,completo,2,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,2
+422,Don Enrique Inmobiliaria,Villarrica,regras,completo,1,1,logo,com_imagens,0
+424,Inmobiliaria del Este — Agencia Villarrica,Villarrica,regras,completo,4,3,"fachada,fachada,interior",com_imagens,1
+427,Kala Huala S.A. — Sucursal Villarrica,Villarrica,regras,completo,4,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,4
+428,Katuetei Emprendimientos Inmobiliarios,Villarrica,regras,completo,10,1,fachada,com_imagens,9
+430,Relevo Inmobiliaria,Villarrica,regras,completo,3,1,fachada,com_imagens,2
+431,Vivaclave Inmobiliaria,Cambyretá,regras,completo,9,3,"logo,interior,interior",com_imagens,5
+432,Crecer Inmobiliaria - Sucursal Coronel Bogado,Coronel Bogado,regras,completo,6,2,"logo,fachada",com_imagens,4
+433,Atlántica de Inmuebles S.A. — Encarnación,Encarnación,regras,completo,10,2,"fachada,interior",com_imagens,8
+435,CENTURY 21 Rio,Encarnación,regras,completo,2,2,"fachada,fachada",com_imagens,0
+436,CENTURY 21 Sur,Encarnación,regras,completo,3,2,"fachada,fachada",com_imagens,0
+437,Inmobiliaria del Este (IDESA) — Encarnación,Encarnación,regras,completo,7,2,"fachada,fachada",com_imagens,3
+438,Inmobiliaria Rolon y Asociados,Encarnación,regras,completo,4,3,"fachada,fachada,interior",com_imagens,1
+439,Inmo Loteamientos — Encarnación,Encarnación,regras,completo,5,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,5
+440,Kasas Propiedades SAE,Encarnación,regras,completo,10,1,fachada,com_imagens,9
+441,La Paraguaya Inmobiliaria S.A. — Encarnación,Encarnación,revisao_manual,completo,2,2,"fachada,fachada",com_imagens,0
+444,RE/MAX CAPITAL,Encarnación,regras,completo,1,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,1
+445,RE/MAX MAESTROS INMOBILIARIOS,Encarnación,regras,completo,8,3,"logo,fachada,equipe",com_imagens,5
+446,RE/MAX RIVIERA,Encarnación,regras,completo,3,3,"fachada,fachada,interior",com_imagens,0
+447,Rodan Inmobiliaria — Sucursal Encarnación,Encarnación,regras,completo,2,1,fachada,com_imagens,1
+448,SS Growth Real Estate,Encarnación,regras,completo,4,3,"logo,equipe,institucional",com_imagens,1
+449,ALTA Consultora Bienes Raíces,Hohenau,regras,completo,10,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,10
+452,Propar S.R.L. — Sucursal Hohenau,Hohenau,regras,completo,1,1,logo,com_imagens,0
+453,Raíces Real Estate — Agencia Hohenau,Hohenau,revisao_manual,completo,1,1,fachada,com_imagens,0
+454,Realtor Comercial HN,Hohenau,regras,completo,2,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,2
+456,Ventas de Terrenos en Itapúa — Paraguay,Hohenau,regras,completo,10,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,10
+457,Jorge Vieira — Asesor Inmobiliario,Obligado,regras,completo,10,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,10
+459,Terra Sur,Obligado,regras,completo,10,1,fachada,com_imagens,9
+461,Atlántica de Inmuebles S.A. — María Auxiliadora,Tomás Romero Pereira,regras,completo,4,2,"fachada,fachada",com_imagens,1
+463,Inmobiliaria BBUBS S.A.,Tomás Romero Pereira,regras,completo,1,1,fachada,com_imagens,0
+464,Inmobiliaria del Este (IDESA) — María Auxiliadora,Tomás Romero Pereira,regras,completo,1,1,fachada,com_imagens,0
+465,Inmo Loteamientos — María Auxiliadora,Tomás Romero Pereira,regras,completo,3,1,fachada,com_imagens,2
+467,EMSA Inmobiliaria — San Ignacio,San Ignacio Guazú,regras,completo,1,1,fachada,com_imagens,0
+468,Inmobiliaria del Este (IDESA) — San Ignacio Misiones,San Ignacio Guazú,regras,completo,3,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,3
+470,Crecer Inmobiliaria - Sucursal San Juan Bautista,San Juan Bautista,regras,completo,1,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,1
+471,Karmar Inmobiliaria — Agencia San Juan,San Juan Bautista,regras,completo,1,1,fachada,com_imagens,0
+473,DIGSA Inmobiliaria — Sucursal Pilar,Pilar,regras,completo,5,2,"fachada,fachada",com_imagens,2
+474,NISA Inmobiliaria — Pilar,Pilar,regras,completo,10,1,fachada,com_imagens,9
+476,Charles Immo Paraguay,La Colmena,regras,completo,10,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,10
+478,La Paraguaya Inmobiliaria S.A. — Paraguarí,Paraguarí,revisao_manual,completo,2,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,2
+479,Tu Terreno en Paraguarí,Paraguarí,regras,completo,10,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,10
+480,Inmobiliaria Lotes a Cuotas,Pirayú,regras,completo,6,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,6
+482,Irun Propiedades S.A. — Sucursal Yaguarón,Yaguarón,regras,completo,3,1,logo,com_imagens,1
+485,GL Negocios Inmobiliarios,Villa Hayes,revisao_manual,completo,3,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,3
+488,Inmuebles Villagra,San Estanislao,regras,completo,1,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,1
+493,Ñande Yvy Desarrollos,San Estanislao,regras,completo,5,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,5
+494,Crecer Inmobiliaria - Sucursal San Pedro del Ycuamandiyú,San Pedro del Ycuamandiyú,regras,completo,1,1,fachada,com_imagens,0
+495,Agüero Inmobiliaria S.A.,Santa Rosa del Aguaray,regras,completo,5,1,logo,com_imagens,4
+497,Gestoria Inmobiliaria D&G,Santa Rosa del Aguaray,revisao_manual,completo,1,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,1
+498,Impronta S.A.,Santa Rosa del Aguaray,regras,completo,4,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,4
+499,Inmueble MC,Santa Rosa del Aguaray,revisao_manual,completo,10,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,10
+501,Mi Tierra S.A. — Sucursal Santa Rosa del Aguaray,Santa Rosa del Aguaray,regras,completo,1,1,logo,com_imagens,0
+503,VISS Emprendimientos,Santa Rosa del Aguaray,regras,completo,1,0,,todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes,1

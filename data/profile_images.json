@@ -62,6 +62,28 @@
        "w": 192
       }
      }
+    },
+    {
+     "alt_es": "Fachada de Inmobiliaria del Este (IDESA) en Ciudad del Este",
+     "alt_pt": "Fachada de Inmobiliaria del Este (IDESA) em Ciudad del Este",
+     "author": "terceiro",
+     "sha256": "4212ed68fe1744a5bd35efc120c0ab51444e82e93ce2c5ac782fc1892269e311",
+     "source": "https://maps.google.com/?cid=8571453613476892572",
+     "type": "fachada",
+     "variants": {
+      "g480": {
+       "bytes": 32166,
+       "h": 284,
+       "src": "/assets/profiles/inmobiliaria-del-este-idesa-ciudad-del-este-fachada-106-2-g480.webp",
+       "w": 480
+      },
+      "g960": {
+       "bytes": 100682,
+       "h": 568,
+       "src": "/assets/profiles/inmobiliaria-del-este-idesa-ciudad-del-este-fachada-106-2-g960.webp",
+       "w": 960
+      }
+     }
     }
    ],
    "slug": "106-inmobiliaria-del-este-idesa-ciudad-del-este"
@@ -116,14 +138,14 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 2562,
-       "h": 81,
+       "bytes": 3510,
+       "h": 64,
        "src": "/assets/profiles/inmo-loteamientos-ciudad-del-este-logo-110-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 3644,
-       "h": 125,
+       "bytes": 5190,
+       "h": 98,
        "src": "/assets/profiles/inmo-loteamientos-ciudad-del-este-logo-110-192.webp",
        "w": 192
       }
@@ -216,16 +238,16 @@
        "w": 960
       },
       "p124": {
-       "bytes": 1382,
+       "bytes": 1910,
        "h": 124,
        "src": "/assets/profiles/jonathan-helbich-ciudad-del-este-equipe-113-124.webp",
-       "w": 83
+       "w": 124
       },
       "p192": {
-       "bytes": 2282,
+       "bytes": 3192,
        "h": 192,
        "src": "/assets/profiles/jonathan-helbich-ciudad-del-este-equipe-113-192.webp",
-       "w": 128
+       "w": 192
       }
      }
     },
@@ -304,16 +326,16 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 4766,
+       "bytes": 4360,
        "h": 124,
        "src": "/assets/profiles/nandejara-imoveis-ciudad-del-este-logo-118-124.webp",
-       "w": 124
+       "w": 106
       },
       "p192": {
-       "bytes": 9062,
+       "bytes": 8718,
        "h": 192,
        "src": "/assets/profiles/nandejara-imoveis-ciudad-del-este-logo-118-192.webp",
-       "w": 192
+       "w": 164
       }
      }
     }
@@ -331,14 +353,14 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 1886,
-       "h": 124,
+       "bytes": 2018,
+       "h": 57,
        "src": "/assets/profiles/propar-s-r-l-ciudad-del-este-logo-123-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 3280,
-       "h": 192,
+       "bytes": 3278,
+       "h": 88,
        "src": "/assets/profiles/propar-s-r-l-ciudad-del-este-logo-123-192.webp",
        "w": 192
       }
@@ -507,14 +529,14 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 2074,
-       "h": 124,
+       "bytes": 2248,
+       "h": 53,
        "src": "/assets/profiles/remax-investor-ciudad-del-este-logo-127-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 3226,
-       "h": 192,
+       "bytes": 3400,
+       "h": 82,
        "src": "/assets/profiles/remax-investor-ciudad-del-este-logo-127-192.webp",
        "w": 192
       }
@@ -656,14 +678,14 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 3108,
-       "h": 124,
+       "bytes": 4304,
+       "h": 116,
        "src": "/assets/profiles/tres-fronteras-inmobiliaria-s-a-ciudad-del-este-logo-134-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 5666,
-       "h": 192,
+       "bytes": 7642,
+       "h": 179,
        "src": "/assets/profiles/tres-fronteras-inmobiliaria-s-a-ciudad-del-este-logo-134-192.webp",
        "w": 192
       }
@@ -883,6 +905,28 @@
        "w": 192
       }
      }
+    },
+    {
+     "alt_es": "Fachada de Kala Huala S.A. en Hernandarias",
+     "alt_pt": "Fachada de Kala Huala S.A. em Hernandarias",
+     "author": "terceiro",
+     "sha256": "a7b1ec58550cfda72501c5b4e9879cadd0ce96eafd912a54b184638aa3e924b2",
+     "source": "https://maps.google.com/?cid=3563638618677711310",
+     "type": "fachada",
+     "variants": {
+      "g480": {
+       "bytes": 65182,
+       "h": 853,
+       "src": "/assets/profiles/kala-huala-s-a-hernandarias-fachada-142-2-g480.webp",
+       "w": 480
+      },
+      "g960": {
+       "bytes": 120434,
+       "h": 1280,
+       "src": "/assets/profiles/kala-huala-s-a-hernandarias-fachada-142-2-g960.webp",
+       "w": 720
+      }
+     }
     }
    ],
    "slug": "142-kala-huala-s-a-casa-matriz"
@@ -898,14 +942,14 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 2930,
-       "h": 80,
+       "bytes": 3280,
+       "h": 34,
        "src": "/assets/profiles/skyone-empower-hernandarias-logo-144-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 4690,
-       "h": 124,
+       "bytes": 5194,
+       "h": 53,
        "src": "/assets/profiles/skyone-empower-hernandarias-logo-144-192.webp",
        "w": 192
       }
@@ -1157,14 +1201,14 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 4090,
-       "h": 124,
+       "bytes": 4294,
+       "h": 109,
        "src": "/assets/profiles/inmobiliaria-monday-s-a-presidente-franco-logo-156-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 6940,
-       "h": 192,
+       "bytes": 7138,
+       "h": 169,
        "src": "/assets/profiles/inmobiliaria-monday-s-a-presidente-franco-logo-156-192.webp",
        "w": 192
       }
@@ -1338,6 +1382,45 @@
     }
    ],
    "slug": "160-inmobiliaria-don-leopoldo"
+  },
+  "161": {
+   "images": [
+    {
+     "alt_es": "Fachada de Inmobiliaria Santacruz Dos Santos en Santa Rita",
+     "alt_pt": "Fachada de Inmobiliaria Santacruz Dos Santos em Santa Rita",
+     "author": "estabelecimento",
+     "sha256": "81d72d3a0758fbe998fbad2e5040cc0652480d73270cc5b7203eebe802ef39d8",
+     "source": "https://maps.google.com/?cid=10544923288301946758",
+     "type": "fachada",
+     "variants": {
+      "g480": {
+       "bytes": 21948,
+       "h": 365,
+       "src": "/assets/profiles/inmobiliaria-santacruz-dos-santos-santa-rita-fachada-161-g480.webp",
+       "w": 480
+      },
+      "g960": {
+       "bytes": 66504,
+       "h": 730,
+       "src": "/assets/profiles/inmobiliaria-santacruz-dos-santos-santa-rita-fachada-161-g960.webp",
+       "w": 960
+      },
+      "p124": {
+       "bytes": 3492,
+       "h": 124,
+       "src": "/assets/profiles/inmobiliaria-santacruz-dos-santos-santa-rita-fachada-161-124.webp",
+       "w": 124
+      },
+      "p192": {
+       "bytes": 6594,
+       "h": 192,
+       "src": "/assets/profiles/inmobiliaria-santacruz-dos-santos-santa-rita-fachada-161-192.webp",
+       "w": 192
+      }
+     }
+    }
+   ],
+   "slug": "161-inmobiliaria-santacruz-dos-santos"
   },
   "162": {
    "images": [
@@ -1518,6 +1601,28 @@
        "w": 192
       }
      }
+    },
+    {
+     "alt_es": "Fachada de EMSA Inmobiliaria en Pedro Juan Caballero",
+     "alt_pt": "Fachada de EMSA Inmobiliaria em Pedro Juan Caballero",
+     "author": "terceiro",
+     "sha256": "294b987dcc426df35735c244302226bf1f9d47999944c3493d43bb6143bc60e1",
+     "source": "https://maps.google.com/?cid=15443731166576816069",
+     "type": "fachada",
+     "variants": {
+      "g480": {
+       "bytes": 26280,
+       "h": 360,
+       "src": "/assets/profiles/emsa-inmobiliaria-pedro-juan-caballero-fachada-164-2-g480.webp",
+       "w": 480
+      },
+      "g960": {
+       "bytes": 83088,
+       "h": 720,
+       "src": "/assets/profiles/emsa-inmobiliaria-pedro-juan-caballero-fachada-164-2-g960.webp",
+       "w": 960
+      }
+     }
     }
    ],
    "slug": "164-emsa-inmobiliaria-pedro-juan-caballero"
@@ -1533,13 +1638,13 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 2338,
+       "bytes": 2342,
        "h": 70,
        "src": "/assets/profiles/inmobiliaria-aquidaban-pedro-juan-caballero-logo-166-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 4172,
+       "bytes": 4186,
        "h": 108,
        "src": "/assets/profiles/inmobiliaria-aquidaban-pedro-juan-caballero-logo-166-192.webp",
        "w": 192
@@ -2009,6 +2114,28 @@
        "w": 960
       }
      }
+    },
+    {
+     "alt_es": "Oficina de Atlántica de Inmuebles S.A. en Asunción",
+     "alt_pt": "Escritório de Atlántica de Inmuebles S.A. em Asunción",
+     "author": "terceiro",
+     "sha256": "d8a7e245293d6c026ea262ca4813f48c1ceb9f7810e2634de5888fc75d4c2e22",
+     "source": "https://maps.google.com/?cid=15208881984204528574",
+     "type": "interior",
+     "variants": {
+      "g480": {
+       "bytes": 19560,
+       "h": 350,
+       "src": "/assets/profiles/atlantica-de-inmuebles-s-a-asuncion-interior-173-g480.webp",
+       "w": 480
+      },
+      "g960": {
+       "bytes": 50778,
+       "h": 700,
+       "src": "/assets/profiles/atlantica-de-inmuebles-s-a-asuncion-interior-173-g960.webp",
+       "w": 960
+      }
+     }
     }
    ],
    "slug": "173-atlantica-de-inmuebles-s-a-agencia-aviadores"
@@ -2133,6 +2260,28 @@
      }
     },
     {
+     "alt_es": "Fachada de Aurora Inmobiliaria S.A. en Asunción",
+     "alt_pt": "Fachada de Aurora Inmobiliaria S.A. em Asunción",
+     "author": "terceiro",
+     "sha256": "8b9d63fe530ff87b7a7128dcf36a0bdf9e5749235656547bcd96a0bf41c11cd1",
+     "source": "https://maps.google.com/?cid=12079383486737316633",
+     "type": "fachada",
+     "variants": {
+      "g480": {
+       "bytes": 25780,
+       "h": 360,
+       "src": "/assets/profiles/aurora-inmobiliaria-s-a-asuncion-fachada-175-2-g480.webp",
+       "w": 480
+      },
+      "g960": {
+       "bytes": 84570,
+       "h": 720,
+       "src": "/assets/profiles/aurora-inmobiliaria-s-a-asuncion-fachada-175-2-g960.webp",
+       "w": 960
+      }
+     }
+    },
+    {
      "alt_es": "Oficina de Aurora Inmobiliaria S.A. en Asunción",
      "alt_pt": "Escritório de Aurora Inmobiliaria S.A. em Asunción",
      "author": "estabelecimento",
@@ -2168,14 +2317,14 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 2044,
-       "h": 100,
+       "bytes": 2040,
+       "h": 99,
        "src": "/assets/profiles/century21-adventure-asuncion-logo-180-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 3534,
-       "h": 154,
+       "bytes": 3568,
+       "h": 153,
        "src": "/assets/profiles/century21-adventure-asuncion-logo-180-192.webp",
        "w": 192
       }
@@ -2339,6 +2488,28 @@
        "h": 192,
        "src": "/assets/profiles/century21-bonanza-asuncion-fachada-185-192.webp",
        "w": 192
+      }
+     }
+    },
+    {
+     "alt_es": "Fachada de CENTURY 21 Bonanza en Asunción",
+     "alt_pt": "Fachada de CENTURY 21 Bonanza em Asunción",
+     "author": "estabelecimento",
+     "sha256": "486584e42db2e869cc329de5b2f96f42e0404157c6b39a0fcd9b3206237350e8",
+     "source": "https://maps.google.com/?cid=8165459338788792103",
+     "type": "fachada",
+     "variants": {
+      "g480": {
+       "bytes": 43224,
+       "h": 353,
+       "src": "/assets/profiles/century21-bonanza-asuncion-fachada-185-2-g480.webp",
+       "w": 480
+      },
+      "g960": {
+       "bytes": 154560,
+       "h": 707,
+       "src": "/assets/profiles/century21-bonanza-asuncion-fachada-185-2-g960.webp",
+       "w": 960
       }
      }
     },
@@ -3013,14 +3184,14 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 1660,
-       "h": 124,
+       "bytes": 1954,
+       "h": 75,
        "src": "/assets/profiles/century21-munoz-poletti-asuncion-logo-199-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 2840,
-       "h": 192,
+       "bytes": 3102,
+       "h": 116,
        "src": "/assets/profiles/century21-munoz-poletti-asuncion-logo-199-192.webp",
        "w": 192
       }
@@ -3040,14 +3211,14 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 4214,
-       "h": 124,
+       "bytes": 3258,
+       "h": 93,
        "src": "/assets/profiles/edipar-paraguay-logo-20-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 8170,
-       "h": 192,
+       "bytes": 6170,
+       "h": 144,
        "src": "/assets/profiles/edipar-paraguay-logo-20-192.webp",
        "w": 192
       }
@@ -4515,25 +4686,25 @@
      "type": "fachada",
      "variants": {
       "g480": {
-       "bytes": 51386,
+       "bytes": 51324,
        "h": 480,
        "src": "/assets/profiles/propietario-inmobiliaria-asuncion-fachada-235-g480.webp",
        "w": 480
       },
       "g960": {
-       "bytes": 85656,
+       "bytes": 85582,
        "h": 700,
        "src": "/assets/profiles/propietario-inmobiliaria-asuncion-fachada-235-g960.webp",
        "w": 700
       },
       "p124": {
-       "bytes": 5236,
+       "bytes": 5186,
        "h": 124,
        "src": "/assets/profiles/propietario-inmobiliaria-asuncion-fachada-235-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 11176,
+       "bytes": 11122,
        "h": 192,
        "src": "/assets/profiles/propietario-inmobiliaria-asuncion-fachada-235-192.webp",
        "w": 192
@@ -4798,6 +4969,28 @@
        "h": 192,
        "src": "/assets/profiles/remax-conexion-asuncion-fachada-240-192.webp",
        "w": 192
+      }
+     }
+    },
+    {
+     "alt_es": "Fachada de RE/MAX Conexión en Asunción",
+     "alt_pt": "Fachada de RE/MAX Conexión em Asunción",
+     "author": "terceiro",
+     "sha256": "309b62855a21e2b2b9524ad7204b4216669f2e407f622587d6d9deede7c94a63",
+     "source": "https://maps.google.com/?cid=9484563310195222781",
+     "type": "fachada",
+     "variants": {
+      "g480": {
+       "bytes": 63284,
+       "h": 606,
+       "src": "/assets/profiles/remax-conexion-asuncion-fachada-240-2-g480.webp",
+       "w": 480
+      },
+      "g960": {
+       "bytes": 177274,
+       "h": 1212,
+       "src": "/assets/profiles/remax-conexion-asuncion-fachada-240-2-g960.webp",
+       "w": 960
       }
      }
     },
@@ -5098,19 +5291,19 @@
      "alt_es": "Logotipo de RE/MAX EXPERIENCE",
      "alt_pt": "Logomarca de RE/MAX EXPERIENCE",
      "author": "estabelecimento",
-     "sha256": "5e7540fbda0ddfd4352106a564b1e2a8e84c237188ad53fe333d011b4779d339",
+     "sha256": "a94b2acf620e5e123ab2ec9c7b5cd7e5cf2c263547ce6db78ca374d16711e51b",
      "source": "https://maps.google.com/?cid=14631636935150882662",
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 820,
-       "h": 70,
+       "bytes": 1896,
+       "h": 43,
        "src": "/assets/profiles/remax-experience-asuncion-logo-245-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 1696,
-       "h": 108,
+       "bytes": 2930,
+       "h": 66,
        "src": "/assets/profiles/remax-experience-asuncion-logo-245-192.webp",
        "w": 192
       }
@@ -5174,16 +5367,16 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 2714,
+       "bytes": 3330,
        "h": 124,
        "src": "/assets/profiles/remax-family-asuncion-logo-246-124.webp",
-       "w": 124
+       "w": 110
       },
       "p192": {
-       "bytes": 4330,
+       "bytes": 5202,
        "h": 192,
        "src": "/assets/profiles/remax-family-asuncion-logo-246-192.webp",
-       "w": 192
+       "w": 170
       }
      }
     },
@@ -5252,6 +5445,28 @@
        "w": 960
       }
      }
+    },
+    {
+     "alt_es": "Equipo de RE/MAX FAMILY",
+     "alt_pt": "Equipe de RE/MAX FAMILY",
+     "author": "terceiro",
+     "sha256": "6b0e7baee2949e7072fc84166ce414ff0ee6d5bd5b5c108c9ea0cdf835793797",
+     "source": "https://maps.google.com/?cid=7555710272320037731",
+     "type": "equipe",
+     "variants": {
+      "g480": {
+       "bytes": 50086,
+       "h": 580,
+       "src": "/assets/profiles/remax-family-asuncion-equipe-246-g480.webp",
+       "w": 480
+      },
+      "g960": {
+       "bytes": 140186,
+       "h": 1160,
+       "src": "/assets/profiles/remax-family-asuncion-equipe-246-g960.webp",
+       "w": 960
+      }
+     }
     }
    ],
    "slug": "246-re-max-family"
@@ -5267,14 +5482,14 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 3204,
-       "h": 124,
+       "bytes": 3236,
+       "h": 89,
        "src": "/assets/profiles/remax-genesis-asuncion-logo-249-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 6372,
-       "h": 192,
+       "bytes": 6502,
+       "h": 137,
        "src": "/assets/profiles/remax-genesis-asuncion-logo-249-192.webp",
        "w": 192
       }
@@ -5377,14 +5592,14 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 2040,
-       "h": 124,
+       "bytes": 2026,
+       "h": 55,
        "src": "/assets/profiles/remax-guimar-asuncion-logo-251-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 2954,
-       "h": 192,
+       "bytes": 2882,
+       "h": 86,
        "src": "/assets/profiles/remax-guimar-asuncion-logo-251-192.webp",
        "w": 192
       }
@@ -5619,14 +5834,14 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 2292,
-       "h": 124,
+       "bytes": 2270,
+       "h": 47,
        "src": "/assets/profiles/remax-prime-asuncion-logo-260-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 3476,
-       "h": 192,
+       "bytes": 3682,
+       "h": 73,
        "src": "/assets/profiles/remax-prime-asuncion-logo-260-192.webp",
        "w": 192
       }
@@ -5895,14 +6110,14 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 2078,
-       "h": 124,
+       "bytes": 2002,
+       "h": 38,
        "src": "/assets/profiles/greenland-properties-y-partners-paraguay-logo-27-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 3436,
-       "h": 192,
+       "bytes": 3604,
+       "h": 58,
        "src": "/assets/profiles/greenland-properties-y-partners-paraguay-logo-27-192.webp",
        "w": 192
       }
@@ -6166,14 +6381,14 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 996,
-       "h": 88,
+       "bytes": 1532,
+       "h": 28,
        "src": "/assets/profiles/guilhem-costa-paraguay-logo-28-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 1742,
-       "h": 136,
+       "bytes": 2830,
+       "h": 43,
        "src": "/assets/profiles/guilhem-costa-paraguay-logo-28-192.webp",
        "w": 192
       }
@@ -6193,14 +6408,14 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 1894,
-       "h": 117,
+       "bytes": 2032,
+       "h": 61,
        "src": "/assets/profiles/view-inmobiliaria-asuncion-logo-281-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 2888,
-       "h": 180,
+       "bytes": 3174,
+       "h": 94,
        "src": "/assets/profiles/view-inmobiliaria-asuncion-logo-281-192.webp",
        "w": 192
       }
@@ -6220,14 +6435,14 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 1784,
-       "h": 75,
+       "bytes": 2582,
+       "h": 68,
        "src": "/assets/profiles/tierras-del-chaco-paraguay-logo-283-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 3122,
-       "h": 116,
+       "bytes": 4484,
+       "h": 105,
        "src": "/assets/profiles/tierras-del-chaco-paraguay-logo-283-192.webp",
        "w": 192
       }
@@ -6358,6 +6573,67 @@
    ],
    "slug": "285-inmobiliaria-renueva"
   },
+  "287": {
+   "images": [
+    {
+     "alt_es": "Fachada de RE/MAX LEGACY en Filadelfia",
+     "alt_pt": "Fachada de RE/MAX LEGACY em Filadelfia",
+     "author": "terceiro",
+     "sha256": "cd0945105a5af94a0cae0c189cf319d40edf7e883aff35c14eab344d8689bcfb",
+     "source": "https://maps.google.com/?cid=15287218811125565984",
+     "type": "fachada",
+     "variants": {
+      "g480": {
+       "bytes": 18458,
+       "h": 360,
+       "src": "/assets/profiles/remax-legacy-filadelfia-fachada-287-g480.webp",
+       "w": 480
+      },
+      "g960": {
+       "bytes": 48300,
+       "h": 720,
+       "src": "/assets/profiles/remax-legacy-filadelfia-fachada-287-g960.webp",
+       "w": 960
+      },
+      "p124": {
+       "bytes": 2936,
+       "h": 124,
+       "src": "/assets/profiles/remax-legacy-filadelfia-fachada-287-124.webp",
+       "w": 124
+      },
+      "p192": {
+       "bytes": 6010,
+       "h": 192,
+       "src": "/assets/profiles/remax-legacy-filadelfia-fachada-287-192.webp",
+       "w": 192
+      }
+     }
+    },
+    {
+     "alt_es": "Oficina de RE/MAX LEGACY en Filadelfia",
+     "alt_pt": "Escritório de RE/MAX LEGACY em Filadelfia",
+     "author": "terceiro",
+     "sha256": "c689859873f66d3e51242d5ed91854e1d5850a528369cd6bb250c36851c5f452",
+     "source": "https://maps.google.com/?cid=15287218811125565984",
+     "type": "interior",
+     "variants": {
+      "g480": {
+       "bytes": 26764,
+       "h": 360,
+       "src": "/assets/profiles/remax-legacy-filadelfia-interior-287-g480.webp",
+       "w": 480
+      },
+      "g960": {
+       "bytes": 76650,
+       "h": 720,
+       "src": "/assets/profiles/remax-legacy-filadelfia-interior-287-g960.webp",
+       "w": 960
+      }
+     }
+    }
+   ],
+   "slug": "287-re-max-legacy"
+  },
   "289": {
    "images": [
     {
@@ -6430,13 +6706,13 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 4058,
+       "bytes": 4482,
        "h": 124,
        "src": "/assets/profiles/inmobiliaria-gestiones-chaco-s-r-l-loma-plata-logo-290-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 7614,
+       "bytes": 8574,
        "h": 192,
        "src": "/assets/profiles/inmobiliaria-gestiones-chaco-s-r-l-loma-plata-logo-290-192.webp",
        "w": 192
@@ -6574,14 +6850,14 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 1962,
-       "h": 48,
+       "bytes": 2076,
+       "h": 44,
        "src": "/assets/profiles/remax-noble-loma-plata-logo-294-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 2926,
-       "h": 75,
+       "bytes": 3330,
+       "h": 68,
        "src": "/assets/profiles/remax-noble-loma-plata-logo-294-192.webp",
        "w": 192
       }
@@ -6684,16 +6960,16 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 3818,
+       "bytes": 4562,
        "h": 124,
        "src": "/assets/profiles/ayp-group-inmobiliaria-caaguazu-caaguazu-logo-296-124.webp",
-       "w": 124
+       "w": 123
       },
       "p192": {
-       "bytes": 7070,
-       "h": 191,
+       "bytes": 8280,
+       "h": 192,
        "src": "/assets/profiles/ayp-group-inmobiliaria-caaguazu-caaguazu-logo-296-192.webp",
-       "w": 192
+       "w": 191
       }
      }
     }
@@ -6972,14 +7248,14 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 1886,
-       "h": 124,
+       "bytes": 2018,
+       "h": 57,
        "src": "/assets/profiles/inmobiliaria-propar-s-r-l-coronel-oviedo-coronel-oviedo-logo-305-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 3280,
-       "h": 192,
+       "bytes": 3278,
+       "h": 88,
        "src": "/assets/profiles/inmobiliaria-propar-s-r-l-coronel-oviedo-coronel-oviedo-logo-305-192.webp",
        "w": 192
       }
@@ -7205,6 +7481,45 @@
    ],
    "slug": "310-legua-inmobiliaria-srl"
   },
+  "311": {
+   "images": [
+    {
+     "alt_es": "Imagen institucional de Loteadora Yvy Porã",
+     "alt_pt": "Imagem institucional de Loteadora Yvy Porã",
+     "author": "terceiro",
+     "sha256": "cbf0037bea2cd4210112de5ce989252dfc4e37b8e41edd14f83d175b6140439c",
+     "source": "https://maps.google.com/?cid=7687930907289998263",
+     "type": "institucional",
+     "variants": {
+      "g480": {
+       "bytes": 21488,
+       "h": 274,
+       "src": "/assets/profiles/loteadora-yvy-pora-coronel-oviedo-institucional-311-g480.webp",
+       "w": 480
+      },
+      "g960": {
+       "bytes": 51492,
+       "h": 549,
+       "src": "/assets/profiles/loteadora-yvy-pora-coronel-oviedo-institucional-311-g960.webp",
+       "w": 960
+      },
+      "p124": {
+       "bytes": 4098,
+       "h": 124,
+       "src": "/assets/profiles/loteadora-yvy-pora-coronel-oviedo-institucional-311-124.webp",
+       "w": 124
+      },
+      "p192": {
+       "bytes": 7786,
+       "h": 192,
+       "src": "/assets/profiles/loteadora-yvy-pora-coronel-oviedo-institucional-311-192.webp",
+       "w": 192
+      }
+     }
+    }
+   ],
+   "slug": "311-loteadora-yvy-pora"
+  },
   "312": {
    "images": [
     {
@@ -7216,14 +7531,14 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 1886,
-       "h": 124,
+       "bytes": 2018,
+       "h": 57,
        "src": "/assets/profiles/propar-s-r-l-coronel-oviedo-logo-312-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 3280,
-       "h": 192,
+       "bytes": 3278,
+       "h": 88,
        "src": "/assets/profiles/propar-s-r-l-coronel-oviedo-logo-312-192.webp",
        "w": 192
       }
@@ -7243,14 +7558,14 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 5754,
-       "h": 124,
+       "bytes": 6276,
+       "h": 88,
        "src": "/assets/profiles/campo-9-inmobiliaria-doctor-juan-eulogio-estigarribia-logo-314-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 9054,
-       "h": 192,
+       "bytes": 10024,
+       "h": 136,
        "src": "/assets/profiles/campo-9-inmobiliaria-doctor-juan-eulogio-estigarribia-logo-314-192.webp",
        "w": 192
       }
@@ -7492,14 +7807,14 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 3994,
-       "h": 124,
+       "bytes": 3978,
+       "h": 117,
        "src": "/assets/profiles/inmuebles-roque-alonso-paraguay-logo-34-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 7090,
-       "h": 192,
+       "bytes": 7336,
+       "h": 181,
        "src": "/assets/profiles/inmuebles-roque-alonso-paraguay-logo-34-192.webp",
        "w": 192
       }
@@ -7580,14 +7895,14 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 2136,
-       "h": 124,
+       "bytes": 2270,
+       "h": 53,
        "src": "/assets/profiles/remax-evolution-fernando-de-la-mora-logo-351-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 3404,
-       "h": 192,
+       "bytes": 3484,
+       "h": 82,
        "src": "/assets/profiles/remax-evolution-fernando-de-la-mora-logo-351-192.webp",
        "w": 192
       }
@@ -7598,6 +7913,62 @@
   },
   "352": {
    "images": [
+    {
+     "alt_es": "Fachada de RE/MAX FIDELITY en Fernando de la Mora",
+     "alt_pt": "Fachada de RE/MAX FIDELITY em Fernando de la Mora",
+     "author": "terceiro",
+     "sha256": "13b225ead0cc5b00ecb95d457c44b9ca713b0fb7d74591f2c2466f847f51228c",
+     "source": "https://maps.google.com/?cid=8761161252117751865",
+     "type": "fachada",
+     "variants": {
+      "g480": {
+       "bytes": 27500,
+       "h": 437,
+       "src": "/assets/profiles/remax-fidelity-fernando-de-la-mora-fachada-352-g480.webp",
+       "w": 480
+      },
+      "g960": {
+       "bytes": 93518,
+       "h": 874,
+       "src": "/assets/profiles/remax-fidelity-fernando-de-la-mora-fachada-352-g960.webp",
+       "w": 960
+      },
+      "p124": {
+       "bytes": 3338,
+       "h": 124,
+       "src": "/assets/profiles/remax-fidelity-fernando-de-la-mora-fachada-352-124.webp",
+       "w": 124
+      },
+      "p192": {
+       "bytes": 6476,
+       "h": 192,
+       "src": "/assets/profiles/remax-fidelity-fernando-de-la-mora-fachada-352-192.webp",
+       "w": 192
+      }
+     }
+    },
+    {
+     "alt_es": "Fachada de RE/MAX FIDELITY en Fernando de la Mora",
+     "alt_pt": "Fachada de RE/MAX FIDELITY em Fernando de la Mora",
+     "author": "terceiro",
+     "sha256": "8060800ee81ba72ddcfb3a20a1171779313a23555071831563f61a2dd593beba",
+     "source": "https://maps.google.com/?cid=8761161252117751865",
+     "type": "fachada",
+     "variants": {
+      "g480": {
+       "bytes": 22256,
+       "h": 480,
+       "src": "/assets/profiles/remax-fidelity-fernando-de-la-mora-fachada-352-2-g480.webp",
+       "w": 480
+      },
+      "g960": {
+       "bytes": 67236,
+       "h": 960,
+       "src": "/assets/profiles/remax-fidelity-fernando-de-la-mora-fachada-352-2-g960.webp",
+       "w": 960
+      }
+     }
+    },
     {
      "alt_es": "Oficina de RE/MAX FIDELITY en Fernando de la Mora",
      "alt_pt": "Escritório de RE/MAX FIDELITY em Fernando de la Mora",
@@ -7617,18 +7988,6 @@
        "h": 720,
        "src": "/assets/profiles/remax-fidelity-fernando-de-la-mora-interior-352-g960.webp",
        "w": 960
-      },
-      "p124": {
-       "bytes": 3408,
-       "h": 124,
-       "src": "/assets/profiles/remax-fidelity-fernando-de-la-mora-interior-352-124.webp",
-       "w": 124
-      },
-      "p192": {
-       "bytes": 6288,
-       "h": 192,
-       "src": "/assets/profiles/remax-fidelity-fernando-de-la-mora-interior-352-192.webp",
-       "w": 192
       }
      }
     },
@@ -8217,16 +8576,16 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 4674,
+       "bytes": 4848,
        "h": 124,
        "src": "/assets/profiles/terra-inmobiliaria-s-r-l-nemby-logo-376-124.webp",
-       "w": 114
+       "w": 108
       },
       "p192": {
-       "bytes": 7868,
+       "bytes": 7814,
        "h": 192,
        "src": "/assets/profiles/terra-inmobiliaria-s-r-l-nemby-logo-376-192.webp",
-       "w": 177
+       "w": 167
       }
      }
     }
@@ -8244,16 +8603,16 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 888,
-       "h": 124,
+       "bytes": 1882,
+       "h": 83,
        "src": "/assets/profiles/century21-catedral-san-lorenzo-logo-379-124.webp",
-       "w": 99
+       "w": 124
       },
       "p192": {
-       "bytes": 1440,
-       "h": 192,
+       "bytes": 2978,
+       "h": 128,
        "src": "/assets/profiles/century21-catedral-san-lorenzo-logo-379-192.webp",
-       "w": 154
+       "w": 192
       }
      }
     },
@@ -8490,6 +8849,28 @@
      }
     },
     {
+     "alt_es": "Fachada de RE/MAX EXECUTIVE en San Lorenzo",
+     "alt_pt": "Fachada de RE/MAX EXECUTIVE em San Lorenzo",
+     "author": "estabelecimento",
+     "sha256": "bd7a6267a2458bf79fbd7286e10a18de83e46e5ae43cf3e592f454add2608571",
+     "source": "https://maps.google.com/?cid=3804359096915825257",
+     "type": "fachada",
+     "variants": {
+      "g480": {
+       "bytes": 38888,
+       "h": 315,
+       "src": "/assets/profiles/remax-executive-san-lorenzo-fachada-384-2-g480.webp",
+       "w": 480
+      },
+      "g960": {
+       "bytes": 135640,
+       "h": 631,
+       "src": "/assets/profiles/remax-executive-san-lorenzo-fachada-384-2-g960.webp",
+       "w": 960
+      }
+     }
+    },
+    {
      "alt_es": "Oficina de RE/MAX EXECUTIVE en San Lorenzo",
      "alt_pt": "Escritório de RE/MAX EXECUTIVE em San Lorenzo",
      "author": "estabelecimento",
@@ -8657,14 +9038,14 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 1522,
-       "h": 124,
+       "bytes": 1860,
+       "h": 64,
        "src": "/assets/profiles/spaini-propiedades-villa-elisa-logo-388-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 2576,
-       "h": 192,
+       "bytes": 3062,
+       "h": 99,
        "src": "/assets/profiles/spaini-propiedades-villa-elisa-logo-388-192.webp",
        "w": 192
       }
@@ -8684,14 +9065,14 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 2226,
-       "h": 123,
+       "bytes": 2302,
+       "h": 110,
        "src": "/assets/profiles/patria-inmobiliaria-s-r-l-ypane-logo-393-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 3696,
-       "h": 191,
+       "bytes": 3730,
+       "h": 170,
        "src": "/assets/profiles/patria-inmobiliaria-s-r-l-ypane-logo-393-192.webp",
        "w": 192
       }
@@ -8711,14 +9092,14 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 2816,
-       "h": 124,
+       "bytes": 2798,
+       "h": 118,
        "src": "/assets/profiles/global-genesis-inmobiliaria-concepcion-logo-397-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 4568,
-       "h": 192,
+       "bytes": 4724,
+       "h": 183,
        "src": "/assets/profiles/global-genesis-inmobiliaria-concepcion-logo-397-192.webp",
        "w": 192
       }
@@ -8842,6 +9223,28 @@
        "bytes": 137768,
        "h": 540,
        "src": "/assets/profiles/la-inmobiliaria-de-altos-altos-fachada-400-2-g960.webp",
+       "w": 960
+      }
+     }
+    },
+    {
+     "alt_es": "Oficina de La Inmobiliaria de Altos en Altos",
+     "alt_pt": "Escritório de La Inmobiliaria de Altos em Altos",
+     "author": "terceiro",
+     "sha256": "a32b24f5ba33b5ff9c67e4922e2f207f9a32370e1b28d6640685aab79503e6b2",
+     "source": "https://maps.google.com/?cid=13214568544510426078",
+     "type": "interior",
+     "variants": {
+      "g480": {
+       "bytes": 22906,
+       "h": 270,
+       "src": "/assets/profiles/la-inmobiliaria-de-altos-altos-interior-400-g480.webp",
+       "w": 480
+      },
+      "g960": {
+       "bytes": 69498,
+       "h": 540,
+       "src": "/assets/profiles/la-inmobiliaria-de-altos-altos-interior-400-g960.webp",
        "w": 960
       }
      }
@@ -9204,14 +9607,14 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 3304,
-       "h": 124,
+       "bytes": 3300,
+       "h": 91,
        "src": "/assets/profiles/don-enrique-inmobiliaria-villarrica-logo-422-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 5424,
-       "h": 192,
+       "bytes": 5404,
+       "h": 140,
        "src": "/assets/profiles/don-enrique-inmobiliaria-villarrica-logo-422-192.webp",
        "w": 192
       }
@@ -9392,16 +9795,16 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 2384,
+       "bytes": 3250,
        "h": 124,
        "src": "/assets/profiles/vivaclave-inmobiliaria-cambyreta-logo-431-124.webp",
-       "w": 124
+       "w": 108
       },
       "p192": {
-       "bytes": 4126,
+       "bytes": 5376,
        "h": 192,
        "src": "/assets/profiles/vivaclave-inmobiliaria-cambyreta-logo-431-192.webp",
-       "w": 192
+       "w": 167
       }
      }
     },
@@ -9463,14 +9866,14 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 2212,
-       "h": 118,
+       "bytes": 3256,
+       "h": 108,
        "src": "/assets/profiles/crecer-inmobiliaria-coronel-bogado-logo-432-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 3854,
-       "h": 183,
+       "bytes": 5410,
+       "h": 167,
        "src": "/assets/profiles/crecer-inmobiliaria-coronel-bogado-logo-432-192.webp",
        "w": 192
       }
@@ -9939,14 +10342,14 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 2686,
-       "h": 124,
+       "bytes": 2674,
+       "h": 56,
        "src": "/assets/profiles/remax-maestros-inmobiliarios-encarnacion-logo-445-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 4606,
-       "h": 192,
+       "bytes": 4558,
+       "h": 87,
        "src": "/assets/profiles/remax-maestros-inmobiliarios-encarnacion-logo-445-192.webp",
        "w": 192
       }
@@ -10132,16 +10535,16 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 1260,
+       "bytes": 1264,
        "h": 124,
        "src": "/assets/profiles/ss-growth-real-estate-encarnacion-logo-448-124.webp",
-       "w": 124
+       "w": 107
       },
       "p192": {
-       "bytes": 2004,
+       "bytes": 2028,
        "h": 192,
        "src": "/assets/profiles/ss-growth-real-estate-encarnacion-logo-448-192.webp",
-       "w": 192
+       "w": 165
       }
      }
     },
@@ -10203,14 +10606,14 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 1886,
-       "h": 124,
+       "bytes": 2018,
+       "h": 57,
        "src": "/assets/profiles/propar-s-r-l-hohenau-logo-452-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 3280,
-       "h": 192,
+       "bytes": 3278,
+       "h": 88,
        "src": "/assets/profiles/propar-s-r-l-hohenau-logo-452-192.webp",
        "w": 192
       }
@@ -10257,6 +10660,45 @@
     }
    ],
    "slug": "453-raices-real-estate-agencia-hohenau"
+  },
+  "459": {
+   "images": [
+    {
+     "alt_es": "Fachada de Terra Sur en Obligado",
+     "alt_pt": "Fachada de Terra Sur em Obligado",
+     "author": "terceiro",
+     "sha256": "2b4ad9262e5d9a4f6b1ba3ee9980b3f79b120d9873b2e1b99dafec05723885e1",
+     "source": "https://maps.google.com/?cid=12976506572571519979",
+     "type": "fachada",
+     "variants": {
+      "g480": {
+       "bytes": 46024,
+       "h": 334,
+       "src": "/assets/profiles/terra-sur-obligado-fachada-459-g480.webp",
+       "w": 480
+      },
+      "g960": {
+       "bytes": 146260,
+       "h": 668,
+       "src": "/assets/profiles/terra-sur-obligado-fachada-459-g960.webp",
+       "w": 960
+      },
+      "p124": {
+       "bytes": 6066,
+       "h": 124,
+       "src": "/assets/profiles/terra-sur-obligado-fachada-459-124.webp",
+       "w": 124
+      },
+      "p192": {
+       "bytes": 12714,
+       "h": 192,
+       "src": "/assets/profiles/terra-sur-obligado-fachada-459-192.webp",
+       "w": 192
+      }
+     }
+    }
+   ],
+   "slug": "459-terra-sur"
   },
   "461": {
    "images": [
@@ -10625,16 +11067,16 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 1892,
+       "bytes": 1288,
        "h": 124,
        "src": "/assets/profiles/irun-propiedades-s-a-yaguaron-logo-482-124.webp",
-       "w": 124
+       "w": 70
       },
       "p192": {
-       "bytes": 3136,
+       "bytes": 2252,
        "h": 192,
        "src": "/assets/profiles/irun-propiedades-s-a-yaguaron-logo-482-192.webp",
-       "w": 192
+       "w": 108
       }
      }
     }
@@ -10691,14 +11133,14 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 1954,
-       "h": 77,
+       "bytes": 2454,
+       "h": 50,
        "src": "/assets/profiles/aguero-inmobiliaria-s-a-santa-rosa-del-aguaray-logo-495-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 3372,
-       "h": 120,
+       "bytes": 4306,
+       "h": 78,
        "src": "/assets/profiles/aguero-inmobiliaria-s-a-santa-rosa-del-aguaray-logo-495-192.webp",
        "w": 192
       }
@@ -10718,14 +11160,14 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 1822,
-       "h": 124,
+       "bytes": 4338,
+       "h": 122,
        "src": "/assets/profiles/mi-tierra-s-a-santa-rosa-del-aguaray-logo-501-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 3420,
-       "h": 192,
+       "bytes": 7240,
+       "h": 188,
        "src": "/assets/profiles/mi-tierra-s-a-santa-rosa-del-aguaray-logo-501-192.webp",
        "w": 192
       }
@@ -10806,14 +11248,14 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 1462,
-       "h": 124,
+       "bytes": 1664,
+       "h": 90,
        "src": "/assets/profiles/somelson-propiedades-paraguay-logo-71-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 2360,
-       "h": 192,
+       "bytes": 2964,
+       "h": 140,
        "src": "/assets/profiles/somelson-propiedades-paraguay-logo-71-192.webp",
        "w": 192
       }
@@ -10855,14 +11297,14 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 2428,
-       "h": 124,
+       "bytes": 3446,
+       "h": 86,
        "src": "/assets/profiles/team-delfi-chase-paraguay-logo-74-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 3928,
-       "h": 192,
+       "bytes": 5192,
+       "h": 133,
        "src": "/assets/profiles/team-delfi-chase-paraguay-logo-74-192.webp",
        "w": 192
       }
@@ -10975,14 +11417,14 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 5368,
-       "h": 65,
+       "bytes": 7248,
+       "h": 73,
        "src": "/assets/profiles/bigal-servicios-inmobiliarios-ciudad-del-este-logo-90-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 9242,
-       "h": 100,
+       "bytes": 12420,
+       "h": 113,
        "src": "/assets/profiles/bigal-servicios-inmobiliarios-ciudad-del-este-logo-90-192.webp",
        "w": 192
       }
@@ -11024,6 +11466,28 @@
        "h": 192,
        "src": "/assets/profiles/c4-inmuebles-ciudad-del-este-interior-91-192.webp",
        "w": 192
+      }
+     }
+    },
+    {
+     "alt_es": "Imagen institucional de C4 Inmuebles",
+     "alt_pt": "Imagem institucional de C4 Inmuebles",
+     "author": "estabelecimento",
+     "sha256": "a5da19229dace8b2bec9b3f48ec8343228adad7d0b7c5e8e8d05089f36ba08ef",
+     "source": "https://maps.google.com/?cid=15951857859978392035",
+     "type": "institucional",
+     "variants": {
+      "g480": {
+       "bytes": 39232,
+       "h": 853,
+       "src": "/assets/profiles/c4-inmuebles-ciudad-del-este-institucional-91-g480.webp",
+       "w": 480
+      },
+      "g960": {
+       "bytes": 66870,
+       "h": 1280,
+       "src": "/assets/profiles/c4-inmuebles-ciudad-del-este-institucional-91-g960.webp",
+       "w": 720
       }
      }
     }
@@ -11124,14 +11588,14 @@
      "type": "logo",
      "variants": {
       "p124": {
-       "bytes": 1928,
-       "h": 100,
+       "bytes": 1906,
+       "h": 99,
        "src": "/assets/profiles/century21-premium-ciudad-del-este-logo-95-124.webp",
        "w": 124
       },
       "p192": {
-       "bytes": 3108,
-       "h": 154,
+       "bytes": 3092,
+       "h": 153,
        "src": "/assets/profiles/century21-premium-ciudad-del-este-logo-95-192.webp",
        "w": 192
       }

@@ -63,8 +63,9 @@ another unrelated profile is dropped (a shared brand logo is allowed).
 | `…-g480.webp`, `…-g960.webp` | 480/960 px wide | profile gallery, `srcset` + `sizes`, lazy |
 
 WebP, EXIF orientation applied, metadata dropped, transparency kept for logos;
-quality is the highest that fits the budget (30/60 KB primary, 80/180 KB
-gallery) and an image is shrunk slightly rather than shipped heavier. Small
+logos are fitted whole and trimmed of uniform borders (letterbox bars), photos
+are cropped; quality is the highest that fits the budget (30/60 KB primary,
+80/180 KB gallery) and an image is shrunk slightly rather than shipped heavier. Small
 originals are never enlarged.
 
 Every page credits the source with a link to the business's Google Maps
@@ -81,6 +82,8 @@ directory, never in the repository.
 | `reports/imagens-manifest.csv` | every published file with alt texts and origin |
 | `reports/imagens-aprovadas.csv`, `-rejeitadas.csv`, `-pendentes.csv` | every source image with its decision and reason |
 | `reports/imagens-perfis.csv` | all 500 profiles: identity decision, Google match, images published |
+| `reports/imagens-cobertura.csv` | every accepted profile and why it has no image when it has none |
+| `reports/imagens-origem-direitos.csv` | origin and rights risk of each published image (business upload: medium; third-party upload: high), kept apart from identity |
 
 The `profile_images` check in `tools/audit.py` blocks a deploy if a published
 image lacks a matching content review, a file is missing, orphaned or over

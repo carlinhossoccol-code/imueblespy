@@ -89,7 +89,7 @@ profile_id,slug,nome,cidade,departamento,identidade,revisao_manual,motivos_regra
 88,88-asesoria-parana,Asesoría Paraná,Ciudad del Este,Alto Paraná,rejeitado,rejeitado: escribanía,nome_google_com_termos_extras:escribania,Escribanía ALTO PARANÁ,"F9CM+C5V, Cd. del Este 100148",ChIJ2XfGhOaP9pQRj1fdGntR_Hk,0,
 89,89-atlantica-de-inmuebles-s-a-ciudad-del-este,Atlántica de Inmuebles S.A. — Ciudad del Este,Ciudad del Este,Alto Paraná,confirmado,,,Atlántica de Inmuebles S.A. (Ciudad del Este),"G836+J7, Monseñor Rodríguez, Cd. del Este 100179",ChIJc5ampMmF9pQRLPtSYHgr3k8,1,fachada
 90,90-bigal-servicios-inmobiliarios,Bigal Servicios Inmobiliarios,Ciudad del Este,Alto Paraná,confirmado,,,BIGAL Servicios Inmobiliarios,"Lomas Valentinas esq, Cd. del Este 100151",ChIJ6cQNrdyP9pQR_yKh5He_o0E,1,logo
-91,91-c4-inmuebles,C4 Inmuebles,Ciudad del Este,Alto Paraná,confirmado,"aceito: nome exato, mesma cidade",nome_curto_ou_generico,C4 INMUEBLES,"2, Sala 03, Centro, Ed. Fuji, Curupayty, Cd. del Este 100137",ChIJn21SSwCF9pQR4_GIAzViYN0,1,interior
+91,91-c4-inmuebles,C4 Inmuebles,Ciudad del Este,Alto Paraná,confirmado,"aceito: nome exato, mesma cidade",nome_curto_ou_generico,C4 INMUEBLES,"2, Sala 03, Centro, Ed. Fuji, Curupayty, Cd. del Este 100137",ChIJn21SSwCF9pQR4_GIAzViYN0,2,"interior,institucional"
 92,92-centro-inmobiliaria,Centro Inmobiliaria,Ciudad del Este,Alto Paraná,confirmado,,,Centro Inmobiliaria,"F9CR+773, Cd. del Este 100139",ChIJX7MB1x-Q9pQRHBRa-FCBnZQ,0,
 93,93-century-21-invest,CENTURY 21 Invest,Ciudad del Este,Alto Paraná,confirmado,,,Century 21 Invest Ciudad del Este,"Choferes del Chaco entre, Mburucuyá y, Cd. del Este 100153",ChIJ7Z-WiKOP9pQRG1ujJOZHZhU,3,"fachada,interior,interior"
 94,94-century-21-next,CENTURY 21 Next,Ciudad del Este,Alto Paraná,sem_pasta_no_zip,,,,,,0,
@@ -104,7 +104,7 @@ profile_id,slug,nome,cidade,departamento,identidade,revisao_manual,motivos_regra
 103,103-gavilan-emprendimientos,Gavilán Emprendimientos,Ciudad del Este,Alto Paraná,confirmado,,,Gavilan,Cd. del Este 100168,ChIJeaRm4L2F9pQRdUgjEyfJ-7g,0,
 104,104-gloria-bentos,Gloria Bentos,Ciudad del Este,Alto Paraná,rejeitado,rejeitado: outro negócio em outra cidade,nome_google_parcial;endereco_google_sem_a_cidade_do_perfil,Casa Gloria,"F9RR+25Q, Av. Carlos Antonio López, Minga Guazú 100136",ChIJl8XVSVSF9pQRI5HE0IZuzqM,0,
 105,105-hb-inmobiliaria-s-a,HB Inmobiliaria S.A.,Ciudad del Este,Alto Paraná,confirmado,"aceito: nome exato, mesma cidade",nome_curto_ou_generico,HB Inmobiliaria S.A.,"Av. Adrián Jara 850, Cd. del Este 100136",ChIJTYY2llWF9pQRd52g-6ySwmU,1,logo
-106,106-inmobiliaria-del-este-idesa-ciudad-del-este,Inmobiliaria del Este (IDESA) - Ciudad del Este,Ciudad del Este,Alto Paraná,confirmado,,,Inmobiliaria del Este Agencia CDE,"KM 9.5, Avenida San Blás, Cd. del Este 100105",ChIJvcKB0KSF9pQRnE8H4KXr83Y,1,fachada
+106,106-inmobiliaria-del-este-idesa-ciudad-del-este,Inmobiliaria del Este (IDESA) - Ciudad del Este,Ciudad del Este,Alto Paraná,confirmado,,,Inmobiliaria del Este Agencia CDE,"KM 9.5, Avenida San Blás, Cd. del Este 100105",ChIJvcKB0KSF9pQRnE8H4KXr83Y,2,"fachada,fachada"
 107,107-inmobiliaria-inmuebles-del-paraguay,Inmobiliaria Inmuebles del Paraguay,Ciudad del Este,Alto Paraná,rejeitado,,nome_google_de_outro_estabelecimento,Inmobiliaria Inmuebles del Paraguay,"Wildo Osmar Britos, Cd. del Este 100172",ChIJBeg2cCSF9pQR0lewzlZGWPw,0,
 108,108-inmobiliaria-my-house-py,Inmobiliaria My House Py,Ciudad del Este,Alto Paraná,confirmado,,,Inmobiliaria My House Py,"Av. Los Comuneros casi, Cd. del Este 100150",ChIJm21KQTqP9pQRof2jPuzZoUI,1,fachada
 109,109-inmobiliaria-ruza,Inmobiliaria Ruza,Ciudad del Este,Alto Paraná,sem_pasta_no_zip,,,,,,0,
@@ -140,7 +140,7 @@ profile_id,slug,nome,cidade,departamento,identidade,revisao_manual,motivos_regra
 139,139-world-imoveis-cde,World Imóveis CDE,Ciudad del Este,Alto Paraná,confirmado,,,World Imóveis CDE,Cd. del Este 100113,ChIJ6XzNNgCF9pQRvFRNOZg-gm0,3,"logo,fachada,fachada"
 140,140-yoana-bentos,Yoana Bentos,Ciudad del Este,Alto Paraná,sem_pasta_no_zip,,,,,,0,
 141,141-inmobiliaria-versatil,Inmobiliaria Versátil,Hernandarias,Alto Paraná,confirmado,,,Inmobiliaria Versátil,"Nro. 6 Zona Comercial PCC, Agustín Pío Barrios, Hernandarias 7220",ChIJ25BKMaKF9pQR69zQU7_GKBo,2,"fachada,fachada"
-142,142-kala-huala-s-a-casa-matriz,Kala Huala S.A. — Casa Matriz,Hernandarias,Alto Paraná,confirmado,,,Kala Huala SA,"Km 4,5, Supercarretera, Hernandarias 100519",ChIJqTltKT2F9pQRzhEmVnGWdDE,1,fachada
+142,142-kala-huala-s-a-casa-matriz,Kala Huala S.A. — Casa Matriz,Hernandarias,Alto Paraná,confirmado,,,Kala Huala SA,"Km 4,5, Supercarretera, Hernandarias 100519",ChIJqTltKT2F9pQRzhEmVnGWdDE,2,"fachada,fachada"
 143,143-re-max-black-del-este,RE/MAX Black del Este,Hernandarias,Alto Paraná,sem_pasta_no_zip,,,,,,0,
 144,144-skyone-empower,SkyOne Empower,Hernandarias,Alto Paraná,confirmado,,,SkyOne Empower,"Calle Augusto Roa Bastos esquina, Hernandarias 7000",ChIJeZpHEwCF9pQRDpMwzrWDyQQ,2,"logo,equipe"
 145,145-ccc-inmobiliaria,CCC Inmobiliaria,Itakyry,Alto Paraná,sem_pasta_no_zip,,,,,,0,
@@ -159,10 +159,10 @@ profile_id,slug,nome,cidade,departamento,identidade,revisao_manual,motivos_regra
 158,158-valle-inmobiliaria,Valle Inmobiliaria,Presidente Franco,Alto Paraná,rejeitado,rejeitado: endereço em outra cidade,endereco_google_sem_a_cidade_do_perfil,Valle Inmobiliaria,Cd. del Este 100214,ChIJoTIRPeWP9pQRlEvyUFTr8uE,0,
 159,159-crecer-inmobiliaria-sucursal-san-alberto,Crecer Inmobiliaria - Sucursal San Alberto,San Alberto,Alto Paraná,rejeitado,,endereco_de_outra_cidade_ou_filial;lugar_google_compartilhado_por_3_perfis,Crecer Inmobiliaria,"Alfredo Seiferheld, Asunción 001421",ChIJE16se4ypXZQRsLybxpIVYO4,0,
 160,160-inmobiliaria-don-leopoldo,Inmobiliaria Don Leopoldo,Santa Rita,Alto Paraná,confirmado,,,Inmobiliaria Don Leopoldo,"Km 214, Ruta Vi, Santa Rita 101307",ChIJF-sphBBr9pQROUTrwyOIsx4,3,"fachada,fachada,interior"
-161,161-inmobiliaria-santacruz-dos-santos,Inmobiliaria Santacruz Dos Santos,Santa Rita,Alto Paraná,confirmado,,,Santacruz & Dos Santos,"Fracción Las Carmelitas, C. Augusto Roa Bastos, Santa Rita 101303",ChIJ3Z0UprBr9pQRhkf7ftwXV5I,0,
+161,161-inmobiliaria-santacruz-dos-santos,Inmobiliaria Santacruz Dos Santos,Santa Rita,Alto Paraná,confirmado,,,Santacruz & Dos Santos,"Fracción Las Carmelitas, C. Augusto Roa Bastos, Santa Rita 101303",ChIJ3Z0UprBr9pQRhkf7ftwXV5I,1,fachada
 162,162-re-max-terra,RE/MAX TERRA,Santa Rita,Alto Paraná,confirmado,,,RE/MAX TERRA,"Avenida 14 de mayo, Santa Rita 101301",ChIJv0IvT6Vr9pQR_Tg5QR6Qzig,4,"fachada,fachada,interior,interior"
 163,163-inmo-loteamientos-colonia-yguazu,Inmo Loteamientos — Colonia Yguazú,Yguazú,Alto Paraná,confirmado,,,Inmo Loteamientos | Sucursal Yguazú,"PY-02 Ruta, Yguazú 100901",ChIJu6NnwHd39pQRJYlU76_249Y,1,fachada
-164,164-emsa-inmobiliaria-pedro-juan-caballero,EMSA Inmobiliaria — Pedro Juan Caballero,Pedro Juan Caballero,Amambay,confirmado,,,EMSA Inmobiliaria Pedro Juan Caballero,"Calle Carlos Antonio López &, Juana de Lara, Pedro Juan Caballero 130113",ChIJSVz49fNvYpQRxa9w7qsnU9Y,1,fachada
+164,164-emsa-inmobiliaria-pedro-juan-caballero,EMSA Inmobiliaria — Pedro Juan Caballero,Pedro Juan Caballero,Amambay,confirmado,,,EMSA Inmobiliaria Pedro Juan Caballero,"Calle Carlos Antonio López &, Juana de Lara, Pedro Juan Caballero 130113",ChIJSVz49fNvYpQRxa9w7qsnU9Y,2,"fachada,fachada"
 165,165-ideal-emprendimientos-s-a,Ideal Emprendimientos S.A.,Pedro Juan Caballero,Amambay,confirmado,,,Ideal Emprendimientos S.A.,"Calle Carlos Antonio López, e, F768+8JF, Gral. Díaz, Pedro Juan Caballero 130112",ChIJY2eFiBtvYpQRSQd5Nn0xgR8,0,
 166,166-inmobiliaria-aquidaban,Inmobiliaria Aquidaban,Pedro Juan Caballero,Amambay,confirmado,,,Inmobiliaria Aquidaban,"Gral Díaz 6404, Pedro Juan Caballero 130112",ChIJP8oijOduYpQR4sO_rJTW3Xw,5,"logo,fachada,fachada,interior,interior"
 167,167-montecristo-inmobiliaria-s-a,Montecristo Inmobiliaria S.A.,Pedro Juan Caballero,Amambay,confirmado,,,Montecristo Inmobiliaria S.A.,"F757+739, General Bruguez, Pedro Juan Caballero 1268",ChIJKeodNN1uYpQRuodw5OW864k,0,
@@ -171,9 +171,9 @@ profile_id,slug,nome,cidade,departamento,identidade,revisao_manual,motivos_regra
 170,170-abas-inmobiliaria,Abas Inmobiliaria,Asunción,Asunción,confirmado,"aceito: Abas Inmobiliaria, matriz em Asunción",lugar_google_compartilhado_por_6_perfis,Abas Inmobiliaria,"Eligio Ayala 196, Asunción 001101",ChIJmY66Zu6nXZQRYJ3fRe9z8dU,4,"fachada,fachada,interior,interior"
 171,171-alcides-cabrera-asesor-inmobiliario,Alcides Cabrera — Asesor Inmobiliario,Asunción,Asunción,rejeitado,,nome_google_de_outro_estabelecimento;lugar_google_compartilhado_por_6_perfis,Abas Inmobiliaria,"Eligio Ayala 196, Asunción 001101",ChIJmY66Zu6nXZQRYJ3fRe9z8dU,0,
 172,172-area-inmobiliaria,Area Inmobiliaria,Asunción,Asunción,sem_pasta_no_zip,,,,,,0,
-173,173-atlantica-de-inmuebles-s-a-agencia-aviadores,Atlántica de Inmuebles S.A. — Agencia Aviadores,Asunción,Asunción,confirmado,,,Atlántica de Inmuebles S.A (Aviadores),"Teniente Primero Dr. Vicente Oddone, Asunción 001527",ChIJSTdwZ8KpXZQRvltZo5XNENM,2,"fachada,fachada"
+173,173-atlantica-de-inmuebles-s-a-agencia-aviadores,Atlántica de Inmuebles S.A. — Agencia Aviadores,Asunción,Asunción,confirmado,,,Atlántica de Inmuebles S.A (Aviadores),"Teniente Primero Dr. Vicente Oddone, Asunción 001527",ChIJSTdwZ8KpXZQRvltZo5XNENM,3,"fachada,fachada,interior"
 174,174-atlantica-de-inmuebles-s-a-casa-central,Atlántica de Inmuebles S.A. — Casa Central,Asunción,Asunción,confirmado,,,Atlántica de Inmuebles S.A (Central),"Cerro Corá 1681 c, Asunción 001224",ChIJzSFgsTGnXZQRW3BCwnl5Ro4,3,"fachada,interior,interior"
-175,175-aurora-inmobiliaria-s-a,Aurora Inmobiliaria S.A.,Asunción,Asunción,confirmado,,,Aurora Inmobiliaria S.A.,"Alberdi, Asunción 001102",ChIJ70ogivSnXZQRGXuyKEiXoqc,2,"fachada,interior"
+175,175-aurora-inmobiliaria-s-a,Aurora Inmobiliaria S.A.,Asunción,Asunción,confirmado,,,Aurora Inmobiliaria S.A.,"Alberdi, Asunción 001102",ChIJ70ogivSnXZQRGXuyKEiXoqc,3,"fachada,fachada,interior"
 176,176-austral-inmobiliaria,Austral Inmobiliaria,Asunción,Asunción,rejeitado,rejeitado: lugar na Argentina,endereco_google_sem_a_cidade_do_perfil,Austral Inmobiliaria,"3 de Febrero 1314, S3080EAL Esperanza, Santa Fe, Argentina",ChIJtULGRz0TtZURE8VttXtCUWA,0,
 177,177-boulevard-plaza-pinedo,Boulevard Plaza Pinedo,Asunción,Asunción,rejeitado,rejeitado: empreendimento em outra cidade,endereco_google_sem_a_cidade_do_perfil,Boulevard Plaza Pinedo,"Cnel. Vicente Machuca, Fernando de la Mora 110311",ChIJU9fy63evXZQR0P8Ml_vB1-U,0,
 178,178-casablanca-inmobiliaria,Casablanca Inmobiliaria,Asunción,Asunción,confirmado,aceito: Casa Blanca Inmobiliaria em Asunción (o homônimo de San Bernardino é outro perfil),nome_google_com_termos_extras:blanca,Casa Blanca Inmobiliaria,"29, Asunción 1101",ChIJSfPYV5GvXZQRrCVmrCgyl8M,0,
@@ -183,7 +183,7 @@ profile_id,slug,nome,cidade,departamento,identidade,revisao_manual,motivos_regra
 182,182-century-21-alma,CENTURY 21 Alma,Asunción,Asunción,sem_pasta_no_zip,,,,,,0,
 183,183-century-21-believe,CENTURY 21 Believe,Asunción,Asunción,rejeitado,rejeitado: outro escritório Century 21,nome_google_parcial;outra_unidade_da_rede:select;lugar_google_compartilhado_por_3_perfis,Century 21 Select,"1408, Asunción 001421",ChIJs-RKLz2nXZQRiGQF8-99I9U,0,
 184,184-century-21-black,CENTURY 21 Black,Asunción,Asunción,confirmado,,,Century 21 Black,"Prof. Juan Carlos Moreno González 3362, Asunción 001229",ChIJj5sNzzmpXZQR4VGdXUmPTKo,2,"fachada,fachada"
-185,185-century-21-bonanza,CENTURY 21 Bonanza,Asunción,Asunción,confirmado,,,CENTURY 21 BONANZA PY,"Av. Dr. Guido Boggiani 5725, Asunción 001416",ChIJ2VE5fd-pXZQRJ-dmlAGKUXE,3,"fachada,interior,interior"
+185,185-century-21-bonanza,CENTURY 21 Bonanza,Asunción,Asunción,confirmado,,,CENTURY 21 BONANZA PY,"Av. Dr. Guido Boggiani 5725, Asunción 001416",ChIJ2VE5fd-pXZQRJ-dmlAGKUXE,4,"fachada,fachada,interior,interior"
 186,186-century-21-capital,CENTURY 21 Capital,Asunción,Asunción,confirmado,,,Century 21 Capital,"Herib Campos Cervera, Asunción 001527",ChIJCYO0eVynXZQRMwnK7iVQsAM,2,"fachada,fachada"
 187,187-century-21-central,CENTURY 21 Central,Asunción,Asunción,sem_pasta_no_zip,,,,,,0,
 188,188-century-21-de-los-rios-larrea,CENTURY 21 De Los Ríos Larrea,Asunción,Asunción,sem_pasta_no_zip,,,,,,0,
@@ -238,13 +238,13 @@ profile_id,slug,nome,cidade,departamento,identidade,revisao_manual,motivos_regra
 237,237-re-max-black,RE/MAX BLACK,Asunción,Asunción,confirmado,,,RE/MAX BLACK,"PCJG+7R4, Av. Dr. Felipe Molas López, Asunción 001520",ChIJ7zyOdgCnXZQRVuuFsc_6LwI,1,fachada
 238,238-re-max-central,RE/MAX CENTRAL,Asunción,Asunción,confirmado,,,REMAX CENTRAL PARAGUAY,"Avda. Perú, P97M+76W, &, Asunción 001209",ChIJGfZNMwCnXZQRzfIWQHhGlFs,2,"fachada,fachada"
 239,239-re-max-city,RE/MAX CITY,Asunción,Asunción,confirmado,,,Remax City,"Av. España 2293, Asunción 001207",ChIJlR09nU6nXZQRamB_XTBd3Ao,2,"fachada,fachada"
-240,240-re-max-conexion,RE/MAX Conexión,Asunción,Asunción,confirmado,,,RE/MAX Conexión,"Jaime Bestard, Asunción 001402",ChIJLXhACaWpXZQR_ajjSRTwn4M,3,"fachada,interior,interior"
+240,240-re-max-conexion,RE/MAX Conexión,Asunción,Asunción,confirmado,,,RE/MAX Conexión,"Jaime Bestard, Asunción 001402",ChIJLXhACaWpXZQR_ajjSRTwn4M,4,"fachada,fachada,interior,interior"
 241,241-re-max-contigo,RE/MAX Contigo,Asunción,Asunción,confirmado,"aceito: Re/MaxCONTIGO, mesma cidade",outra_unidade_da_rede:re maxcontigo,Re/MaxCONTIGO,"PCFR+HFJ, Prócer Juan Manuel Iturbe 392, Asunción 001526",ChIJqw-AQQenXZQR-8lTgeomDJA,1,fachada
 242,242-re-max-cosmopolita,RE/MAX COSMOPOLITA,Asunción,Asunción,confirmado,,,REMAX COSMOPOLITA,"Sgto. José León Gauto N° 428, Asunción 001207",ChIJfe_K_0vNXpQRS97mCbTx4VE,3,"interior,interior,equipe"
 243,243-re-max-cumbre,RE/MAX CUMBRE,Asunción,Asunción,confirmado,,,Remax Cumbre,"Av. Dr. Guido Boggiani, Asunción 5823",ChIJoYuATwCpXZQRkDm0MPU5TyI,2,"equipe,equipe"
 244,244-re-max-elite,RE/MAX ELITE,Asunción,Asunción,confirmado,,,RE/MAX Elite,"Federación Rusa 1461, Asunción 001527",ChIJ65eXSxymXZQRfoUskjGhI_A,2,"fachada,interior"
 245,245-re-max-experience,RE/MAX EXPERIENCE,Asunción,Asunción,confirmado,,,Remax Experience Py,"Padre Juan Pucheu 588, Asunción 1409",ChIJHxTY2b2nXZQRZk8nUkUEDss,3,"logo,interior,interior"
-246,246-re-max-family,RE/MAX FAMILY,Asunción,Asunción,confirmado,,,RE/MAX FAMILY,"Av Gral Máximo Santos 2488, Asunción 1614",ChIJLR-BOfupXZQRY-Nn93VG22g,4,"logo,fachada,interior,interior"
+246,246-re-max-family,RE/MAX FAMILY,Asunción,Asunción,confirmado,,,RE/MAX FAMILY,"Av Gral Máximo Santos 2488, Asunción 1614",ChIJLR-BOfupXZQRY-Nn93VG22g,5,"logo,fachada,interior,interior,equipe"
 247,247-re-max-fenix,RE/MAX FENIX,Asunción,Asunción,sem_pasta_no_zip,,,,,,0,
 248,248-re-max-focus,RE/MAX FOCUS,Asunción,Asunción,rejeitado,"rejeitado: página de uma agente, não do escritório",outra_unidade_da_rede:kattia ortiz,Kattia Ortiz Remax Focus,"Sinforiano Buzó Gómez 223, Asunción 001403",ChIJ-965cQKvXZQRjlQ1pb_sQLA,0,
 249,249-re-max-genesis,RE/MAX GÉNESIS,Asunción,Asunción,confirmado,,,REMAX GENESIS,"Teodosio González 7245 casi, Asunción 001418",ChIJ73QX6ICoXZQRt3-H6fkVt0o,1,logo
@@ -285,7 +285,7 @@ profile_id,slug,nome,cidade,departamento,identidade,revisao_manual,motivos_regra
 284,284-betel-arquitectura-inmobiliaria,Betel Arquitectura - Inmobiliaria,Filadelfia,Boquerón,confirmado,,,Betel Arquitectura - Inmobiliaria,"JXGG+VF2, Filadelfia 160403",ChIJ7bLzYgAbcpQRKMCNkY32pw8,1,fachada
 285,285-inmobiliaria-renueva,Inmobiliaria Renueva,Filadelfia,Boquerón,confirmado,,,Inmobiliaria Renueva,"Avenida Trebol, JXX9+6M5, &, Filadelfia 160401",ChIJIcHPKQARcpQRqNiUKHvZsnM,2,"fachada,fachada"
 286,286-re-max-1st-choice,RE/MAX 1ST CHOICE,Filadelfia,Boquerón,sem_pasta_no_zip,,,,,,0,
-287,287-re-max-legacy,RE/MAX LEGACY,Filadelfia,Boquerón,confirmado,,,Re/max Legacy - Inmobiliaria Filadelfia,"JXM8+Q8Q, Filadelfia 160402",ChIJ8dArCqUQcpQRIArPeIMcJ9Q,0,
+287,287-re-max-legacy,RE/MAX LEGACY,Filadelfia,Boquerón,confirmado,,,Re/max Legacy - Inmobiliaria Filadelfia,"JXM8+Q8Q, Filadelfia 160402",ChIJ8dArCqUQcpQRIArPeIMcJ9Q,2,"fachada,interior"
 288,288-century-21-alfa,CENTURY 21 Alfa,Loma Plata,Boquerón,sem_pasta_no_zip,,,,,,0,
 289,289-inmobiliaria-daka,Inmobiliaria DAKA,Loma Plata,Boquerón,confirmado,,,Inmobiliaria DAKA,"Paraguay, Loma Plata 1243",ChIJNfRxBfH5cZQR3fK8cNZrFBQ,2,"fachada,fachada"
 290,290-inmobiliaria-gestiones-chaco-s-r-l,Inmobiliaria Gestiones Chaco S.R.L.,Loma Plata,Boquerón,confirmado,,,INMOBILIARIA GESTIONES CHACO S.R.L.,"Boquerón, Loma Plata 160502",ChIJu8QR8H75cZQR2R_mfz3kPnk,1,logo
@@ -309,7 +309,7 @@ profile_id,slug,nome,cidade,departamento,identidade,revisao_manual,motivos_regra
 308,308-la-loteadora-inmobiliaria-s-a-agencia-coronel-oviedo,La Loteadora Inmobiliaria S.A. - Agencia Coronel Oviedo,Coronel Oviedo,Caaguazú,sem_pasta_no_zip,,,,,,0,
 309,309-la-paraguaya-inmobiliaria-s-a-coronel-oviedo,La Paraguaya Inmobiliaria S.A. — Coronel Oviedo,Coronel Oviedo,Caaguazú,confirmado,aceito: sucursal Coronel Oviedo de La Paraguaya,nome_google_parcial,Suc. Cnel oviedo La Paraguaya Inmobiliaria,"Dr. Blas Garay, Cnel. Oviedo 050104",ChIJ08JX55TpXpQRBqGyx9fs7RA,1,fachada
 310,310-legua-inmobiliaria-srl,Legua Inmobiliaria SRL,Coronel Oviedo,Caaguazú,confirmado,,,Legua Inmobiliaria SRL,"HH44+HV5 Sobre Tuyuti entre Ayolas y Tacuary a 50 metros del Rectorado UNCA, al lado mismo de Tajy Seguros, Tuyuti, Cnel. Oviedo 050107",ChIJZfYUOwDpXpQRJnuQIp8Xo9o,2,"fachada,fachada"
-311,311-loteadora-yvy-pora,Loteadora Yvy Porã,Coronel Oviedo,Caaguazú,confirmado,,,Loteadora Yvy Porã,Cnel. Oviedo 050133,ChIJFfZKt93DXpQRt1PEgm0EsWo,0,
+311,311-loteadora-yvy-pora,Loteadora Yvy Porã,Coronel Oviedo,Caaguazú,confirmado,,,Loteadora Yvy Porã,Cnel. Oviedo 050133,ChIJFfZKt93DXpQRt1PEgm0EsWo,1,institucional
 312,312-propar-s-r-l-sucursal-coronel-oviedo,Propar S.R.L. — Sucursal Coronel Oviedo,Coronel Oviedo,Caaguazú,confirmado,aceito: mesmo escritório cadastrado duas vezes (305 e 312),lugar_google_compartilhado_por_2_perfis,Inmobiliaria Propar S.R.L. Coronel Oviedo,Cnel. Oviedo 050101,ChIJZdA-NhfpXpQRZ7_6YUhai0k,1,logo
 313,313-urba-sucursal-coronel-oviedo,URBA - Sucursal Coronel Oviedo,Coronel Oviedo,Caaguazú,sem_pasta_no_zip,,,,,,0,
 314,314-campo-9-inmobiliaria,Campo 9 Inmobiliaria,Doctor Juan Eulogio Estigarribia,Caaguazú,confirmado,,,Campo 9 Inmobiliaria,"Proceres de Mayo Casi, Dr Juan Eulogio Estigarribia 3660",ChIJQ8bdpMBDX5QRGQKS2rbVE0M,2,"logo,fachada"
@@ -348,7 +348,7 @@ profile_id,slug,nome,cidade,departamento,identidade,revisao_manual,motivos_regra
 349,349-re-max-creation,RE/MAX CREATION,Fernando de la Mora,Central,sem_pasta_no_zip,,,,,,0,
 350,350-re-max-energy,RE/MAX ENERGY,Fernando de la Mora,Central,rejeitado,,nome_google_de_outro_estabelecimento;lugar_google_compartilhado_por_2_perfis,REMAX SINERGY,"Eusebio Lillo entre, Nicanor Torales y, Asunción 2346",ChIJx8gGAl6pXZQR9f2j0hh4mUk,0,
 351,351-re-max-evolution,RE/MAX EVOLUTION,Fernando de la Mora,Central,confirmado,,,Remax Evolution Py,"Gustavo Storm casi, Fernando de la Mora 110310",ChIJfXYzlT6vXZQRsIF9CMu4OyU,1,logo
-352,352-re-max-fidelity,RE/MAX FIDELITY,Fernando de la Mora,Central,confirmado,,,REMAX FIDELITY,"Acaray c, Av. Mariscal López, Fernando de la Mora 110310",ChIJ0alLDdyuXZQROShlfL3llXk,2,"interior,interior"
+352,352-re-max-fidelity,RE/MAX FIDELITY,Fernando de la Mora,Central,confirmado,,,REMAX FIDELITY,"Acaray c, Av. Mariscal López, Fernando de la Mora 110310",ChIJ0alLDdyuXZQROShlfL3llXk,4,"fachada,fachada,interior,interior"
 353,353-re-max-sigma,RE/MAX SIGMA,Fernando de la Mora,Central,confirmado,,,REMAX SIGMA,"Saturio Ríos 215c, Fernando de la Mora 110319",ChIJfwjvyHCvXZQRA6UbBmg2zDA,3,"fachada,fachada,interior"
 354,354-re-max-sol,RE/MAX SOL,Fernando de la Mora,Central,rejeitado,rejeitado: endereço em outra cidade,endereco_de_outra_cidade_ou_filial,Re/max Sol,"San Antonio, &, San Lorenzo 111439",ChIJa74b9NyvXZQRLEjeHqcNIrE,0,
 355,355-fermar-emprendimientos-inmobiliarios,Fermar Emprendimientos Inmobiliarios,Itá,Central,confirmado,,,Fermar Emprendimientos Inmobiliarios,"Compañía, Itá 2710",ChIJATPrrk9PXJQRPw8EezJgWoU,0,
@@ -380,7 +380,7 @@ profile_id,slug,nome,cidade,departamento,identidade,revisao_manual,motivos_regra
 381,381-inmo-loteamientos-san-lorenzo,Inmo Loteamientos — San Lorenzo,San Lorenzo,Central,confirmado,,,Inmo Loteamientos | Casa Matriz - San Lorenzo,"Km 14, Parque 14 y medio, Mariscal José Félix Estigarribia 5, San Lorenzo 2160",ChIJiXL-fCevXZQR78sd3-QgZYc,3,"fachada,interior,interior"
 382,382-jc-bienes-raices,JC Bienes Raíces,San Lorenzo,Central,confirmado,"aceito: nome exato, mesma cidade",nome_curto_ou_generico,JC BIENES RAICES,"Abraham Linconl 1280 c/ 12 de Junio San Lorenzo, San Lorenzo 2160",ChIJB67Jq6evXZQRYAIWGA2gJqg,1,logo
 383,383-la-paraguaya-inmobiliaria-s-a-san-lorenzo,La Paraguaya Inmobiliaria S.A. — San Lorenzo,San Lorenzo,Central,confirmado,aceito: sucursal San Lorenzo de La Paraguaya,nome_google_parcial,Suc. San Lorenzo La Paraguaya Inmobiliaria,"MF3W+F3C, San Lorenzo 111423",ChIJ5VsZdPCvXZQR4DxIUgdq22A,1,fachada
-384,384-re-max-executive,RE/MAX EXECUTIVE,San Lorenzo,Central,confirmado,,,RE/MAX EXECUTIVE,"Manuel Ortiz Guerrero 355 casi, San Lorenzo 2160",ChIJMeZyHsSvXZQRaZKxOXHMyzQ,4,"fachada,interior,interior,institucional"
+384,384-re-max-executive,RE/MAX EXECUTIVE,San Lorenzo,Central,confirmado,,,RE/MAX EXECUTIVE,"Manuel Ortiz Guerrero 355 casi, San Lorenzo 2160",ChIJMeZyHsSvXZQRaZKxOXHMyzQ,5,"fachada,fachada,interior,interior,institucional"
 385,385-re-max-magnificat,RE/MAX MAGNIFICAT,San Lorenzo,Central,confirmado,,,"RE/MAX MAGNIFICAT, San Lorenzo, Paraguay","La Colmena, San Lorenzo 111420",ChIJeV760WavXZQRRMszAAPCWYc,2,"fachada,interior"
 386,386-re-max-supreme,RE/MAX SUPREME,San Lorenzo,Central,sem_pasta_no_zip,,,,,,0,
 387,387-ivan-propiedades,Ivan Propiedades,Villa Elisa,Central,confirmado,,,Ivan Propiedades,"Av. Americo Picco, Villa Elisa 111510",ChIJ6T5Cdd-rXZQRjkXs9mh-0i0,1,logo
@@ -396,7 +396,7 @@ profile_id,slug,nome,cidade,departamento,identidade,revisao_manual,motivos_regra
 397,397-global-genesis-inmobiliaria-casa-central,Global Génesis Inmobiliaria - Casa Central,Concepción,Concepción,confirmado,,,Global Génesis,"HHV5+J2J, Mayor Julio Otano, Concepción 010107",ChIJB1Io3VmdZpQRQsyUcQmE5Ts,2,"logo,fachada"
 398,398-re-max-zafiro,RE/MAX Zafiro,Concepción,Concepción,confirmado,,,RE/MAX ZAFIRO,"HHV3+8X8, Concepción 010107",ChIJsR1qZgWdZpQRfsXPgrJkvzs,0,
 399,399-global-genesis-inmobiliaria-horqueta,Global Génesis Inmobiliaria - Horqueta,Horqueta,Concepción,confirmado,,,GLOBAL GÉNESIS INMOBILIARIA S.A,"MX33+V4G, Horqueta 010303",ChIJb8zlSlCpZpQRFBJR9eoqO2g,1,fachada
-400,400-la-inmobiliaria-de-altos,La Inmobiliaria de Altos,Altos,Cordillera,confirmado,,,La Inmobiliaria de Altos,"Dr. Federico Chavez, Altos 030202",ChIJ8-KpJFm1XZQR3juY0xOUY7c,2,"fachada,fachada"
+400,400-la-inmobiliaria-de-altos,La Inmobiliaria de Altos,Altos,Cordillera,confirmado,,,La Inmobiliaria de Altos,"Dr. Federico Chavez, Altos 030202",ChIJ8-KpJFm1XZQR3juY0xOUY7c,3,"fachada,fachada,interior"
 401,401-comercial-angel-sebastian,Comercial Angel Sebastián,Arroyos y Esteros,Cordillera,confirmado,,,Comercial Angel Sebastian,"Unnamed Rd, Arroyos y Esteros 030301",ChIJhe15DFjdXZQRjfG1Rmawzkc,0,
 402,402-lotea-inmobiliaria,LOTEA Inmobiliaria,Arroyos y Esteros,Cordillera,sem_pasta_no_zip,,,,,,0,
 403,403-vittoria-s-a,Vittoria S.A.,Atyrá,Cordillera,confirmado,,,Vittoria S.A,"Compañia, Atyrá 030405",ChIJ5d7HC_zNXZQR0Omp1x8FWe8,0,
@@ -455,7 +455,7 @@ profile_id,slug,nome,cidade,departamento,identidade,revisao_manual,motivos_regra
 456,456-ventas-de-terrenos-en-itapua-paraguay,Ventas de Terrenos en Itapúa — Paraguay,Hohenau,Itapúa,confirmado,,,Ventas de Terrenos en Itapúa - Paraguay,"Av. Los Fundadores, Hohenau 071406",ChIJC3GDXrXlV5QRTP67I814SzA,0,
 457,457-jorge-vieira-asesor-inmobiliario,Jorge Vieira — Asesor Inmobiliario,Obligado,Itapúa,confirmado,,,Asesor inmobiliario Jorge Vieira,Obligado 6360,ChIJgwatqQv7V5QRblbnjtnBvhc,0,
 458,458-paraguay-bienes-raices-oficina-obligado,Paraguay Bienes Raíces — Oficina Obligado,Obligado,Itapúa,rejeitado,,nome_google_de_outro_estabelecimento,Paraguay Bienes Raíces,"Avenida Mcal. Francisco Solano López, Obligado 6063",ChIJsTiVc737V5QRrEfXEt35bXk,0,
-459,459-terra-sur,Terra Sur,Obligado,Itapúa,confirmado,,,Terra Sur,"Obligado, Itapúa, Obligado 6360",ChIJj9arS076V5QR66ulq_nPFbQ,0,
+459,459-terra-sur,Terra Sur,Obligado,Itapúa,confirmado,,,Terra Sur,"Obligado, Itapúa, Obligado 6360",ChIJj9arS076V5QR66ulq_nPFbQ,1,fachada
 460,460-real-propiedades-s-a-sucursal-san-pedro-del-parana,REAL PROPIEDADES S.A. — Sucursal San Pedro del Paraná,San Pedro del Paraná,Itapúa,rejeitado,,nome_google_de_outro_estabelecimento,REAL PROPIEDADES SA - Suc. San Pedro del Paraná,"5Q9W+3J5, Fulgencio Yegros, San Pedro del Paraná 072002",ChIJt__cPQA1WJQRKJySdFAWGlE,0,
 461,461-atlantica-de-inmuebles-s-a-maria-auxiliadora,Atlántica de Inmuebles S.A. — María Auxiliadora,Tomás Romero Pereira,Itapúa,confirmado,,,Atlántica de Inmuebles S.A. (María Auxiliadora),"Av. Los Colonos, María Auxiliadora 072414",ChIJH4lV6Dbp95QR2cA5LRHWZdM,2,"fachada,fachada"
 462,462-e-e-emprendimientos-juridico-e-inmobiliario,E&E Emprendimientos Jurídico e Inmobiliario,Tomás Romero Pereira,Itapúa,sem_pasta_no_zip,,,,,,0,

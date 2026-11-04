@@ -63,7 +63,7 @@ REVIEW_DIR = DATA / "images_review"
 IDENTITY_REVIEW = REVIEW_DIR / "identidade.csv"   # manual identity decisions
 CONTENT_REVIEW = REVIEW_DIR / "conteudo.csv"      # what each candidate shows
 REPORTS = REPO / "reports"
-REVIEW_POOL = 8       # candidates per profile shown for content review
+REVIEW_POOL = 10      # candidates per profile shown for content review (every photo of a folder)
 
 VERSION = 1           # bump to invalidate every checkpoint
 EXTRACT_VERSION = 2   # 2: ZIP names decoded as UTF-8
@@ -646,11 +646,29 @@ def encode_webp(im: Image.Image, max_bytes: int, keep_alpha: bool) -> bytes:
     return best
 
 
+def trim_logo(im: Image.Image) -> Image.Image:
+    """Drop uniform borders (letterbox bars, transparent margins) around a logo."""
+    from PIL import ImageChops
+    if im.mode == "RGBA":
+        bbox = im.getchannel("A").point(lambda v: 255 if v > 8 else 0).getbbox()
+    else:
+        rgb = im.convert("RGB")
+        bg = Image.new("RGB", rgb.size, rgb.getpixel((0, 0)))
+        bbox = ImageChops.difference(rgb, bg).convert("L").point(lambda v: 255 if v > 24 else 0).getbbox()
+    if not bbox or (bbox[2] - bbox[0]) * (bbox[3] - bbox[1]) > 0.97 * im.width * im.height:
+        return im
+    pad = round(0.04 * max(bbox[2] - bbox[0], bbox[3] - bbox[1]))
+    return im.crop((max(0, bbox[0] - pad), max(0, bbox[1] - pad),
+                    min(im.width, bbox[2] + pad), min(im.height, bbox[3] + pad)))
+
+
 def render_variant(src: Path, box: int, max_bytes: int, square: bool, logo: bool) -> tuple[bytes, int, int]:
     with Image.open(src) as im:
         im = ImageOps.exif_transpose(im)
         alpha = logo and (im.mode in ("RGBA", "LA", "P"))
         im = im.convert("RGBA" if alpha else "RGB")
+        if logo:
+            im = trim_logo(im)
         if square and not logo:
             im = ImageOps.fit(im, (box, box), Image.Resampling.LANCZOS)
         else:
@@ -676,6 +694,7 @@ def _encode_job(job):
 
 def stage_optimize(images, root: Path, work: Path) -> None:
     from concurrent.futures import ProcessPoolExecutor
+    review = load_content_review()
     out = work / "optimized"
     out.mkdir(parents=True, exist_ok=True)
     specs = [("p" + n, b, mb, True) for n, b, mb in PRIMARY_VARIANTS] + \
@@ -685,10 +704,17 @@ def stage_optimize(images, root: Path, work: Path) -> None:
         if not im.get("candidate_rank"):
             continue
         for name, box, max_bytes, square in specs:
-            dst = out / f"{im['sha256'][:20]}-{name}-v{VERSION}.webp"
+            # The reviewed class decides the rendering: a logo is fitted whole and
+            # trimmed, a photo is cropped. Renderings that differ from the original
+            # automatic guess get their own cache name, so nothing else re-encodes.
+            cls = review.get((im["sha256"], im["profile_id"]), "")
+            logo = cls == "logo" if cls else im["logo_hint"]
+            tag = "-L2" if cls == "logo" else ("-P2" if im["logo_hint"] and not logo else "")
+            im["render_logo"] = logo
+            dst = out / f"{im['sha256'][:20]}-{name}{tag}-v{VERSION}.webp"
             todo.append((im, name, dst))
             if not (dst.exists() and dst.with_suffix(".json").exists()) or dst.stat().st_size > max_bytes:
-                jobs.append((str(root / im["rel"]), str(dst), box, max_bytes, square, im["logo_hint"]))
+                jobs.append((str(root / im["rel"]), str(dst), box, max_bytes, square, logo))
     jobs = list(dict.fromkeys(jobs))   # the same picture in two folders is encoded once
     if jobs:
         with ProcessPoolExecutor(max_workers=os.cpu_count() or 2) as ex:
@@ -848,6 +874,56 @@ def stage_report(images, infos, matches, profiles, manifest, zip_meta) -> dict:
                                  "origem": e["source"], "sha256_original": e["sha256"]})
     write_csv(REPORTS / "imagens-manifest.csv", man_rows, list(man_rows[0].keys()) if man_rows else ["profile_id"])
 
+    # Origin and rights risk, kept apart from identity: a photo can be certainly
+    # of the right business and still carry a rights risk, and vice versa.
+    RISK = {
+        "estabelecimento": ("medio", "Enviada pelo proprio estabelecimento ao Google Maps; sem autorizacao "
+                                     "direta registrada; os termos da Google Maps Platform nao permitem "
+                                     "republicar fotos fora da API"),
+        "terceiro": ("alto", "Enviada por um usuario do Google Maps (pessoa fisica); sem licenca do autor; "
+                             "os termos da Google Maps Platform nao permitem republicar fotos fora da API"),
+    }
+    rights_rows = []
+    for pid, v in sorted(manifest.items(), key=lambda kv: int(kv[0])):
+        for e in v["images"]:
+            lvl, why = RISK[e["author"]]
+            rights_rows.append({"profile_id": pid, "slug_perfil": v["slug"], "tipo": e["type"],
+                                "arquivos": " ".join(x["src"] for x in e["variants"].values()),
+                                "sha256_original": e["sha256"], "origem": "Google Maps (Places Photos)",
+                                "link_origem": e["source"], "autor": e["author"],
+                                "risco_direitos": lvl, "observacao": why})
+    write_csv(REPORTS / "imagens-origem-direitos.csv", rights_rows,
+              list(rights_rows[0].keys()) if rights_rows else ["profile_id"])
+
+    # Coverage: every accepted profile, and why it has no image when it has none.
+    imgs_by_pid = defaultdict(list)
+    for im in images:
+        imgs_by_pid[im.get("profile_id", "")].append(im)
+    cov_rows = []
+    for m in sorted((m for m in matches.values() if m["decision"] == "confirmado"), key=lambda m: int(m["profile_id"])):
+        pid = m["profile_id"]
+        imgs, pub_n = imgs_by_pid[pid], len(manifest.get(pid, {}).get("images", []))
+        ex = Counter(r.split(":")[0] for i in imgs for r in i.get("exclude", []))
+        cls = Counter((i.get("content") or "").split(":")[0] for i in imgs if i.get("content"))
+        if pub_n:
+            why = "com_imagens"
+        elif not imgs:
+            why = "pasta_sem_fotos"
+        elif cls and set(cls) == {"rejeitar"}:
+            why = "todas_as_fotos_eram_imoveis_loteamentos_ou_irrelevantes"
+        elif ex.get("mesma_foto_em_outro_perfil"):
+            why = "fotos_validas_so_compartilhadas_com_outro_perfil"
+        elif ex.get("sem_revisao_de_conteudo") or ex.get(f"fora_do_lote_de_revisao_{REVIEW_POOL}"):
+            why = "fotos_ainda_nao_revisadas"
+        else:
+            why = "fotos_sem_qualidade_tecnica"
+        cov_rows.append({"profile_id": pid, "nome": profiles[pid]["name"], "cidade": profiles[pid]["city"],
+                         "origem_identidade": "revisao_manual" if m.get("override_decision") else "regras",
+                         "escopo": m.get("scope") or "completo", "fotos_na_pasta": len(imgs),
+                         "aproveitadas": pub_n, "tipos": ",".join(e["type"] for e in manifest.get(pid, {}).get("images", [])),
+                         "situacao": why, "rejeitadas_conteudo": cls.get("rejeitar", 0)})
+    write_csv(REPORTS / "imagens-cobertura.csv", cov_rows, list(cov_rows[0].keys()))
+
     by_pid = defaultdict(list)
     for m in matches.values():
         by_pid[m["profile_id"]].append(m)
@@ -885,11 +961,16 @@ def stage_report(images, infos, matches, profiles, manifest, zip_meta) -> dict:
         "imagens_aproveitadas": len(pub),
         "imagens_aproveitadas_por_tipo": dict(typ),
         "imagens_aproveitadas_autor_estabelecimento": sum(1 for e in pub if e["author"] == "estabelecimento"),
+        "risco_direitos": {"medio_enviada_pelo_estabelecimento": sum(1 for e in pub if e["author"] == "estabelecimento"),
+                           "alto_enviada_por_terceiro": sum(1 for e in pub if e["author"] == "terceiro"),
+                           "perfis_com_alguma_foto_de_terceiro": sum(1 for v in manifest.values()
+                                                                     if any(e["author"] == "terceiro" for e in v["images"]))},
         "perfis_com_imagem": len(manifest),
         "perfis_com_logo": has("logo"),
         "perfis_com_fachada": has("fachada"),
         "perfis_com_galeria": sum(1 for v in manifest.values() if any(e["type"] != "logo" for e in v["images"])),
         "perfis_sem_imagem": len(profiles) - len(manifest),
+        "cobertura_perfis_aceitos": dict(Counter(r["situacao"] for r in cov_rows)),
         "bytes_originais_acervo": sum(i.get("bytes", 0) for i in images),
         "bytes_originais_aproveitadas": sum(i.get("bytes", 0) for i in images if i.get("published")),
         "bytes_publicados": sum(v["bytes"] for e in pub for v in e["variants"].values()),
