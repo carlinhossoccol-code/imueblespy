@@ -1,0 +1,85 @@
+profile_id,decisao,motivo
+7,aceito,"Ayres Inmobiliarias S.A, nome distintivo no Paraguai"
+25,aceito,nome exato; Lúke = Luque
+32,aceito,nome exato e distintivo no Paraguai
+34,aceito,"Inmuebles Roque Alonso y Mas, Mariano Roque Alonso"
+43,aceito,nome exato no Paraguai
+58,aceito,nome exato e distintivo no Paraguai
+65,aceito,nome exato e distintivo no Paraguai
+71,aceito,nome exato e distintivo no Paraguai
+82,aceito,nome exato e distintivo no Paraguai
+86,aceito,nome exato e distintivo no Paraguai
+91,aceito,"nome exato, mesma cidade"
+105,aceito,"nome exato, mesma cidade"
+117,aceito,"nome exato, mesma cidade"
+125,aceito,"Raíces Ciudad del Este, mesma cidade"
+150,aceito,"nome exato, mesma cidade"
+169,aceito,"Raíces Pedro Juan Caballero, mesma cidade"
+170,aceito,"Abas Inmobiliaria, matriz em Asunción"
+178,aceito,Casa Blanca Inmobiliaria em Asunción (o homônimo de San Bernardino é outro perfil)
+217,aceito,"123 SA Grupo Inmobiliario, mesma cidade"
+241,aceito,"Re/MaxCONTIGO, mesma cidade"
+283,aceito,nome exato; Neuland fica em Boquerón
+292,aceito,"nome exato, mesma cidade"
+305,aceito,mesmo escritório cadastrado duas vezes (305 e 312)
+309,aceito,sucursal Coronel Oviedo de La Paraguaya
+312,aceito,mesmo escritório cadastrado duas vezes (305 e 312)
+330,aceito,"nome exato, mesma cidade"
+337,aceito,nome exato; Saltos del Guairá = Salto del Guairá
+364,aceito,sucursal Limpio de La Paraguaya
+373,aceito,"Remax Sinergy II, mesma cidade"
+382,aceito,"nome exato, mesma cidade"
+383,aceito,sucursal San Lorenzo de La Paraguaya
+408,aceito,"Sina construcción y inmobiliaria, mesma cidade"
+409,aceito,"nome exato, mesma cidade"
+411,aceito,"nome exato, mesma cidade"
+441,aceito,"sucursal Encarnación de La Paraguaya, mesma cidade"
+453,aceito,"Raíces Hohenau, mesma cidade"
+478,aceito,sucursal Paraguarí de La Paraguaya
+485,aceito,"nome exato, mesma cidade"
+497,aceito,"nome exato, mesma cidade"
+499,aceito,"nome exato, mesma cidade"
+20,aceito_principal,Edipar - Edificios Paraguay
+27,aceito_principal,Green Land Properties & Partners
+28,aceito_principal,Team Guilhem Costa RE/MAX Black
+31,aceito_principal,Grupo Idées
+74,aceito_principal,Skyone - Team Delfi Chase
+236,aceito_principal,Centro de Experiencias da Raíces em Asunción
+413,aceito_principal,"INMo Group Piribebuy, provável mesma rede"
+2,rejeitado,"lugar é a matriz, perfil é a sucursal"
+8,rejeitado,lugar na Colômbia
+9,rejeitado,nome genérico; existe também CH BROKERS
+11,rejeitado,restaurante
+23,rejeitado,outro negócio (fotógrafa)
+24,rejeitado,restaurante
+33,rejeitado,outra empresa
+61,rejeitado,cursinho
+64,rejeitado,empreendimento
+67,rejeitado,paróquia
+70,rejeitado,outro escritório SkyOne
+77,rejeitado,lugar na Argentina
+83,rejeitado,outro negócio sem cidade
+88,rejeitado,escribanía
+96,rejeitado,"Century 21 Seven de Asunción, perfil é CDE"
+101,rejeitado,outro negócio (Estrella de Oro)
+104,rejeitado,outro negócio em outra cidade
+112,rejeitado,endereço em outra cidade
+158,rejeitado,endereço em outra cidade
+176,rejeitado,lugar na Argentina
+177,rejeitado,empreendimento em outra cidade
+183,rejeitado,outro escritório Century 21
+204,rejeitado,outro escritório Century 21
+230,rejeitado,lugar compartilhado sem unidade definida
+231,rejeitado,lugar nos EUA
+248,rejeitado,"página de uma agente, não do escritório"
+250,rejeitado,outro escritório RE/MAX (Family)
+253,rejeitado,outro escritório RE/MAX (Family)
+268,rejeitado,outro escritório RE/MAX (Sienna)
+273,rejeitado,RE/MAX Paraguay genérico
+321,rejeitado,outra empresa em outra cidade
+333,rejeitado,loteamento da empresa
+354,rejeitado,endereço em outra cidade
+380,rejeitado,"agência de outro bairro, unidade não confirmada"
+477,rejeitado,loteamento da empresa
+481,rejeitado,outro negócio em outra cidade
+487,rejeitado,outro negócio em outra cidade

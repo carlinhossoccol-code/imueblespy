@@ -1,47 +1,36 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Reconcile, select and optimise real profile images - publishing only what is proven.
+"""Reconcile, review and optimise real profile images - never on the wrong business.
 
-Input is the ZIP produced by the Google Places photo collector (one folder per
-profile with an ``info.json`` and up to ten photos). Nothing from that ZIP is
-ever written into the repository: it is extracted into a work directory that
-must live *outside* the repository, and only images that pass every gate below
-are optimised into ``site/assets/profiles/``.
+Input is the ZIP of photos collected from Google Maps (one folder per profile
+with an ``info.json`` and up to ten photos). Nothing from that ZIP is written
+into the repository as is: it is extracted into a work directory that must live
+*outside* the repository, and only reviewed images are optimised into
+``site/assets/profiles/``.
 
-Gates, in order. An image is published only if it passes all of them:
+An image is published when both gates pass (see tools/images/README.md):
 
 1. **Profile identity** - the Google place is the profile, not a namesake, a
-   sibling branch or another office of the same franchise (``match``).
-2. **Image identity** - the photo was published by the business itself on its
-   own listing. A third-party upload at the right place is not proof that the
-   picture shows the business.
-3. **Right of use** - a row in ``data/image_rights.csv`` documents the basis
-   (written authorisation, own photo, licence) with evidence and a reviewer.
-   Finding a photo on Google is *not* a basis: Google Maps Platform terms do
-   not allow storing Places photos and republishing them outside the API.
-   This pipeline never infers or invents a right of use.
-4. **Human review of content** - the same row records what the image shows
-   (logo, facade, interior, team, institutional). That classification cannot be
-   made reliably by a script, and alt text is generated from it, so nothing is
-   described that a reviewer did not confirm.
+   sibling branch, another franchise office or a development (``match``, then
+   ``data/images_review/identidade.csv`` for the cases rules left pending).
+2. **Content** - a reviewer classified it as logo, facade, interior, team or
+   institutional (``data/images_review/conteudo.csv``). Photos of listed
+   properties and lots never ship; alt text comes from the class only.
 
-Everything that fails a gate stays in the review queue
-(``data/images_audit/fila_revisao.csv``) with the reason.
-
-Stages (each one checkpointed in the work directory, so a re-run only redoes
-what changed):
+Stages (checkpointed in the work directory):
 
     extract    verify the ZIP (size, SHA-256, CRC of every member), unpack it
     inventory  hash, dimensions, perceptual hash, logo hints - per image
-    match      profile identity per folder
-    select     <= 5 distinct candidates per profile, duplicates removed
-    optimize   WebP variants of the candidates (work dir only, for review)
-    publish    approved images -> site/assets/profiles + data/profile_images.json
-    report     audit CSV/JSON in data/images_audit/
+    match      profile identity per folder (+ manual decisions)
+    select     <= 8 distinct candidates per accepted profile for review
+    sheets     numbered contact sheets of unreviewed candidates (--sheets)
+    optimize   WebP variants (work dir)
+    publish    reviewed images -> site/assets/profiles + data/profile_images.json
+    report     reports/imagens-*.csv|json
 
 Usage:
     python3 -I tools/images/pipeline.py --zip /path/imagens.zip \\
-        --work /path/outside/repo [--sha256 <expected>] [--stages all]
+        --work /path/outside/repo [--sha256 <expected>] [--sheets]
 """
 from __future__ import annotations
 
@@ -66,12 +55,15 @@ Image.MAX_IMAGE_PIXELS = 80_000_000  # refuse decompression bombs, allow 48 MP p
 
 REPO = Path(__file__).resolve().parents[2]
 DATA = REPO / "data"
-AUDIT = DATA / "images_audit"
 SITE = REPO / "site"
 ASSET_DIR = SITE / "assets" / "profiles"
 ASSET_URL = "/assets/profiles"
 MANIFEST = DATA / "profile_images.json"
-RIGHTS = DATA / "image_rights.csv"
+REVIEW_DIR = DATA / "images_review"
+IDENTITY_REVIEW = REVIEW_DIR / "identidade.csv"   # manual identity decisions
+CONTENT_REVIEW = REVIEW_DIR / "conteudo.csv"      # what each candidate shows
+REPORTS = REPO / "reports"
+REVIEW_POOL = 8       # candidates per profile shown for content review
 
 VERSION = 1           # bump to invalidate every checkpoint
 EXTRACT_VERSION = 2   # 2: ZIP names decoded as UTF-8
@@ -82,9 +74,6 @@ NEAR_DUP = 6          # dHash Hamming distance treated as the same picture
 
 # What a reviewer may record, in display priority order.
 TYPES = ["logo", "fachada", "interior", "equipe", "institucional"]
-BASES = {"autorizacao_escrita", "foto_propria", "licenca"}
-RIGHTS_FIELDS = ["sha256", "profile_id", "image_type", "basis", "evidence",
-                 "granted_by", "granted_date", "reviewed_by", "reviewed_date", "notes"]
 
 # Variants: (name, box, max_bytes). Box sizes come from the components:
 # .identity is 62x62 in directory cards, .profile-logo 96x96 on the profile,
@@ -93,9 +82,6 @@ RIGHTS_FIELDS = ["sha256", "profile_id", "image_type", "basis", "evidence",
 PRIMARY_VARIANTS = [("124", 124, 30_000), ("192", 192, 60_000)]
 GALLERY_VARIANTS = [("480", 480, 80_000), ("960", 960, 180_000)]
 
-GOOGLE_BASIS_NOTE = ("Foto obtida pela Google Places API; os termos da Google Maps Platform "
-                     "não permitem armazenar nem republicar a foto fora da API e não há licença "
-                     "do autor registrada em data/image_rights.csv")
 
 
 # ---------------------------------------------------------------------------
@@ -495,8 +481,26 @@ def stage_match(infos: dict, profiles: dict) -> dict[str, dict]:
             if r["decision"] == "confirmado":
                 r["decision"] = "pendente"
             r["reasons"].append(f"lugar_google_compartilhado_por_{len(group)}_perfis")
+    # Documented human review of the cases the rules left pending
+    # (data/images_review/identidade.csv). 'aceito_principal' = moderate doubt:
+    # the profile gets its single most reliable image and no gallery.
+    overrides = {}
+    if IDENTITY_REVIEW.exists():
+        with open(IDENTITY_REVIEW, encoding="utf-8", newline="") as fh:
+            overrides = {r["profile_id"]: r for r in csv.DictReader(fh)}
+    for r in res.values():
+        o = overrides.get(r["profile_id"])
+        if not o:
+            continue
+        r["override"] = f"{o['decisao']}: {o['motivo']}"
+        r["override_decision"] = o["decisao"]
+        if o["decisao"] in ("aceito", "aceito_principal"):
+            r["decision"] = "confirmado"
+            r["scope"] = "principal" if o["decisao"] == "aceito_principal" else "completo"
+        elif o["decisao"] == "rejeitado":
+            r["decision"] = "rejeitado"
     c = Counter(r["decision"] for r in res.values())
-    log(f"match: {dict(c)}")
+    log(f"match: {dict(c)} ({len(overrides)} manual identity decision(s))")
     return res
 
 
@@ -514,15 +518,19 @@ def is_owner(img: dict, info: dict, prof_name: str) -> bool:
 
 
 def stage_select(images, infos, matches, profiles) -> None:
-    sha_profiles = defaultdict(set)
-    for im in images:
-        m = matches.get(im["folder"])
-        if im.get("ok") and m and m["profile_id"]:
-            sha_profiles[im["sha256"]].add(m["profile_id"])
-
+    """Review pool: up to REVIEW_POOL distinct, usable images per accepted profile."""
     by_folder = defaultdict(list)
     for im in images:
         by_folder[im["folder"]].append(im)
+    accepted_place = {}
+    for m in matches.values():
+        if m["decision"] == "confirmado":
+            accepted_place[m["profile_id"]] = m["place_id"]
+    sha_profiles = defaultdict(set)
+    for im in images:
+        m = matches.get(im["folder"])
+        if im.get("ok") and m and m["profile_id"] in accepted_place:
+            sha_profiles[im["sha256"]].add(m["profile_id"])
 
     for folder, imgs in by_folder.items():
         m = matches.get(folder, {})
@@ -531,6 +539,7 @@ def stage_select(images, infos, matches, profiles) -> None:
         for im in imgs:
             im["profile_id"] = m.get("profile_id", "")
             im["profile_identity"] = m.get("decision", "pendente")
+            im["scope"] = m.get("scope", "")
             im["owner"] = bool(prof) and is_owner(im, info, prof.get("name", ""))
             reasons = []
             if not im.get("ok"):
@@ -540,21 +549,23 @@ def stage_select(images, infos, matches, profiles) -> None:
                     reasons.append("resolucao_insuficiente")
                 if max(im["width"], im["height"]) / max(1, min(im["width"], im["height"])) > 3:
                     reasons.append("proporcao_extrema")
-                if len(sha_profiles.get(im["sha256"], ())) > 1:
-                    reasons.append("mesma_imagem_em_outro_perfil")
+                others = sha_profiles.get(im["sha256"], set()) - {im["profile_id"]}
+                # Same picture in another accepted profile: fine when both profiles are
+                # the same Google place (one office listed twice), otherwise flagged and
+                # allowed only as a brand logo at publish time.
+                im["shared_with"] = sorted(p for p in others if accepted_place.get(p) != accepted_place.get(im["profile_id"]))
             if im["profile_identity"] == "rejeitado":
                 reasons.append("perfil_rejeitado")
+            elif im["profile_identity"] == "pendente":
+                reasons.append("perfil_pendente")
             im["exclude"] = reasons
-            if im["profile_identity"] == "confirmado" and im["owner"]:
-                im["image_identity"] = "confirmada"
-            elif im["profile_identity"] == "confirmado":
-                im["image_identity"] = "pendente_autor_terceiro"
+            if im["profile_identity"] == "confirmado":
+                im["image_identity"] = "confirmada" if im["owner"] else "lugar_confirmado_autor_terceiro"
             elif im["profile_identity"] == "rejeitado":
                 im["image_identity"] = "rejeitada"
             else:
                 im["image_identity"] = "pendente_perfil"
 
-        # Rank: business's own uploads first, logos first, then resolution.
         pool = [im for im in imgs if not im["exclude"]]
         pool.sort(key=lambda i: (not i["owner"], not i["logo_hint"], -(i["width"] * i["height"]), i["file"]))
         kept, hashes = [], []
@@ -562,15 +573,55 @@ def stage_select(images, infos, matches, profiles) -> None:
             if any(hamming(im["dhash"], h) <= NEAR_DUP for h in hashes):
                 im["exclude"].append("duplicata")
                 continue
-            if len(kept) >= MAX_PER_PROFILE:
-                im["exclude"].append("excedente_maximo_5")
+            if len(kept) >= REVIEW_POOL:
+                im["exclude"].append(f"fora_do_lote_de_revisao_{REVIEW_POOL}")
                 continue
             hashes.append(im["dhash"])
             kept.append(im)
         for rank, im in enumerate(kept, 1):
             im["candidate_rank"] = rank
     n = sum(1 for i in images if i.get("candidate_rank"))
-    log(f"select: {n} candidates (<= {MAX_PER_PROFILE} per profile, duplicates removed)")
+    log(f"select: {n} candidates for review (<= {REVIEW_POOL} per accepted profile, duplicates removed)")
+
+
+def load_content_review() -> dict[tuple[str, str], str]:
+    out = {}
+    if CONTENT_REVIEW.exists():
+        with open(CONTENT_REVIEW, encoding="utf-8", newline="") as fh:
+            for r in csv.DictReader(fh):
+                out[(r["sha256"].strip(), r["profile_id"].strip())] = r["classe"].strip()
+    return out
+
+
+def stage_sheets(images, root: Path, work: Path) -> int:
+    """Numbered contact sheets of candidates still lacking a content decision."""
+    from PIL import ImageDraw
+    review = load_content_review()
+    todo = [i for i in images if i.get("candidate_rank") and (i["sha256"], i["profile_id"]) not in review]
+    todo.sort(key=lambda i: (int(i["profile_id"]), i["candidate_rank"]))
+    out = work / "sheets"
+    if out.exists():
+        shutil.rmtree(out)
+    out.mkdir(parents=True)
+    cols, rows, tw, th = 8, 6, 190, 175
+    index = []
+    for s in range(0, len(todo), cols * rows):
+        sheet = Image.new("RGB", (cols * tw, rows * th), "white")
+        d = ImageDraw.Draw(sheet)
+        for k, im in enumerate(todo[s:s + cols * rows]):
+            n = s + k
+            with Image.open(root / im["rel"]) as src:
+                t = ImageOps.exif_transpose(src).convert("RGB")
+                t.thumbnail((tw - 6, th - 30))
+            x, y = (k % cols) * tw, (k // cols) * th
+            sheet.paste(t, (x + 3, y + 3))
+            d.text((x + 3, y + th - 26), f"{n} #{im['profile_id']} {'P' if im['owner'] else 'T'}", fill="black")
+            d.text((x + 3, y + th - 14), split_name(im.get("_pname", ""))[0][:30], fill="black")
+            index.append({"n": n, "sheet": s // (cols * rows), "sha256": im["sha256"], "profile_id": im["profile_id"]})
+        sheet.save(out / f"sheet-{s // (cols * rows):02d}.jpg", quality=80)
+    write_csv(out / "index.csv", index, ["n", "sheet", "sha256", "profile_id"])
+    log(f"sheets: {len(todo)} image(s) awaiting content review in {out}")
+    return len(todo)
 
 
 # ---------------------------------------------------------------------------
@@ -605,6 +656,11 @@ def render_variant(src: Path, box: int, max_bytes: int, square: bool, logo: bool
         else:
             im.thumbnail((box, box) if square else (box, box * 4), Image.Resampling.LANCZOS)
         data = encode_webp(im, max_bytes, alpha)
+        # Still over budget at the lowest quality: shrink a little rather than
+        # ship a heavy file or an ugly one.
+        while len(data) > max_bytes and min(im.size) > 160:
+            im = im.resize((round(im.width * 0.85), round(im.height * 0.85)), Image.Resampling.LANCZOS)
+            data = encode_webp(im, max_bytes, alpha)
         return data, im.width, im.height
 
 
@@ -631,7 +687,7 @@ def stage_optimize(images, root: Path, work: Path) -> None:
         for name, box, max_bytes, square in specs:
             dst = out / f"{im['sha256'][:20]}-{name}-v{VERSION}.webp"
             todo.append((im, name, dst))
-            if not (dst.exists() and dst.with_suffix(".json").exists()):
+            if not (dst.exists() and dst.with_suffix(".json").exists()) or dst.stat().st_size > max_bytes:
                 jobs.append((str(root / im["rel"]), str(dst), box, max_bytes, square, im["logo_hint"]))
     jobs = list(dict.fromkeys(jobs))   # the same picture in two folders is encoded once
     if jobs:
@@ -649,72 +705,78 @@ def stage_optimize(images, root: Path, work: Path) -> None:
 # ---------------------------------------------------------------------------
 # stage: publish
 # ---------------------------------------------------------------------------
-def load_rights() -> list[dict]:
-    if not RIGHTS.exists():
-        return []
-    with open(RIGHTS, encoding="utf-8", newline="") as fh:
-        return [r for r in csv.DictReader(fh) if (r.get("sha256") or "").strip()]
-
-
 ALT = {
-    "logo": ("Logotipo de {n}", "Logotipo de {n}"),
-    "fachada": ("Fachada de la oficina de {n}{en}", "Fachada do escritório de {n}{em}"),
-    "interior": ("Interior de la oficina de {n}", "Interior do escritório de {n}"),
+    "logo": ("Logotipo de {n}", "Logomarca de {n}"),
+    "fachada": ("Fachada de {n}{en}", "Fachada de {n}{em}"),
+    "interior": ("Oficina de {n}{en}", "Escritório de {n}{em}"),
     "equipe": ("Equipo de {n}", "Equipe de {n}"),
     "institucional": ("Imagen institucional de {n}", "Imagem institucional de {n}"),
 }
+TYPE_CAP = {"logo": 1, "fachada": 2, "interior": 2, "equipe": 2, "institucional": 1}
 
 
-def stage_publish(images, profiles) -> list[dict]:
-    by_sha = defaultdict(list)
+def maps_link(url: str) -> str:
+    m = re.search(r"[?&]cid=(\d+)", url or "")
+    return f"https://maps.google.com/?cid={m.group(1)}" if m else ""
+
+
+def stage_publish(images, infos, matches, profiles) -> dict:
+    review = load_content_review()
+    by_pid = defaultdict(list)
     for im in images:
-        if im.get("ok"):
-            by_sha[im["sha256"]].append(im)
-    approved = defaultdict(list)
-    decisions = []
-    for r in load_rights():
-        sha, pid = r["sha256"].strip(), r["profile_id"].strip()
-        problems = []
-        cands = [i for i in by_sha.get(sha, []) if i.get("profile_id") == pid]
-        im = cands[0] if cands else None
-        if not im:
-            problems.append("imagem_nao_pertence_ao_perfil")
-        else:
-            if im["image_identity"] != "confirmada":
-                problems.append("identidade_nao_confirmada:" + im["image_identity"])
-            if not im.get("candidate_rank"):
-                problems.append("fora_da_selecao:" + ",".join(im["exclude"]))
-        if r.get("image_type") not in TYPES:
-            problems.append("tipo_nao_revisado")
-        if r.get("basis") not in BASES:
-            problems.append("base_de_uso_invalida")
-        for f in ("evidence", "granted_by", "granted_date", "reviewed_by", "reviewed_date"):
-            if not (r.get(f) or "").strip():
-                problems.append(f"campo_vazio:{f}")
-        decisions.append({"sha256": sha, "profile_id": pid, "ok": not problems, "problems": problems})
-        if not problems:
-            approved[pid].append((r, im))
+        cls = review.get((im.get("sha256", ""), im.get("profile_id", "")))
+        im["content"] = cls or ""
+        if not im.get("candidate_rank"):
+            continue
+        if cls is None:
+            im["exclude"].append("sem_revisao_de_conteudo")
+            continue
+        if cls not in TYPES:
+            im["exclude"].append(cls)          # e.g. rejeitar:imovel_anunciado
+            continue
+        if im.get("shared_with") and cls != "logo":
+            im["exclude"].append("mesma_foto_em_outro_perfil")
+            continue
+        by_pid[im["profile_id"]].append(im)
 
+    city_ok = {m["profile_id"]: m.get("city_ok") for m in matches.values()}
     ASSET_DIR.mkdir(parents=True, exist_ok=True)
     manifest, keep = {}, set()
-    for pid, items in sorted(approved.items(), key=lambda kv: int(kv[0])):
+    for pid in sorted(by_pid, key=int):
         prof = profiles[pid]
-        items.sort(key=lambda ri: (TYPES.index(ri[0]["image_type"]), ri[1]["candidate_rank"]))
-        items = items[:MAX_PER_PROFILE]
-        entries, seen_type = [], Counter()
-        for r, im in items:
-            t = r["image_type"]
-            seen_type[t] += 1
-            base = f"{slugify(split_name(prof['name'])[0])}-{slugify(prof.get('city') or 'paraguay')}-{t}-{pid}"
-            if seen_type[t] > 1:
-                base += f"-{seen_type[t]}"
-            city = prof.get("city") or ""
-            alt_es, alt_pt = ALT[t]
-            fmt = {"n": prof["name"], "en": f" en {city}" if city else "", "em": f" em {city}" if city else ""}
-            entry = {"type": t, "sha256": im["sha256"], "alt_es": alt_es.format(**fmt),
-                     "alt_pt": alt_pt.format(**fmt), "basis": r["basis"], "variants": {}}
-            for vname, v in im["variants"].items():
-                fname = f"{base}-{vname}.webp"
+        items = sorted(by_pid[pid], key=lambda i: (TYPES.index(i["content"]), i["candidate_rank"]))
+        chosen, per_type = [], Counter()
+        for im in items:
+            if per_type[im["content"]] >= TYPE_CAP[im["content"]] or len(chosen) >= MAX_PER_PROFILE:
+                im["exclude"].append("excedente_por_tipo_ou_total")
+                continue
+            per_type[im["content"]] += 1
+            chosen.append(im)
+        if chosen and chosen[0]["scope"] == "principal":   # moderate doubt: main image only
+            for im in chosen[1:]:
+                im["exclude"].append("perfil_somente_imagem_principal")
+            chosen = chosen[:1]
+        base_name = split_name(prof["name"])[0]
+        city = prof.get("city") or ""
+        # The city goes into alt text and slug only when it is the profile's own.
+        say_city = city if city and city_ok.get(pid) is not False else ""
+        entries, seen = [], Counter()
+        for im in chosen:
+            t = im["content"]
+            seen[t] += 1
+            slug = f"{slugify(base_name)}-{slugify(say_city or 'paraguay')}-{t}-{pid}"
+            if seen[t] > 1:
+                slug += f"-{seen[t]}"
+            fmt = {"n": base_name, "en": f" en {say_city}" if say_city else "", "em": f" em {say_city}" if say_city else ""}
+            entry = {"type": t, "sha256": im["sha256"], "alt_es": ALT[t][0].format(**fmt),
+                     "alt_pt": ALT[t][1].format(**fmt), "author": "estabelecimento" if im["owner"] else "terceiro",
+                     "source": maps_link(infos.get(im["folder"], {}).get("google_maps", "")), "variants": {}}
+            # Logos fill the identity slot only; photos always go to the gallery and
+            # also fill the slot when they are the profile's primary image.
+            wanted = [n for n in im["variants"] if (n.startswith("p") and (t == "logo" or not entries))
+                      or (n.startswith("g") and t != "logo")]
+            for vname, v in ((n, im["variants"][n]) for n in wanted):
+                fname = f"{slug}-{vname[1:]}.webp" if vname.startswith("p") else f"{slug}-g{vname[1:]}.webp"
                 dst = ASSET_DIR / fname
                 if not dst.exists() or dst.read_bytes() != Path(v["path"]).read_bytes():
                     shutil.copyfile(v["path"], dst)
@@ -722,6 +784,7 @@ def stage_publish(images, profiles) -> list[dict]:
                 entry["variants"][vname] = {"src": f"{ASSET_URL}/{fname}", "w": v["w"], "h": v["h"],
                                             "bytes": v["bytes"]}
             entries.append(entry)
+            im["published"] = True
         manifest[pid] = {"slug": prof["slug"], "images": entries}
 
     for f in ASSET_DIR.iterdir():          # idempotent: nothing stale survives
@@ -730,111 +793,113 @@ def stage_publish(images, profiles) -> list[dict]:
     if not any(ASSET_DIR.iterdir()):
         ASSET_DIR.rmdir()
     write_json(MANIFEST, {"version": VERSION, "profiles": manifest})
-    log(f"publish: {sum(len(v['images']) for v in manifest.values())} image(s) for {len(manifest)} profile(s); "
-        f"{sum(1 for d in decisions if not d['ok'])} rights row(s) refused")
-    return decisions
+    log(f"publish: {sum(len(v['images']) for v in manifest.values())} image(s) for {len(manifest)} profile(s)")
+    return manifest
 
 
 # ---------------------------------------------------------------------------
 # stage: report
 # ---------------------------------------------------------------------------
-def stage_report(images, infos, matches, profiles, decisions, zip_meta) -> dict:
-    manifest = read_json(MANIFEST, {"profiles": {}})["profiles"]
-    published = {e["sha256"] + ":" + pid for pid, v in manifest.items() for e in v["images"]}
-    rights_ok = {d["sha256"] + ":" + d["profile_id"] for d in decisions if d["ok"]}
-    rights_rows = {d["sha256"] + ":" + d["profile_id"]: d for d in decisions}
+def stage_report(images, infos, matches, profiles, manifest, zip_meta) -> dict:
+    REPORTS.mkdir(parents=True, exist_ok=True)
+    pub_files = {(e["sha256"], pid): e for pid, v in manifest.items() for e in v["images"]}
 
-    inv_rows, queue = [], []
-    for im in sorted(images, key=lambda i: i["rel"]):
-        key = f"{im.get('sha256', '')}:{im.get('profile_id', '')}"
+    def row(im):
         info = infos.get(im["folder"], {})
-        if key in published:
-            status, reason = "publicada", ""
-        elif key in rights_rows:
-            status, reason = "direitos_recusados", ";".join(rights_rows[key]["problems"])
-        else:
-            status, reason = "sem_base_de_uso_documentada", GOOGLE_BASIS_NOTE
-        v = im.get("variants") or {}
-        row = {
-            "image_id": (im.get("sha256") or "")[:12], "pasta": im["folder"], "arquivo": im["file"],
-            "profile_id": im.get("profile_id", ""), "identidade_perfil": im.get("profile_identity", ""),
-            "identidade_imagem": im.get("image_identity", ""),
-            "autor": "proprio_estabelecimento" if im.get("owner") else "terceiro",
-            # Third-party contributors are private people: their names and
-            # profile links stay in the work directory, not in the repository.
-            "autor_uri": (im.get("authors") or [{}])[0].get("uri", "") if im.get("owner") else "",
-            "origem": "Google Maps Platform - Places Photos",
-            "google_maps": info.get("google_maps", ""), "place_id": info.get("place_id", ""),
-            "largura": im.get("width", ""), "altura": im.get("height", ""), "bytes": im.get("bytes", 0),
-            "sha256": im.get("sha256", ""), "dhash": im.get("dhash", ""),
-            "logo_provavel": int(bool(im.get("logo_hint"))),
-            "candidata": im.get("candidate_rank", ""), "exclusao": ";".join(im.get("exclude", [])),
-            "bytes_otimizado": sum(x["bytes"] for x in v.values()) if v else "",
-            "direitos": status, "motivo_direitos": reason,
+        e = pub_files.get((im.get("sha256", ""), im.get("profile_id", "")))
+        return {
+            "image_id": (im.get("sha256") or "")[:12], "profile_id": im.get("profile_id", ""),
+            "perfil": profiles.get(im.get("profile_id", ""), {}).get("name", ""),
+            "pasta": im["folder"], "arquivo": im["file"],
+            "identidade_perfil": im.get("profile_identity", ""), "identidade_imagem": im.get("image_identity", ""),
+            # Third-party contributors are private people: no names or profile links here.
+            "autor": "estabelecimento" if im.get("owner") else "terceiro",
+            "origem": maps_link(info.get("google_maps", "")), "place_id": info.get("place_id", ""),
+            "largura": im.get("width", ""), "altura": im.get("height", ""), "bytes_original": im.get("bytes", 0),
+            "sha256": im.get("sha256", ""), "classe": im.get("content", ""),
+            "motivo": ";".join(im.get("exclude", [])),
+            "bytes_publicados": sum(v["bytes"] for v in e["variants"].values()) if e else "",
         }
-        inv_rows.append(row)
-        if status != "publicada" and im.get("candidate_rank"):
-            queue.append(row)
-    inv_fields = list(inv_rows[0].keys()) if inv_rows else []
-    write_csv(AUDIT / "inventario.csv", inv_rows, inv_fields)
-    write_csv(AUDIT / "fila_revisao.csv", sorted(queue, key=lambda r: (int(r["profile_id"] or 0), r["candidata"])),
-              inv_fields)
+
+    rows = [row(i) for i in sorted(images, key=lambda i: (int(i.get("profile_id") or 0), i["rel"]))]
+    fields = list(rows[0].keys())
+    approved = [r for r in rows if r["bytes_publicados"] != ""]
+    # Pending = could still be used: unresolved identity, or an accepted profile's
+    # image that was never put in front of a reviewer. Everything else not
+    # published was decided against, with the reason in 'motivo'.
+    def is_pending(r):
+        return r["identidade_perfil"] == "pendente" or (
+            r["identidade_perfil"] == "confirmado" and not r["classe"]
+            and any(k in r["motivo"] for k in ("fora_do_lote", "sem_revisao")))
+    pending = [r for r in rows if r["bytes_publicados"] == "" and is_pending(r)]
+    rejected = [r for r in rows if r["bytes_publicados"] == "" and not is_pending(r)]
+    write_csv(REPORTS / "imagens-aprovadas.csv", approved, fields)
+    write_csv(REPORTS / "imagens-pendentes.csv", pending, fields)
+    write_csv(REPORTS / "imagens-rejeitadas.csv", rejected, fields)
+
+    man_rows = []
+    for pid, v in sorted(manifest.items(), key=lambda kv: int(kv[0])):
+        for pos, e in enumerate(v["images"]):
+            for vname, var in e["variants"].items():
+                man_rows.append({"profile_id": pid, "slug_perfil": v["slug"], "posicao": pos, "tipo": e["type"],
+                                 "uso": "principal" if vname.startswith("p") else "galeria",
+                                 "arquivo": var["src"], "largura": var["w"], "altura": var["h"], "bytes": var["bytes"],
+                                 "alt_es": e["alt_es"], "alt_pt": e["alt_pt"], "autor": e["author"],
+                                 "origem": e["source"], "sha256_original": e["sha256"]})
+    write_csv(REPORTS / "imagens-manifest.csv", man_rows, list(man_rows[0].keys()) if man_rows else ["profile_id"])
 
     by_pid = defaultdict(list)
     for m in matches.values():
         by_pid[m["profile_id"]].append(m)
     prof_rows = []
     for pid in sorted(profiles, key=int):
-        p = profiles[pid]
-        ms = by_pid.get(pid, [])
-        m = ms[0] if ms else {}
+        p, m = profiles[pid], (by_pid.get(pid) or [{}])[0]
         info = infos.get(m.get("folder", ""), {})
-        imgs = [i for i in images if i.get("profile_id") == pid]
+        imgs = manifest.get(pid, {}).get("images", [])
         prof_rows.append({
             "profile_id": pid, "slug": p["slug"], "nome": p["name"], "cidade": p["city"],
-            "departamento": p["department"], "pasta": m.get("folder", ""),
-            "identidade": m.get("decision", "sem_imagens_no_zip"),
-            "motivos": ";".join(m.get("reasons", [])),
+            "departamento": p["department"], "identidade": m.get("decision", "sem_pasta_no_zip"),
+            "revisao_manual": m.get("override", ""), "motivos_regras": ";".join(m.get("reasons", [])),
             "nome_google": info.get("nome_google", ""), "endereco_google": info.get("endereco_google", ""),
-            "place_id": info.get("place_id", ""), "pontuacao_nome": m.get("name_score", ""),
-            "cidade_confere": {True: "sim", False: "nao", None: ""}.get(m.get("city_ok")),
-            "dominio_confere": "sim" if m.get("domain_ok") else "",
-            "imagens": len(imgs), "candidatas": sum(1 for i in imgs if i.get("candidate_rank")),
-            "publicadas": len(manifest.get(pid, {}).get("images", [])),
+            "place_id": info.get("place_id", ""), "imagens_publicadas": len(imgs),
+            "tipos": ",".join(e["type"] for e in imgs),
         })
-    write_csv(AUDIT / "perfis.csv", prof_rows, list(prof_rows[0].keys()))
+    write_csv(REPORTS / "imagens-perfis.csv", prof_rows, list(prof_rows[0].keys()))
 
-    cand = [i for i in images if i.get("candidate_rank")]
-    pub_imgs = [e for v in manifest.values() for e in v["images"]]
+    pub = [e for v in manifest.values() for e in v["images"]]
+    pub_shas = {e["sha256"] for e in pub}
+    typ = Counter(e["type"] for e in pub)
+    has = lambda t: sum(1 for v in manifest.values() if any(e["type"] == t for e in v["images"]))
     summary = {
         "zip": zip_meta,
         "imagens_processadas": len(images),
         "imagens_validas": sum(1 for i in images if i.get("ok")),
-        "pastas_no_zip": len(infos),
         "perfis_no_site": len(profiles),
-        "perfis_com_pasta": len({m["profile_id"] for m in matches.values() if m["profile_id"]}),
+        "pastas_no_zip": len(infos),
         "identidade_perfil": dict(Counter(m["decision"] for m in matches.values())),
-        "identidade_imagem": dict(Counter(i.get("image_identity", "") for i in images)),
-        "imagens_identidade_confirmada": sum(1 for i in images if i.get("image_identity") == "confirmada"),
-        "imagens_com_base_de_uso_documentada": len(rights_ok),
-        "linhas_de_direitos_recusadas": sum(1 for d in decisions if not d["ok"]),
-        "candidatas_selecionadas": len(cand),
-        "candidatas_identidade_confirmada": sum(1 for i in cand if i.get("image_identity") == "confirmada"),
-        "imagens_integradas": len(pub_imgs),
-        "perfis_com_imagens_integradas": len(manifest),
-        "pendentes_identidade": sum(1 for i in cand if i.get("image_identity") != "confirmada"),
-        "pendentes_somente_direitos": sum(1 for i in cand if i.get("image_identity") == "confirmada"
-                                          and f"{i['sha256']}:{i['profile_id']}" not in published),
-        "exclusoes": dict(Counter(r for i in images for r in i.get("exclude", []))),
-        "bytes_originais_total": sum(i.get("bytes", 0) for i in images),
-        "bytes_originais_candidatas": sum(i.get("bytes", 0) for i in cand),
-        "bytes_otimizados_candidatas": sum(sum(v["bytes"] for v in (i.get("variants") or {}).values()) for i in cand),
-        "bytes_publicados": sum(v["bytes"] for e in pub_imgs for v in e["variants"].values()),
-        "regras": {"max_por_perfil": MAX_PER_PROFILE, "lado_minimo_px": MIN_SIDE,
-                   "dhash_duplicata": NEAR_DUP, "variantes_principal": PRIMARY_VARIANTS,
-                   "variantes_galeria": GALLERY_VARIANTS, "versao": VERSION},
+        "revisoes_manuais_de_identidade": dict(Counter(m.get("override_decision", "") for m in matches.values()
+                                                       if m.get("override_decision"))),
+        "candidatas_revisadas": sum(1 for i in images if i.get("candidate_rank")),
+        "classes_revisao_conteudo": dict(Counter(i["content"].split(":")[0] if ":" in i["content"] else i["content"]
+                                                 for i in images if i.get("content"))),
+        "imagens_aproveitadas": len(pub),
+        "imagens_aproveitadas_por_tipo": dict(typ),
+        "imagens_aproveitadas_autor_estabelecimento": sum(1 for e in pub if e["author"] == "estabelecimento"),
+        "perfis_com_imagem": len(manifest),
+        "perfis_com_logo": has("logo"),
+        "perfis_com_fachada": has("fachada"),
+        "perfis_com_galeria": sum(1 for v in manifest.values() if any(e["type"] != "logo" for e in v["images"])),
+        "perfis_sem_imagem": len(profiles) - len(manifest),
+        "bytes_originais_acervo": sum(i.get("bytes", 0) for i in images),
+        "bytes_originais_aproveitadas": sum(i.get("bytes", 0) for i in images if i.get("published")),
+        "bytes_publicados": sum(v["bytes"] for e in pub for v in e["variants"].values()),
+        "arquivos_publicados": sum(len(e["variants"]) for e in pub),
+        "exclusoes": dict(Counter(r.split(":")[0] for i in images for r in i.get("exclude", []))),
+        "regras": {"max_por_perfil": MAX_PER_PROFILE, "limite_por_tipo": TYPE_CAP, "lote_revisao": REVIEW_POOL,
+                   "lado_minimo_px": MIN_SIDE, "dhash_duplicata": NEAR_DUP,
+                   "variantes_principal": PRIMARY_VARIANTS, "variantes_galeria": GALLERY_VARIANTS},
     }
-    write_json(AUDIT / "resumo.json", summary)
+    write_json(REPORTS / "imagens-resumo.json", summary)
     return summary
 
 
@@ -844,6 +909,7 @@ def main() -> int:
     ap.add_argument("--zip", default=os.environ.get("INMUEBLESPY_IMAGES_ZIP"), required=False)
     ap.add_argument("--work", default=os.environ.get("INMUEBLESPY_IMAGES_WORK"), required=False)
     ap.add_argument("--sha256", default=os.environ.get("INMUEBLESPY_IMAGES_SHA256"))
+    ap.add_argument("--sheets", action="store_true", help="also draw contact sheets of unreviewed candidates")
     args = ap.parse_args()
     if not args.zip or not args.work:
         sys.exit("--zip and --work are required (or INMUEBLESPY_IMAGES_ZIP / INMUEBLESPY_IMAGES_WORK)")
@@ -857,17 +923,21 @@ def main() -> int:
     profiles = load_profiles()
     images, infos = stage_inventory(root, work)
     matches = stage_match(infos, profiles)
+    for im in images:
+        im["_pname"] = profiles.get(matches.get(im["folder"], {}).get("profile_id", ""), {}).get("name", "")
     stage_select(images, infos, matches, profiles)
+    if args.sheets:
+        stage_sheets(images, root, work)
     stage_optimize(images, root, work)
-    decisions = stage_publish(images, profiles)
+    manifest = stage_publish(images, infos, matches, profiles)
     ck = read_json(work / "checkpoints" / "extract.json", {})
-    summary = stage_report(images, infos, matches, profiles, decisions,
+    summary = stage_report(images, infos, matches, profiles, manifest,
                            {"bytes": zip_path.stat().st_size, "sha256": ck.get("sha256", "")})
     # Full detail (third-party author names included) stays in the work dir.
     write_json(work / "detail.json", {"images": images, "matches": matches})
-    log(json.dumps({k: summary[k] for k in ("imagens_processadas", "imagens_identidade_confirmada",
-                                            "imagens_com_base_de_uso_documentada", "imagens_integradas",
-                                            "perfis_com_imagens_integradas")}, ensure_ascii=False))
+    log(json.dumps({k: summary[k] for k in ("imagens_processadas", "imagens_aproveitadas", "perfis_com_imagem",
+                                            "perfis_com_logo", "perfis_com_fachada", "perfis_com_galeria")},
+                   ensure_ascii=False))
     return 0
 
 

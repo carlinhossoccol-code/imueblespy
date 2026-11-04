@@ -1,0 +1,91 @@
+{
+ "arquivos_publicados": 1050,
+ "bytes_originais_acervo": 2966714556,
+ "bytes_originais_aproveitadas": 468643322,
+ "bytes_publicados": 45555502,
+ "candidatas_revisadas": 1152,
+ "classes_revisao_conteudo": {
+  "equipe": 26,
+  "fachada": 241,
+  "institucional": 15,
+  "interior": 154,
+  "logo": 66,
+  "rejeitar": 666
+ },
+ "exclusoes": {
+  "duplicata": 18,
+  "excedente_por_tipo_ou_total": 104,
+  "fora_do_lote_de_revisao_8": 115,
+  "perfil_rejeitado": 550,
+  "perfil_somente_imagem_principal": 6,
+  "rejeitar": 659
+ },
+ "identidade_perfil": {
+  "confirmado": 273,
+  "rejeitado": 91
+ },
+ "imagens_aproveitadas": 383,
+ "imagens_aproveitadas_autor_estabelecimento": 234,
+ "imagens_aproveitadas_por_tipo": {
+  "equipe": 21,
+  "fachada": 196,
+  "institucional": 11,
+  "interior": 95,
+  "logo": 60
+ },
+ "imagens_processadas": 1835,
+ "imagens_validas": 1835,
+ "pastas_no_zip": 364,
+ "perfis_com_fachada": 138,
+ "perfis_com_galeria": 166,
+ "perfis_com_imagem": 202,
+ "perfis_com_logo": 60,
+ "perfis_no_site": 500,
+ "perfis_sem_imagem": 298,
+ "regras": {
+  "dhash_duplicata": 6,
+  "lado_minimo_px": 200,
+  "limite_por_tipo": {
+   "equipe": 2,
+   "fachada": 2,
+   "institucional": 1,
+   "interior": 2,
+   "logo": 1
+  },
+  "lote_revisao": 8,
+  "max_por_perfil": 5,
+  "variantes_galeria": [
+   [
+    "480",
+    480,
+    80000
+   ],
+   [
+    "960",
+    960,
+    180000
+   ]
+  ],
+  "variantes_principal": [
+   [
+    "124",
+    124,
+    30000
+   ],
+   [
+    "192",
+    192,
+    60000
+   ]
+  ]
+ },
+ "revisoes_manuais_de_identidade": {
+  "aceito": 40,
+  "aceito_principal": 7,
+  "rejeitado": 37
+ },
+ "zip": {
+  "bytes": 2905984794,
+  "sha256": "4ae36b1b95a8deeb79afba26f94dd52d158831f94af5da7d951ba46817d55c77"
+ }
+}

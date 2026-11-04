@@ -101,5 +101,5 @@
 .pimg-gallery{margin-top:22px}
 .pimg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:12px}
 .pimg-grid figure{margin:0}
-.pimg-grid img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:12px;background:var(--soft)}
+.pimg-grid img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--line);border-radius:12px;background:var(--soft)}
 .pimg-note{margin-top:10px;font-size:.85rem;color:var(--muted)}

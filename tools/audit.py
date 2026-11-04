@@ -416,20 +416,18 @@ def c_images():
     return bad
 
 
-@check("profile_images", "Real profile images are approved, documented, present, light and not orphaned")
+@check("profile_images", "Real profile images are reviewed, present, light and not orphaned")
 def c_profile_images():
-    """Only images with a documented right of use may ship (tools/images/pipeline.py)."""
+    """Only reviewed images may ship (tools/images/pipeline.py, data/images_review/)."""
     import csv as _csv
 
     bad = []
     man = (C.load_json("profile_images.json", {}) or {}).get("profiles", {})
-    rights = set()
+    reviewed = {}
     try:
-        with open(os.path.join(C.DATA, "image_rights.csv"), encoding="utf-8", newline="") as fh:
+        with open(os.path.join(C.DATA, "images_review", "conteudo.csv"), encoding="utf-8", newline="") as fh:
             for r in _csv.DictReader(fh):
-                if all((r.get(f) or "").strip() for f in ("sha256", "profile_id", "image_type", "basis",
-                                                          "evidence", "granted_by", "reviewed_by")):
-                    rights.add((r["sha256"].strip(), r["profile_id"].strip()))
+                reviewed[(r["sha256"].strip(), r["profile_id"].strip())] = r["classe"].strip()
     except FileNotFoundError:
         pass
     adir = os.path.join(C.SITE, "assets", "profiles")
@@ -437,8 +435,8 @@ def c_profile_images():
     referenced = set()
     for pid, entry in man.items():
         for img in entry.get("images", []):
-            if (img.get("sha256"), pid) not in rights:
-                bad.append((f"profile {pid}", f"image {img.get('sha256', '')[:12]} has no documented right of use"))
+            if reviewed.get((img.get("sha256"), pid)) != img.get("type"):
+                bad.append((f"profile {pid}", f"image {img.get('sha256', '')[:12]} lacks a matching content review"))
             if not img.get("alt_es") or not img.get("alt_pt"):
                 bad.append((f"profile {pid}", "image without alt text in both languages"))
             for v in img.get("variants", {}).values():

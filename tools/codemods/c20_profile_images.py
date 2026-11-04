@@ -2,9 +2,9 @@
 """Show approved real images of a profile, and only those.
 
 Input is ``data/profile_images.json``, written by ``tools/images/pipeline.py``.
-An entry exists only for images whose identity was confirmed and whose right of
-use is documented in ``data/image_rights.csv``; this codemod trusts nothing
-else and invents nothing.
+An entry exists only for images whose profile identity was confirmed and whose
+content was reviewed (``data/images_review/``); this codemod trusts nothing else
+and invents nothing.
 
 For a profile with approved images:
 
@@ -47,8 +47,8 @@ REPLACED_RE = re.compile(r'<img [^>]*data-pimg="(?P<pid>\d+)"[^>]*/>')
 GALLERY_RE = re.compile(r'<section class="pimg-gallery" data-pimg-gallery="\d+">.*?</section>', re.S)
 PROFILE_SEG = {lang: (C.AGENCY_SEGMENT[lang], C.AGENT_SEGMENT[lang]) for lang in C.LANGS}
 GALLERY_TITLE = {"es": "Imágenes de la empresa", "pt-br": "Imagens da empresa"}
-GALLERY_NOTE = {"es": "Imágenes publicadas con autorización documentada.",
-                "pt-br": "Imagens publicadas com autorização documentada."}
+GALLERY_NOTE = {"es": 'Fuente de las imágenes: <a href="{u}" rel="nofollow noopener noreferrer" target="_blank">perfil del establecimiento en Google Maps</a>.',
+                "pt-br": 'Fonte das imagens: <a href="{u}" rel="nofollow noopener noreferrer" target="_blank">perfil do estabelecimento no Google Maps</a>.'}
 
 _STATE = None
 
@@ -109,7 +109,12 @@ def _gallery(pid, images, lang):
                     f'srcset="{a["src"]} {a["w"]}w, {b["src"]} {b["w"]}w" width="{a["w"]}"/></figure>')
     return (f'<section class="pimg-gallery" data-pimg-gallery="{pid}"><h2 class="profile-heading">'
             f'{GALLERY_TITLE[lang]}</h2><div class="pimg-grid">{"".join(figs)}</div>'
-            f'<p class="pimg-note">{GALLERY_NOTE[lang]}</p></section>')
+            f'{_note(images, lang)}</section>')
+
+
+def _note(images, lang):
+    src = next((i.get("source") for i in images if i.get("source")), "")
+    return f'<p class="pimg-note">{GALLERY_NOTE[lang].format(u=_attr(src))}</p>' if src else ""
 
 
 def apply(path, src, ctx):
@@ -149,7 +154,9 @@ def apply(path, src, ctx):
 
     # 3. Gallery of the remaining images, after the profile's data table.
     if gallery_for:
-        rest = profiles[gallery_for]["images"][1:]
+        # The logo already sits in the identity slot; every photo goes to the gallery,
+        # including a primary photo, which the 96 px slot shows only as a thumbnail.
+        rest = [i for i in profiles[gallery_for]["images"] if i["type"] != "logo"]
         if rest:
             i = out.find('data-pimg="%s"' % gallery_for)
             j = out.find("</table>", i)
