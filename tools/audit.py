@@ -416,6 +416,52 @@ def c_images():
     return bad
 
 
+@check("profile_images", "Real profile images are approved, documented, present, light and not orphaned")
+def c_profile_images():
+    """Only images with a documented right of use may ship (tools/images/pipeline.py)."""
+    import csv as _csv
+
+    bad = []
+    man = (C.load_json("profile_images.json", {}) or {}).get("profiles", {})
+    rights = set()
+    try:
+        with open(os.path.join(C.DATA, "image_rights.csv"), encoding="utf-8", newline="") as fh:
+            for r in _csv.DictReader(fh):
+                if all((r.get(f) or "").strip() for f in ("sha256", "profile_id", "image_type", "basis",
+                                                          "evidence", "granted_by", "reviewed_by")):
+                    rights.add((r["sha256"].strip(), r["profile_id"].strip()))
+    except FileNotFoundError:
+        pass
+    adir = os.path.join(C.SITE, "assets", "profiles")
+    on_disk = set(os.listdir(adir)) if os.path.isdir(adir) else set()
+    referenced = set()
+    for pid, entry in man.items():
+        for img in entry.get("images", []):
+            if (img.get("sha256"), pid) not in rights:
+                bad.append((f"profile {pid}", f"image {img.get('sha256', '')[:12]} has no documented right of use"))
+            if not img.get("alt_es") or not img.get("alt_pt"):
+                bad.append((f"profile {pid}", "image without alt text in both languages"))
+            for v in img.get("variants", {}).values():
+                name = v["src"].rsplit("/", 1)[-1]
+                referenced.add(name)
+                p = os.path.join(adir, name)
+                if not os.path.exists(p):
+                    bad.append((v["src"], "manifest image missing on disk"))
+                elif os.path.getsize(p) > 200_000:
+                    bad.append((v["src"], f"{os.path.getsize(p)} bytes, over the 200 KB ceiling"))
+    for name in sorted(on_disk - referenced):
+        bad.append((f"/assets/profiles/{name}", "file not in data/profile_images.json"))
+    for root, _, files in os.walk(C.SITE):
+        for f in files:
+            if f.lower().endswith((".zip", ".part", ".tmp")):
+                bad.append((os.path.relpath(os.path.join(root, f), C.SITE), "archive or temporary file in site/"))
+    for p, s in CP.pages():
+        for pid in set(re.findall(r'data-pimg(?:-gallery)?="(\d+)"', s)):
+            if pid not in man:
+                bad.append((C.rel_url(p), f"shows images of profile {pid}, which has none approved"))
+    return bad
+
+
 @check("banner", "PT-BR advertising banner on every PT page, none on ES, after first useful section")
 def c_banner():
     bad = []

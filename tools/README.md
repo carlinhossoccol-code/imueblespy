@@ -68,6 +68,8 @@ domain.
 | `tools/serve.py` | Threaded local server, used by every browser check |
 | `tools/run_all.sh` | The whole pipeline, in the only correct order |
 | `tools/check_http.py` | Verifies a deployed host over real HTTP |
+| `tools/images/pipeline.py` | Real profile images: identity, rights gate, selection, WebP (see `tools/images/README.md`) |
+| `tools/codemods/c20_profile_images.py` | Puts approved images in cards and profile galleries; no-op without approvals |
 
 ## Rules for a codemod
 

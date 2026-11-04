@@ -1,3 +1,9 @@
 .DS_Store
 *.swp
 __pycache__/
+# Raw image intake (tools/images/pipeline.py works outside the repo; never commit these)
+*.zip
+*.part
+*.tmp
+/imobs/
+/imobs loca/

@@ -94,3 +94,12 @@
 .stack{display:grid;grid-auto-rows:min-content;grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));align-items:stretch}
 .stack > .company{height:100%}
 .stack > .callout{grid-column:1/-1}
+
+/* Approved real profile images (tools/codemods/c20_profile_images.py). The
+   identity slots keep their 62/96 px boxes; photos fill them, logos fit. */
+.pimg-photo{object-fit:cover}
+.pimg-gallery{margin-top:22px}
+.pimg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:12px}
+.pimg-grid figure{margin:0}
+.pimg-grid img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:12px;background:var(--soft)}
+.pimg-note{margin-top:10px;font-size:.85rem;color:var(--muted)}
