@@ -200,7 +200,7 @@ def registrable(url: str) -> str:
 
 def dhash(img: Image.Image) -> str:
     g = img.convert("L").resize((9, 8), Image.Resampling.LANCZOS)
-    px = list(g.getdata())
+    px = g.tobytes()  # one byte per pixel in mode L
     bits = 0
     for row in range(8):
         for col in range(8):
@@ -284,7 +284,8 @@ def stage_extract(zip_path: Path, work: Path, expected_sha: str | None) -> Path:
         if raw.exists():
             shutil.rmtree(raw)
         raw.mkdir(parents=True)
-        zf.extractall(raw)
+        for info in zf.infolist():
+            zf.extract(info, raw)
     roots = {Path(n).parts[0] for n in names}
     root = roots.pop() if len(roots) == 1 else "."
     write_json(ck, {"key": key, "sha256": digest, "members": len(names), "root": root})
@@ -314,7 +315,8 @@ def analyse_image(path: Path) -> dict:
             rec["alpha"] = alpha
             rec["dhash"] = dhash(im)
             small = im.convert("RGB").resize((64, 64), Image.Resampling.BILINEAR)
-            q = Counter((r >> 3, g >> 3, b >> 3) for r, g, b in small.getdata())
+            raw = small.tobytes()
+            q = Counter((raw[i] >> 3, raw[i + 1] >> 3, raw[i + 2] >> 3) for i in range(0, len(raw), 3))
             rec["colors"] = len(q)
             rec["top8_share"] = round(sum(c for _, c in q.most_common(8)) / 4096, 3)
             # A hint only: flat artwork or transparency usually means a logo.
@@ -363,6 +365,9 @@ def stage_inventory(root: Path, work: Path) -> tuple[list[dict], dict[str, dict]
             images.append({**{k2: v for k2, v in rec.items() if k2 != "_k"},
                            "rel": rel, "folder": folder.name, "file": name,
                            "listed": name in listed, "authors": authors})
+    seen = {im["rel"] for im in images}
+    for stale in [k for k in files if k not in seen]:   # renamed or removed files
+        del files[stale]
     write_json(ck_path, cache)
     log(f"inventory: {len(images)} images in {len(infos)} folders ({fresh} analysed, rest from checkpoint)")
     return images, infos
